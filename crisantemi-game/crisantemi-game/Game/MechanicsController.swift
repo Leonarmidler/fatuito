@@ -44,10 +44,18 @@ extension GameScene {
         return tilt
     }
     
-    func moveCamera(cameraNode: SKCameraNode) {
+    func fixCamera(cameraNode: SKCameraNode) {
         cameraNode.position.x = playerNode.position.x
         cameraNode.position.y = playerNode.position.y + cameraFixedY
         cameraNode.setScale(zoomScale)
+        
+        backgroundNode.position = playerNode.position
     }
     
+    func reposition(player: SKSpriteNode, ground: SKSpriteNode) {
+        if (player.position.y < -ground.frame.height) {
+            playerNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        }
+    }
+
 }

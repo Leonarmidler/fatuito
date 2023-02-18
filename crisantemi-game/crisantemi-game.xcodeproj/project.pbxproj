@@ -14,10 +14,11 @@
 		A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E429A0EC7800DC9A66 /* Main.storyboard */; };
 		A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */; };
 		A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E929A0EC7900DC9A66 /* LaunchScreen.storyboard */; };
-		A7DF46F529A0ED0100DC9A66 /* Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F429A0ED0100DC9A66 /* Mechanics.swift */; };
+		A7DF46F529A0ED0100DC9A66 /* MechanicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */; };
 		A7DF46F729A0ED7000DC9A66 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F629A0ED7000DC9A66 /* ContactController.swift */; };
 		A7DF46F929A0EDB300DC9A66 /* TouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F829A0EDB300DC9A66 /* TouchController.swift */; };
 		A7DF46FB29A0EE2700DC9A66 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46FA29A0EE2700DC9A66 /* TestController.swift */; };
+		A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +30,11 @@
 		A7DF46E529A0EC7800DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7DF46EA29A0EC7900DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A7DF46F429A0ED0100DC9A66 /* Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanics.swift; sourceTree = "<group>"; };
+		A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicsController.swift; sourceTree = "<group>"; };
 		A7DF46F629A0ED7000DC9A66 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		A7DF46F829A0EDB300DC9A66 /* TouchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchController.swift; sourceTree = "<group>"; };
 		A7DF46FA29A0EE2700DC9A66 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				A7DF46E029A0EC7800DC9A66 /* GameScene.swift */,
-				A7DF46F429A0ED0100DC9A66 /* Mechanics.swift */,
+				A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */,
+				A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */,
 				A7DF46F629A0ED7000DC9A66 /* ContactController.swift */,
 				A7DF46F829A0EDB300DC9A66 /* TouchController.swift */,
 				A7DF46FA29A0EE2700DC9A66 /* TestController.swift */,
@@ -176,9 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */,
 				A7DF46E129A0EC7800DC9A66 /* GameScene.swift in Sources */,
 				A7DF46F729A0ED7000DC9A66 /* ContactController.swift in Sources */,
-				A7DF46F529A0ED0100DC9A66 /* Mechanics.swift in Sources */,
+				A7DF46F529A0ED0100DC9A66 /* MechanicsController.swift in Sources */,
 				A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */,
 				A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */,
 				A7DF46F929A0EDB300DC9A66 /* TouchController.swift in Sources */,

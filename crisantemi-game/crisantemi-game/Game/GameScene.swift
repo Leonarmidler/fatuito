@@ -15,8 +15,8 @@ class GameScene: SKScene {
     // PARAMETERS
     let cameraFixedX: CGFloat = 150
     let cameraFixedY: CGFloat = 30
-    
-    let zoomScale: CGFloat = 2.0
+    let zoomScale: CGFloat = 1
+
     let playerMass: CGFloat = 0.5
     let staticObjMass: CGFloat = 1000
     let stdFriction: CGFloat = 0.5
@@ -34,14 +34,16 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         addCamera()
+        addBackground()
         addGround()
         addPlayer()
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        moveCamera(cameraNode: cameraNode)
+        fixCamera(cameraNode: cameraNode)
         applyGravity(node: playerNode)
+        reposition(player: playerNode, ground: groundNode)
     }
     
     func addPlayer() {
@@ -74,6 +76,8 @@ class GameScene: SKScene {
         groundNode = SKSpriteNode(imageNamed: "rampa")
         groundNode.position = CGPoint(x: frame.midX, y: frame.midY)
         
+        groundNode.setScale(2)
+        
         groundNode.physicsBody = SKPhysicsBody(texture: SKTexture(image: UIImage(named: "rampa")!), size: groundNode.size)
         groundNode.physicsBody?.categoryBitMask = PhysicsCategory.groundCategory
         groundNode.physicsBody?.collisionBitMask = PhysicsCategory.playerCategory
@@ -91,7 +95,7 @@ class GameScene: SKScene {
     
     func addBackground() {
         backgroundNode = SKSpriteNode(imageNamed: "background")
-        backgroundNode.size = CGSize(width: self.view!.frame.width, height: self.view!.frame.height)
+        backgroundNode.size = CGSize(width: scene!.frame.width, height: scene!.frame.height)
         backgroundNode.position = CGPoint(x: frame.midX, y: frame.midY)
         
         addChild(backgroundNode)
