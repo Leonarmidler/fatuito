@@ -10,8 +10,8 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class MechanicsController {
-    func getInclination(motionManager: CMMotionManager) -> Double {
+struct MechanicsController {
+    static func getInclination(motionManager: CMMotionManager) -> Double {
         var inclination: Double = 0
         
         if motionManager.accelerometerData != nil {
@@ -21,8 +21,8 @@ class MechanicsController {
         return inclination
     }
     
-    func getTiltedGravityVector(motionManager: CMMotionManager) -> CGVector {
-        let tilt = self.checkTilt(actualTilt: self.getInclination(motionManager: motionManager))
+    static func getTiltedGravityVector(motionManager: CMMotionManager) -> CGVector {
+        let tilt = checkTilt(actualTilt: getInclination(motionManager: motionManager))
         let gravityForce = CGFloat(-9.8 * GameParameters.playerMass)
         let sin = CGFloat(tilt)
         let cos = cos(asin(sin))
@@ -32,19 +32,19 @@ class MechanicsController {
         return tiltedGravityVector
     }
     
-    func applyGravity(motionManager: CMMotionManager) -> CGVector{
+    static func applyGravity(motionManager: CMMotionManager) -> CGVector{
         let tiltedGravityVector = self.getTiltedGravityVector(motionManager: motionManager)
         let fixedGravity = CGVector(dx: tiltedGravityVector.dx, dy: tiltedGravityVector.dy)
         
         return fixedGravity
     }
     
-    func jump(node: SKNode, motionManager: CMMotionManager) {
+    static func jump(node: SKNode, motionManager: CMMotionManager) {
             let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy*GameParameters.jumpIntensity))
     }
     
-    func checkTilt(actualTilt: Double) -> Double {
+    static func checkTilt(actualTilt: Double) -> Double {
         
         let maxTilt = 0.8
         let minTilt = -maxTilt
@@ -59,15 +59,15 @@ class MechanicsController {
         return tilt
     }
     
-    func fixCamera(cameraNode: SKCameraNode, playerNode: SKSpriteNode) {
+    static func fixCamera(cameraNode: SKCameraNode, playerNode: SKSpriteNode) {
         cameraNode.position.x = playerNode.position.x
         cameraNode.position.y = playerNode.position.y + GameParameters.cameraFixedY
         cameraNode.setScale(GameParameters.zoomScale)
     }
     
-    func reposition(player: SKSpriteNode, ground: SKSpriteNode) {
+    static func reposition(player: SKSpriteNode, ground: SKSpriteNode, scene: SKScene) {
         if (player.position.y < -ground.frame.height) {
-            player.position = CGPoint(x: GameScene().frame.midX, y: GameScene().frame.midY)
+            player.position = scene.frame.origin
         }
     }
     

@@ -11,7 +11,9 @@ import GameplayKit
 import CoreMotion
 
 class GameScene: SKScene {
-    let mechanicsController = MechanicsController()
+    
+    // STARTING POINT
+    let startingPoint = CGPoint(x: GameParameters.frameWidth/2, y: GameParameters.frameHeight/2)
     
     // NODE IMAGE NAMES
     let playerImageName = "player"
@@ -39,9 +41,9 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        physicsWorld.gravity = mechanicsController.applyGravity(motionManager: motionManager)
-        mechanicsController.fixCamera(cameraNode: cameraNode, playerNode: playerNode)
-        mechanicsController.reposition(player: playerNode, ground: groundNode)
+        physicsWorld.gravity = MechanicsController.applyGravity(motionManager: motionManager)
+        MechanicsController.fixCamera(cameraNode: cameraNode, playerNode: playerNode)
+        MechanicsController.reposition(player: playerNode, ground: groundNode, scene: self)
     }
     
     func addPlayer() {
