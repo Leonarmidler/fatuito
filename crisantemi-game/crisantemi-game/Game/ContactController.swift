@@ -11,17 +11,18 @@ import GameplayKit
 
 struct PhysicsCategory {
     static let none   : UInt32 = 0
-    static let playerCategory : UInt32 = 0b1
-    static let groundCategory : UInt32 = 0b10
+    static let playerCategory : UInt32 = 0b0001
+    static let groundCategory : UInt32 = 0b0010
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        if contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "ground" || contact.bodyB.node?.name == "player" && contact.bodyA.node?.name == "ground"{
-            isOnGround = true
-        } else {
-            isOnGround = false
+        let bodyA = contact.bodyA
+        let bodyB = contact.bodyB
+        
+        if bodyA.categoryBitMask == PhysicsCategory.playerCategory && bodyB.categoryBitMask == PhysicsCategory.groundCategory {
+            print("TOCCO")
         }
     }
     

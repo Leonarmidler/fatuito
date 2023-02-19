@@ -11,22 +11,44 @@ import GameplayKit
 
 extension GameScene {
     
-    func applyGravity(node: SKNode) {
+    func getInclination() -> Double {
         self.motionManager.startAccelerometerUpdates()
+        var inclination: Double = 0
+        
+        if self.motionManager.accelerometerData != nil {
+            inclination = self.motionManager.accelerometerData!.acceleration.y
+        }
+        
+        return inclination
+    }
+    
+    func getTiltedGravityVector() -> CGVector {
+        let tilt = self.checkTilt(actualTilt: self.getInclination())
+        let gravityForce = CGFloat(-9.8 * self.playerMass)
+        let sin = CGFloat(tilt)
+        let cos = cos(asin(sin))
+        
+        let tiltedGravityVector = CGVector(dx: gravityForce*sin, dy: gravityForce*cos)
+        
+        return tiltedGravityVector
+    }
+    
+    func applyGravity(node: SKNode) {
         let action = SKAction.run {
-            if self.motionManager.accelerometerData != nil {
-                let tilt = self.checkTilt(actualTilt: self.motionManager.accelerometerData!.acceleration.y)
-                let gravityForce = CGFloat(-9.8 * self.playerMass)
-                let sin = CGFloat(tilt)
-                let cos = cos(asin(sin))
-                
-                let fixedGravity = CGVector(dx: gravityForce*sin, dy: gravityForce*cos)
-                self.physicsWorld.gravity = fixedGravity
-            }
+            let tiltedGravityVector = self.getTiltedGravityVector()
+            let fixedGravity = CGVector(dx: tiltedGravityVector.dx, dy: tiltedGravityVector.dy)
+            self.physicsWorld.gravity = fixedGravity
         }
         
         node.run(action)
-        
+    }
+    
+    func jump(node: SKNode) {
+//        if isOnGround {
+            let tiltedGravityVector = getTiltedGravityVector()
+            node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy*jumpIntensity))
+            isOnGround = false
+//        }
     }
     
     func checkTilt(actualTilt: Double) -> Double {
@@ -57,5 +79,5 @@ extension GameScene {
             playerNode.position = CGPoint(x: frame.midX, y: frame.midY)
         }
     }
-
+    
 }
