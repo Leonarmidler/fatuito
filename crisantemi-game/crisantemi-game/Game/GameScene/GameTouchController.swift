@@ -25,7 +25,7 @@ extension GameScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        print("touchesBegan")
-        jump(node: playerNode)
+        mechanicsController.jump(node: playerNode, motionManager: motionManager)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

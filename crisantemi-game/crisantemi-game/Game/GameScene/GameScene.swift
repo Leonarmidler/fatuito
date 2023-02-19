@@ -11,21 +11,11 @@ import GameplayKit
 import CoreMotion
 
 class GameScene: SKScene {
+    let mechanicsController = MechanicsController()
     
-    // NODE NAMES
+    // NODE IMAGE NAMES
     let playerImageName = "player"
     let groundImageName = "rampa"
-    
-    // PARAMETERS
-    let cameraFixedX: CGFloat = 150
-    let cameraFixedY: CGFloat = 30
-    let zoomScale: CGFloat = 1
-
-    let playerMass: CGFloat = 0.5
-    let staticObjMass: CGFloat = 1000
-    let stdFriction: CGFloat = 0.5
-    
-    let jumpIntensity: CGFloat = 60
     
     // NODES
     let cameraNode = SKCameraNode()
@@ -33,26 +23,25 @@ class GameScene: SKScene {
     var backgroundNode: SKSpriteNode!
     var groundNode: SKSpriteNode!
     
-    let motionManager = CMMotionManager()
-    
-    // CHECKS
+    // BOOL CHECKS
     var isOnGround = true
     
-    override func didMove(to view: SKView) {
-        physicsWorld.contactDelegate = self
+    let motionManager = CMMotionManager()
     
+    override func didMove(to view: SKView) {
+        motionManager.startAccelerometerUpdates()
+        
         addBackground()
         addGround()
         addPlayer()
         addCamera()
-    
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        applyGravity(node: playerNode)
-        fixCamera(cameraNode: cameraNode)
-        reposition(player: playerNode, ground: groundNode)
+        physicsWorld.gravity = mechanicsController.applyGravity(motionManager: motionManager)
+        mechanicsController.fixCamera(cameraNode: cameraNode, playerNode: playerNode)
+        mechanicsController.reposition(player: playerNode, ground: groundNode)
     }
     
     func addPlayer() {
@@ -68,8 +57,8 @@ class GameScene: SKScene {
         playerNode.physicsBody?.collisionBitMask = PhysicsCategory.groundCategory
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.groundCategory
         
-        playerNode.physicsBody?.mass = playerMass
-        playerNode.physicsBody?.friction = stdFriction
+        playerNode.physicsBody?.mass = GameParameters.playerMass
+        playerNode.physicsBody?.friction = GameParameters.stdFriction
         
         playerNode.physicsBody?.affectedByGravity = true
         playerNode.physicsBody?.isDynamic = true
@@ -98,8 +87,8 @@ class GameScene: SKScene {
         groundNode.physicsBody?.collisionBitMask = PhysicsCategory.playerCategory
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.playerCategory
         
-        groundNode.physicsBody?.mass = staticObjMass
-        groundNode.physicsBody?.friction = stdFriction
+        groundNode.physicsBody?.mass = GameParameters.staticObjMass
+        groundNode.physicsBody?.friction = GameParameters.stdFriction
         
         groundNode.physicsBody?.isDynamic = true
         groundNode.physicsBody?.allowsRotation = false
