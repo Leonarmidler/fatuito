@@ -11,6 +11,7 @@ import GameplayKit
 import CoreMotion
 
 struct MechanicsController {
+    
     static func getInclination(motionManager: CMMotionManager) -> Double {
         var inclination: Double = 0
         

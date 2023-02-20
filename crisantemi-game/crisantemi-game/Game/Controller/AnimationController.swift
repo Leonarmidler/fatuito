@@ -9,5 +9,5 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-extension GameScene {
+struct AnimationController {
 }

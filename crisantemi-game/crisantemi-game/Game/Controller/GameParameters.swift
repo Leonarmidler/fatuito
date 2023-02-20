@@ -11,7 +11,7 @@ import SpriteKit
 struct GameParameters {
     
     // TRANSITION
-    static let transitionTime: CGFloat = 0.5
+    static let transitionTime: CGFloat = 2
     
     // VIEW SIZE
     static let frameWidth: CGFloat = 2532
@@ -21,14 +21,18 @@ struct GameParameters {
     static let cameraFixedX: CGFloat = 150
     static let cameraFixedY: CGFloat = 30
     static let zoomScale: CGFloat = 1
+    
     // PHYSICS
     static let playerMass: CGFloat = 0.5
     static let staticObjMass: CGFloat = 1000
     static let stdFriction: CGFloat = 0.5
     static let jumpIntensity: CGFloat = 60
     
+    // CHECKS
+    var isOnGround = false
+    
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
-        fromScene.view?.presentScene(toScene, transition: .crossFade(withDuration: GameParameters.transitionTime))
+        fromScene.view?.presentScene(toScene, transition: .reveal(with: SKTransitionDirection.up, duration: transitionTime))
         
         fromScene.removeFromParent()
     }

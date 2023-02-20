@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class GameScene: SKScene {
+class LevelTest: SKScene {
     
     // STARTING POINT
     let startingPoint = CGPoint(x: GameParameters.frameWidth/2, y: GameParameters.frameHeight/2)
@@ -32,11 +32,14 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         motionManager.startAccelerometerUpdates()
+        physicsWorld.contactDelegate = self
         
-        addBackground()
+//        addBackground()
+        spawnPlatform(point: CGPoint(x: frame.midX, y: frame.midY-850))
         addGround()
         addPlayer()
         addCamera()
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -44,6 +47,35 @@ class GameScene: SKScene {
         physicsWorld.gravity = MechanicsController.applyGravity(motionManager: motionManager)
         MechanicsController.fixCamera(cameraNode: cameraNode, playerNode: playerNode)
         MechanicsController.reposition(player: playerNode, ground: groundNode, scene: self)
+    }
+    
+    func addCamera() {
+        cameraNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(cameraNode)
+        self.camera = cameraNode
+    }
+    
+    func spawnPlatform(point: CGPoint) {
+        let platformNode: SKSpriteNode!
+        let platformTexture = SKTexture(imageNamed: "platform")
+        
+        platformNode = SKSpriteNode(texture: platformTexture)
+        platformNode.size = platformTexture.size()
+        
+        platformNode.position = point
+        
+        platformNode.physicsBody = SKPhysicsBody(texture: platformTexture, size: platformNode.size)
+//        platformNode.physicsBody?.contactTestBitMask = platformNode.physicsBody?.collisionBitMask ?? 0
+        platformNode.physicsBody?.categoryBitMask = PhysicsCategory.groundCategory
+        platformNode.physicsBody?.collisionBitMask = PhysicsCategory.playerCategory
+        platformNode.physicsBody?.contactTestBitMask = PhysicsCategory.playerCategory
+        
+        platformNode.physicsBody?.isDynamic = false
+        platformNode.physicsBody?.allowsRotation = false
+        platformNode.physicsBody?.pinned = true
+        
+        platformNode.name = "platform"
+        addChild(platformNode)
     }
     
     func addPlayer() {
@@ -54,11 +86,14 @@ class GameScene: SKScene {
         playerNode.size = CGSize(width: 100, height: 100)
         playerNode.position = CGPoint(x: frame.midX, y: frame.midY)
         
-        playerNode.physicsBody = SKPhysicsBody(texture: playerTexture, size: playerNode.size)
-        playerNode.physicsBody?.categoryBitMask = PhysicsCategory.playerCategory
-        playerNode.physicsBody?.collisionBitMask = PhysicsCategory.groundCategory
-        groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.groundCategory
+//        playerNode.physicsBody = SKPhysicsBody(texture: playerTexture, size: playerNode.size)
+        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        playerNode.physicsBody?.contactTestBitMask = playerNode.physicsBody?.collisionBitMask ?? 0
         
+//        playerNode.physicsBody?.categoryBitMask = PhysicsCategory.playerCategory
+//        playerNode.physicsBody?.collisionBitMask = PhysicsCategory.groundCategory
+//        playerNode.physicsBody?.contactTestBitMask = PhysicsCategory.groundCategory
+            
         playerNode.physicsBody?.mass = GameParameters.playerMass
         playerNode.physicsBody?.friction = GameParameters.stdFriction
         
@@ -68,12 +103,6 @@ class GameScene: SKScene {
         
         playerNode.name = "player"
         addChild(playerNode)
-    }
-    
-    func addCamera() {
-        cameraNode.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(cameraNode)
-        self.camera = cameraNode
     }
     
     func addGround() {
@@ -92,7 +121,7 @@ class GameScene: SKScene {
         groundNode.physicsBody?.mass = GameParameters.staticObjMass
         groundNode.physicsBody?.friction = GameParameters.stdFriction
         
-        groundNode.physicsBody?.isDynamic = true
+        groundNode.physicsBody?.isDynamic = false
         groundNode.physicsBody?.allowsRotation = false
         groundNode.physicsBody?.pinned = true
         

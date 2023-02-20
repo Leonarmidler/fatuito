@@ -10,7 +10,7 @@
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
 		A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */; };
 		A7DF46DD29A0EC7800DC9A66 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */; };
-		A7DF46E129A0EC7800DC9A66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E029A0EC7800DC9A66 /* GameScene.swift */; };
+		A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */; };
 		A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */; };
 		A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E429A0EC7800DC9A66 /* Main.storyboard */; };
 		A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 		A7DF46D729A0EC7800DC9A66 /* crisantemi-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crisantemi-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		A7DF46E029A0EC7800DC9A66 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTest.swift; sourceTree = "<group>"; };
 		A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A7DF46E529A0EC7800DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,10 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */,
-				A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */,
 				A7DF992B29A2CAB700D21CEC /* Controller */,
 				A7DF992629A2C4CA00D21CEC /* MenuScene */,
-				A7DF992529A2C4C100D21CEC /* GameScene */,
+				A7DF992529A2C4C100D21CEC /* LevelTest */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -110,14 +109,14 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		A7DF992529A2C4C100D21CEC /* GameScene */ = {
+		A7DF992529A2C4C100D21CEC /* LevelTest */ = {
 			isa = PBXGroup;
 			children = (
-				A7DF46E029A0EC7800DC9A66 /* GameScene.swift */,
+				A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */,
 				A7DF46F629A0ED7000DC9A66 /* GameContactController.swift */,
 				A7DF46F829A0EDB300DC9A66 /* GameTouchController.swift */,
 			);
-			path = GameScene;
+			path = LevelTest;
 			sourceTree = "<group>";
 		};
 		A7DF992629A2C4CA00D21CEC /* MenuScene */ = {
@@ -131,6 +130,7 @@
 		A7DF992B29A2CAB700D21CEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */,
 				A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */,
 				A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */,
 			);
@@ -211,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */,
-				A7DF46E129A0EC7800DC9A66 /* GameScene.swift in Sources */,
+				A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */,
 				A7DF46F729A0ED7000DC9A66 /* GameContactController.swift in Sources */,
 				A7DF992829A2C4EC00D21CEC /* MenuScene.swift in Sources */,
 				A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */,
