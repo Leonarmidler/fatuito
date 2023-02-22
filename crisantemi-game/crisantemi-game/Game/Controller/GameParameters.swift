@@ -14,6 +14,9 @@ struct GameParameters {
     static let transitionTime: CGFloat = 2
     
     // VIEW SIZE
+    static let circleSize = CGSize(width: 400, height: 400)
+    static let playerSize = CGSize(width: 150, height: 150)
+    
     static let frameWidth: CGFloat = 2532
     static let frameHeight: CGFloat = 1170
     
@@ -23,10 +26,12 @@ struct GameParameters {
     static let zoomScale: CGFloat = 1
     
     // PHYSICS
-    static let playerMass: CGFloat = 0.5
+    static let playerMass: CGFloat = 1
     static let staticObjMass: CGFloat = 1000
     static let stdFriction: CGFloat = 0.5
-    static let jumpIntensity: CGFloat = 60
+    static let jumpIntensity: CGFloat = 1000
+    
+//    static let jointDamping: CGFloat = 0.7 // Ractive force of joint
     
     // CHECKS
     var isOnGround = false

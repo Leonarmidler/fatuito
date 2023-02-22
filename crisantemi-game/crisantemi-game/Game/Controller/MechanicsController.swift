@@ -42,7 +42,9 @@ struct MechanicsController {
     
     static func jump(node: SKNode, motionManager: CMMotionManager) {
             let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
-        node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy*GameParameters.jumpIntensity))
+        node.physicsBody?.velocity.dy = 0
+        node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
+//        node.physicsBody?.applyForce(CGVector(dx: -tiltedGravityVector.dx, dy: -tiltedGravityVector.dy))
     }
     
     static func checkTilt(actualTilt: Double) -> Double {
@@ -72,4 +74,13 @@ struct MechanicsController {
         }
     }
     
+    static func setDynamicAnchorPoint(firstNode: SKSpriteNode, secondNode: SKSpriteNode, anchorPoint: CGPoint, damping: CGFloat, frequency: CGFloat) -> SKPhysicsJointSpring {
+        let joint = SKPhysicsJointSpring.joint(withBodyA: firstNode.physicsBody!, bodyB: secondNode.physicsBody!, anchorA: CGPoint(x: secondNode.frame.midX, y: secondNode.frame.midY), anchorB: anchorPoint)
+        
+        joint.damping = damping
+        joint.frequency = frequency
+        
+        return joint
+    }
+
 }

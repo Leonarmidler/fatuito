@@ -34,7 +34,6 @@ class MenuScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan")
         GameParameters.switchScene(fromScene: self, toScene: LevelTest(size: self.size))
     }
 }
