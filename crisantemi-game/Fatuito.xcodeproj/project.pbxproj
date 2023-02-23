@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7DF46D229A0EC7800DC9A66 /* Build configuration list for PBXProject "crisantemi-game" */;
+			buildConfigurationList = A7DF46D229A0EC7800DC9A66 /* Build configuration list for PBXProject "Fatuito" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -425,7 +425,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7DF46D229A0EC7800DC9A66 /* Build configuration list for PBXProject "crisantemi-game" */ = {
+		A7DF46D229A0EC7800DC9A66 /* Build configuration list for PBXProject "Fatuito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7DF46EC29A0EC7900DC9A66 /* Debug */,

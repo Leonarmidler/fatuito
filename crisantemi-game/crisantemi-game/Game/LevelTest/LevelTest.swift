@@ -31,14 +31,13 @@ class LevelTest: SKScene {
     
     // BOOL CHECKS
     var isOnGround = true
-    
     let motionManager = CMMotionManager()
-    var count = 0
+    
     override func didMove(to view: SKView) {
         motionManager.startAccelerometerUpdates()
         physicsWorld.contactDelegate = self
         
-        addGround(name: "rampa", position: CGPoint(x: 0, y: 0))
+        addGround(name: "levelTest", position: CGPoint(x: 0, y: 0))
         addPlayer()
         addExtCircle()
         addCamera()
@@ -52,7 +51,8 @@ class LevelTest: SKScene {
         // Called before each frame is rendered
         physicsWorld.gravity = MechanicsController.applyGravity(motionManager: motionManager)
         MechanicsController.fixCamera(cameraNode: cameraNode, playerNode: circleNode)
-        MechanicsController.reposition(player: circleNode, ground: groundNode, scene: self)
+        MechanicsController.reposition(nodeToReposition: circleNode, refNode: groundNode, scene: self)
+        MechanicsController.reposition(nodeToReposition: playerNode, refNode: groundNode, scene: self)
     }
     
     func addCamera() {
@@ -90,6 +90,7 @@ class LevelTest: SKScene {
         eyesNode = SKSpriteNode(texture: eyesTexture)
         eyesNode.size = CGSize(width: 50, height: 50)
         eyesNode.position = CGPoint(x: 0, y: 500)
+        eyesNode.zPosition = 30
         
         eyesNode.physicsBody = SKPhysicsBody(texture: eyesTexture, size: eyesTexture.size())
         
@@ -146,7 +147,7 @@ class LevelTest: SKScene {
         
         groundNode = SKSpriteNode(texture: groundTexture)
         groundNode.position = position
-        
+
         groundNode.physicsBody = SKPhysicsBody(texture: groundTexture, size: groundNode.size)
         groundNode.physicsBody?.categoryBitMask = PhysicsCategory.groundCategory
         groundNode.physicsBody?.collisionBitMask = PhysicsCategory.playerCategory

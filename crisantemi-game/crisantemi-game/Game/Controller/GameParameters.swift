@@ -14,7 +14,7 @@ struct GameParameters {
     static let transitionTime: CGFloat = 2
     
     // VIEW SIZE
-    static let circleSize = CGSize(width: 400, height: 400)
+    static let circleSize = CGSize(width: 300, height: 300)
     static let playerSize = CGSize(width: 150, height: 150)
     
     static let frameWidth: CGFloat = 2532
@@ -31,7 +31,7 @@ struct GameParameters {
     static let stdFriction: CGFloat = 0.5
     static let jumpIntensity: CGFloat = 1000
     
-//    static let jointDamping: CGFloat = 0.7 // Ractive force of joint
+//    static let jointDamping: CGFloat = 0.7 // Ractive force of joint (STD = 10)
     
     // CHECKS
     var isOnGround = false
