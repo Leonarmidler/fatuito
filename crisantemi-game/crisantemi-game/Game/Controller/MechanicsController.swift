@@ -68,9 +68,11 @@ struct MechanicsController {
         cameraNode.setScale(GameParameters.zoomScale)
     }
     
-    static func reposition(nodeToReposition: SKSpriteNode, refNode: SKSpriteNode, scene: SKScene) {
+    static func reposition(nodeToReposition: SKSpriteNode, playerNode: SKSpriteNode, refNode: SKSpriteNode, spawnPoint: CGPoint) {
         if (nodeToReposition.position.y < -refNode.frame.height) {
-            nodeToReposition.position = scene.frame.origin
+            nodeToReposition.position = spawnPoint
+            playerNode.position = spawnPoint
+            nodeToReposition.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         }
     }
     
