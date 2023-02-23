@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
-		A7DF46D729A0EC7800DC9A66 /* crisantemi-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crisantemi-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DF46D729A0EC7800DC9A66 /* Fatuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fatuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTest.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		A7DF46D829A0EC7800DC9A66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7DF46D729A0EC7800DC9A66 /* crisantemi-game.app */,
+				A7DF46D729A0EC7800DC9A66 /* Fatuito.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7DF46D629A0EC7800DC9A66 /* crisantemi-game */ = {
+		A7DF46D629A0EC7800DC9A66 /* Fatuito */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7DF46EE29A0EC7900DC9A66 /* Build configuration list for PBXNativeTarget "crisantemi-game" */;
+			buildConfigurationList = A7DF46EE29A0EC7900DC9A66 /* Build configuration list for PBXNativeTarget "Fatuito" */;
 			buildPhases = (
 				A7DF46D329A0EC7800DC9A66 /* Sources */,
 				A7DF46D429A0EC7800DC9A66 /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = "crisantemi-game";
+			name = Fatuito;
 			productName = "crisantemi-game";
-			productReference = A7DF46D729A0EC7800DC9A66 /* crisantemi-game.app */;
+			productReference = A7DF46D729A0EC7800DC9A66 /* Fatuito.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7DF46D629A0EC7800DC9A66 /* crisantemi-game */,
+				A7DF46D629A0EC7800DC9A66 /* Fatuito */,
 			);
 		};
 /* End PBXProject section */
@@ -434,7 +434,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7DF46EE29A0EC7900DC9A66 /* Build configuration list for PBXNativeTarget "crisantemi-game" */ = {
+		A7DF46EE29A0EC7900DC9A66 /* Build configuration list for PBXNativeTarget "Fatuito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7DF46EF29A0EC7900DC9A66 /* Debug */,
