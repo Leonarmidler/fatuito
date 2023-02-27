@@ -19,7 +19,7 @@ struct PhysicsCategory {
 extension LevelTest: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        if contact.bodyA.contactTestBitMask == PhysicsCategory.playerCategory {
+        if contact.bodyA.node?.name == "circle" {
             isOnGround = true
         }
     }

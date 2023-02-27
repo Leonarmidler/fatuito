@@ -34,7 +34,7 @@ struct MechanicsController {
     }
     
     static func jump(node: SKNode, motionManager: CMMotionManager) {
-            let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
+        let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
         node.physicsBody?.velocity.dy = 0
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
     }
