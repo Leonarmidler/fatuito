@@ -10,6 +10,9 @@ import SpriteKit
 
 struct GameParameters {
     
+    // DIMENSION
+    static let fontSize: CGFloat = 150
+    
     // TRANSITION
     static let transitionTime: CGFloat = 3
     
@@ -23,8 +26,7 @@ struct GameParameters {
     // CAMERA
     static let cameraFixedX: CGFloat = 150
     static let cameraFixedY: CGFloat = 10
-    static let zoomScale: CGFloat = 0.150
-    
+    static let zoomScale: CGFloat = 0.5
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.10
     static let playerMass: CGFloat = 0.050
@@ -39,9 +41,9 @@ struct GameParameters {
     var isOnGround = false
     
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
-        fromScene.view?.presentScene(toScene, transition: .crossFade(withDuration: transitionTime))
-        
+        fromScene.removeAllChildren()
         fromScene.removeFromParent()
+        fromScene.view?.presentScene(toScene, transition: .fade(withDuration: transitionTime))
     }
     
 }

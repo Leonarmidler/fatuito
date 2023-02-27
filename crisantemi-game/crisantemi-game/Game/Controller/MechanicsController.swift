@@ -54,13 +54,13 @@ struct MechanicsController {
         return tilt
     }
     
-    static func fixCamera(cameraNode: SKCameraNode, playerNode: SKSpriteNode) {
+    static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {
         cameraNode.position.x = playerNode.position.x
         cameraNode.position.y = playerNode.position.y + GameParameters.cameraFixedY
         cameraNode.setScale(GameParameters.zoomScale)
     }
     
-    static func reposition(nodeToReposition: SKSpriteNode, playerNode: SKSpriteNode, refNode: SKSpriteNode, spawnPoint: CGPoint) {
+    static func reposition(nodeToReposition: SKNode, playerNode: SKNode, refNode: SKNode, spawnPoint: CGPoint) {
         if (nodeToReposition.position.y < -refNode.frame.height) {
             nodeToReposition.position = spawnPoint
             playerNode.position = spawnPoint
@@ -68,13 +68,17 @@ struct MechanicsController {
         }
     }
     
-    static func setDynamicAnchorPoint(firstNode: SKSpriteNode, secondNode: SKSpriteNode, anchorPoint: CGPoint, damping: CGFloat, frequency: CGFloat) -> SKPhysicsJointSpring {
+    static func setDynamicAnchorPoint(firstNode: SKNode, secondNode: SKNode, anchorPoint: CGPoint, damping: CGFloat, frequency: CGFloat) -> SKPhysicsJointSpring {
         let joint = SKPhysicsJointSpring.joint(withBodyA: firstNode.physicsBody!, bodyB: secondNode.physicsBody!, anchorA: CGPoint(x: secondNode.frame.midX, y: secondNode.frame.midY), anchorB: anchorPoint)
         
         joint.damping = damping
         joint.frequency = frequency
         
         return joint
+    }
+    
+    static func addPoint() {
+        
     }
 
 }

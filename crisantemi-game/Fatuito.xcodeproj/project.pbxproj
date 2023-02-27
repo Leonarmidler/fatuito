@@ -87,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				A7D3905829A2D643009FDE81 /* MenuScene.sks */,
-				A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */,
 				A7DF46E429A0EC7800DC9A66 /* Main.storyboard */,
 				A7DF46E929A0EC7900DC9A66 /* LaunchScreen.storyboard */,
 			);
@@ -117,6 +116,7 @@
 		A7DF992529A2C4C100D21CEC /* LevelTest */ = {
 			isa = PBXGroup;
 			children = (
+				A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */,
 				A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */,
 				A7DF46F629A0ED7000DC9A66 /* GameContactController.swift */,
 				A7DF46F829A0EDB300DC9A66 /* GameTouchController.swift */,

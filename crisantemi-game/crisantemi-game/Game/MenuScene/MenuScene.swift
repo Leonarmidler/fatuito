@@ -10,46 +10,127 @@ import SpriteKit
 import GameplayKit
 
 class MenuScene: SKScene {
+    
+    // SELECTOR
+    var labelSelector: Int = 0
+    var selectedLabel = SKLabelNode()
 
     // NODES
-    var logoNode: SKSpriteNode!
-    var newGameNode = SKLabelNode()
+    var logoNode =  SKSpriteNode()
+    var leftArrowNode = SKLabelNode()
+    var rightArrowNode = SKLabelNode()
+    var playNode = SKLabelNode()
+    var stageSelectNode = SKLabelNode()
+    var galleryNode = SKLabelNode()
+    var quitNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
         // Add menu content here
-        newGameLabel()
+        addLogo()
+        addRightArrow()
+        addLeftArrow()
+        
+        addPlayLabel()
+        addStageSelectLabel()
+
+        addSelectedLabel()
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
     
-    func newGameLabel() {
-        newGameNode.text = "NEW GAME"
-        newGameNode.fontName = "Fatuito.ttf"
-        newGameNode.position = CGPoint(x: frame.midX, y: frame.midY)
+    func addSelectedLabel() {
+        switch labelSelector {
+        case 0: selectedLabel = playNode; break
+        case 1: selectedLabel = stageSelectNode; break
+        default: break
+        }
         
-        newGameNode.name = "newGame"
-        addChild(newGameNode)
+        addChild(selectedLabel)
     }
     
-    func continueLabel() {
+    func switchLabel() {
+        selectedLabel.removeFromParent()
+        addSelectedLabel()
+    }
         
+    func addLogo() {
+        logoNode = SKSpriteNode(imageNamed: "logo")
+        logoNode.setScale(0.5)
+        logoNode.position = CGPoint(x: frame.midX, y: frame.midY + 250)
+        
+        addChild(logoNode)
+    }
+    
+    func addLeftArrow() {
+        leftArrowNode.text = "<"
+        leftArrowNode.fontName = "Fatuito"
+        leftArrowNode.fontSize = GameParameters.fontSize*2
+        leftArrowNode.position = CGPoint(x: frame.midX - logoNode.frame.width/2 - leftArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
+        
+        leftArrowNode.name = "<"
+        addChild(leftArrowNode)
+    }
+    
+    func addRightArrow() {
+        rightArrowNode.text = ">"
+        rightArrowNode.fontName = "Fatuito"
+        rightArrowNode.fontSize = GameParameters.fontSize*2
+        rightArrowNode.position = CGPoint(x: frame.midX + logoNode.frame.width/2 + rightArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
+        
+        rightArrowNode.name = ">"
+        addChild(rightArrowNode)
+    }
+    
+    func addPlayLabel() {
+        playNode.text = "PLAY"
+        playNode.fontName = "Fatuito"
+        playNode.fontSize = GameParameters.fontSize
+        playNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
+        
+        playNode.name = "newGame"
+    }
+    
+    func addStageSelectLabel() {
+        stageSelectNode.text = "STAGE SELECT"
+        stageSelectNode.fontName = "Fatuito"
+        stageSelectNode.fontSize = GameParameters.fontSize
+        stageSelectNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
+        
+        stageSelectNode.name = "stageSelect"
     }
 
-    func optionLabel() {
+    func addOptionLabel() {
         
     }
     
-    func languageLabel() {
+    func addLanguageLabel() {
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
-            if (node.name == "newGame") {
+            switch node.name {
+            case "<":
+                if labelSelector == 1 {
+                    labelSelector = -1
+                }
+                labelSelector += 1
+                switchLabel()
+                break
+            case ">":
+                if labelSelector == 0 {
+                    labelSelector = 2
+                }
+                labelSelector -= 1
+                switchLabel()
+                break
+            case "newGame":
                 GameParameters.switchScene(fromScene: self, toScene: LevelTest(size: self.size))
+                break
+            default: break
             }
         }
     }
