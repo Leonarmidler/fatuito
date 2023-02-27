@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fatuito.ttf</string>
+		<string>Assets/Fatuito.ttf</string>
 	</array>
 </dict>
 </plist>
