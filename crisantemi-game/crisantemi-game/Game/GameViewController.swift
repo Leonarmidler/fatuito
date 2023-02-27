@@ -14,12 +14,12 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // Create and configure the menu scene
-        let levelTest = LevelTest(size: CGSize(width: GameParameters.frameWidth, height: GameParameters.frameHeight))
-        levelTest.scaleMode = .aspectFill
+        let menuScene = MenuScene(size: CGSize(width: GameParameters.frameWidth, height: GameParameters.frameHeight))
+        menuScene.scaleMode = .aspectFill
         
         // Present the menu scene
         if let view = self.view as? SKView {
-            view.presentScene(levelTest)
+            view.presentScene(menuScene)
         }
     }
     

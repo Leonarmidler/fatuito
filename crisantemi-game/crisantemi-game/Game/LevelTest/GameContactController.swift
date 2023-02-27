@@ -19,11 +19,9 @@ struct PhysicsCategory {
 extension LevelTest: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        
-        if contact.bodyA.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyB.contactTestBitMask == PhysicsCategory.groundCategory || contact.bodyB.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyA.contactTestBitMask == PhysicsCategory.groundCategory {
+        if contact.bodyA.contactTestBitMask == PhysicsCategory.playerCategory {
             isOnGround = true
         }
-        
     }
- 
+    
 }

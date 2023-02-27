@@ -24,7 +24,7 @@ struct MechanicsController {
     
     static func getTiltedGravityVector(motionManager: CMMotionManager) -> CGVector {
         let tilt = checkTilt(actualTilt: getInclination(motionManager: motionManager))
-        let gravityForce = CGFloat(-9.8 * GameParameters.playerMass)
+        let gravityForce = CGFloat(-9.8)*GameParameters.gravityScaleFactor
         let sin = CGFloat(tilt)
         let cos = cos(asin(sin))
         
@@ -33,23 +33,15 @@ struct MechanicsController {
         return tiltedGravityVector
     }
     
-    static func applyGravity(motionManager: CMMotionManager) -> CGVector{
-        let tiltedGravityVector = self.getTiltedGravityVector(motionManager: motionManager)
-        let fixedGravity = CGVector(dx: tiltedGravityVector.dx, dy: tiltedGravityVector.dy)
-        
-        return fixedGravity
-    }
-    
     static func jump(node: SKNode, motionManager: CMMotionManager) {
             let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
         node.physicsBody?.velocity.dy = 0
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
-//        node.physicsBody?.applyForce(CGVector(dx: -tiltedGravityVector.dx, dy: -tiltedGravityVector.dy))
     }
     
     static func checkTilt(actualTilt: Double) -> Double {
         
-        let maxTilt = 0.8
+        let maxTilt = 0.9
         let minTilt = -maxTilt
         var tilt = actualTilt
         

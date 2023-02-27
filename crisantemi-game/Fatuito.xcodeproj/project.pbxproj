@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A75F3DBF29ACAC5A008013EF /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A75F3DBE29ACAC5A008013EF /* Fatuito.ttf */; };
+		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
 		A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */; };
-		A7DF46DD29A0EC7800DC9A66 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */; };
 		A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */; };
 		A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */; };
 		A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E429A0EC7800DC9A66 /* Main.storyboard */; };
@@ -24,10 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A75F3DBE29ACAC5A008013EF /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fatuito.ttf; path = ../../../../../Desktop/Fatuito.ttf; sourceTree = "<group>"; };
+		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
+		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		A7DF46D729A0EC7800DC9A66 /* Fatuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fatuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTest.swift; sourceTree = "<group>"; };
 		A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A7DF46E529A0EC7800DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		A7DF46CE29A0EC7800DC9A66 = {
 			isa = PBXGroup;
 			children = (
+				A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */,
 				A7DF46D929A0EC7800DC9A66 /* crisantemi-game */,
 				A7DF46D829A0EC7800DC9A66 /* Products */,
 			);
@@ -82,8 +86,8 @@
 		A7DF46F129A0EC8700DC9A66 /* IDK */ = {
 			isa = PBXGroup;
 			children = (
-				A7DF46DC29A0EC7800DC9A66 /* GameScene.sks */,
 				A7D3905829A2D643009FDE81 /* MenuScene.sks */,
+				A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */,
 				A7DF46E429A0EC7800DC9A66 /* Main.storyboard */,
 				A7DF46E929A0EC7900DC9A66 /* LaunchScreen.storyboard */,
 			);
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */,
+				A75F3DBE29ACAC5A008013EF /* Fatuito.ttf */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -196,10 +201,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */,
-				A7DF46DD29A0EC7800DC9A66 /* GameScene.sks in Resources */,
 				A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */,
 				A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */,
+				A75F3DBF29ACAC5A008013EF /* Fatuito.ttf in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
+				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +373,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56AV2RD3G8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -399,6 +406,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56AV2RD3G8;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

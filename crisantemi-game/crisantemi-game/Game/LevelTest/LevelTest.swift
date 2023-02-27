@@ -50,18 +50,20 @@ class LevelTest: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        physicsWorld.gravity = MechanicsController.applyGravity(motionManager: motionManager)
-        backgroundNode.position = circleNode.position
+        physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
+
         MechanicsController.fixCamera(cameraNode: cameraNode, playerNode: circleNode)
         MechanicsController.reposition(nodeToReposition: circleNode, playerNode: playerNode, refNode: groundNode, spawnPoint: startingPoint)
     }
     
+    // CAMERA
     func addCamera() {
         cameraNode.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(cameraNode)
         self.camera = cameraNode
     }
     
+    // PALLA ESTERNA
     func addExtCircle() {
         let circleTexture = SKTexture(imageNamed: circleImage)
         
@@ -85,6 +87,7 @@ class LevelTest: SKScene {
         addChild(circleNode)
     }
     
+    // PALLA INTERNA
     func addPlayer() {
         let playerTexture = SKTexture(imageNamed: playerImageName)
         
@@ -103,11 +106,12 @@ class LevelTest: SKScene {
         
         playerNode.physicsBody?.affectedByGravity = true
         playerNode.physicsBody?.isDynamic = true
-        playerNode.physicsBody?.allowsRotation = false
+        playerNode.physicsBody?.allowsRotation = true
     
         addChild(playerNode)
     }
     
+    // PAVIMENTO
     func addGround(name: String, position: CGPoint) {
         let groundTexture = SKTexture(imageNamed: name)
         
@@ -133,11 +137,10 @@ class LevelTest: SKScene {
     
     func addBackground() {
         backgroundNode = SKSpriteNode(imageNamed: "background")
-        backgroundNode.size = CGSize(width: GameParameters.frameWidth, height: GameParameters.frameHeight)
+        backgroundNode.size = CGSize(width: GameParameters.frameWidth/0.8, height: GameParameters.frameHeight/0.8)
+        backgroundNode.position = position
         backgroundNode.zPosition = -5
-        
-        backgroundNode.setScale(0.1)
-        
+
         addChild(backgroundNode)
     }
     

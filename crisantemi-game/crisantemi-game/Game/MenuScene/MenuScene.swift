@@ -12,28 +12,45 @@ import GameplayKit
 class MenuScene: SKScene {
 
     // NODES
-    var buttonNode: SKSpriteNode!
+    var logoNode: SKSpriteNode!
+    var newGameNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
         // Add menu content here
-        addStartButton()
+        newGameLabel()
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
     
-    func addStartButton() {
-        let buttonTexture = SKTexture(imageNamed: "startButton")
+    func newGameLabel() {
+        newGameNode.text = "NEW GAME"
+        newGameNode.fontName = "Fatuito.ttf"
+        newGameNode.position = CGPoint(x: frame.midX, y: frame.midY)
         
-        buttonNode = SKSpriteNode(texture: buttonTexture)
-        buttonNode.size = buttonTexture.size()
-        buttonNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        newGameNode.name = "newGame"
+        addChild(newGameNode)
+    }
+    
+    func continueLabel() {
         
-        addChild(buttonNode)
     }
 
+    func optionLabel() {
+        
+    }
+    
+    func languageLabel() {
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        GameParameters.switchScene(fromScene: self, toScene: LevelTest(size: self.size))
+        for t in touches {
+            let node = self.atPoint(t.location(in :self))
+            if (node.name == "newGame") {
+                GameParameters.switchScene(fromScene: self, toScene: LevelTest(size: self.size))
+            }
+        }
     }
 }
