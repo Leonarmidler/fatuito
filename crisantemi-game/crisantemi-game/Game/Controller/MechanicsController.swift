@@ -9,6 +9,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import CoreMotion
+import AVFoundation
 
 struct MechanicsController {
     
@@ -40,7 +41,6 @@ struct MechanicsController {
     }
     
     static func checkTilt(actualTilt: Double) -> Double {
-        
         let maxTilt = 0.9
         let minTilt = -maxTilt
         var tilt = actualTilt

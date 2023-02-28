@@ -8,20 +8,17 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-
-struct PhysicsCategory {
-    static let none   : UInt32 = 0
-    static let playerCategory : UInt32 = 0b0001
-    static let circleCategory : UInt32 = 0b0010
-    static let groundCategory : UInt32 = 0b0011
-}
+import AVFoundation
 
 extension LevelTest: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        if contact.bodyA.node?.name == "circle" {
+        if contact.bodyA.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyB.categoryBitMask == PhysicsCategory.groundCategory || contact.bodyB.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyA.categoryBitMask == PhysicsCategory.groundCategory {
             isOnGround = true
         }
+//        if contact.bodyA.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyB.node == childNode(withName: "tree") || contact.bodyB.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyB.node == childNode(withName: "tree") {
+//            GameParameters.switchScene(fromScene: self, toScene: GameOverScene())
+//        }
     }
     
 }

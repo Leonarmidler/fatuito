@@ -8,6 +8,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class MenuScene: SKScene {
     
@@ -16,6 +17,9 @@ class MenuScene: SKScene {
     var selectedLabel = SKLabelNode()
 
     // NODES
+    var pressArrow = AVAudioPlayer()
+    var pressButton = AVAudioPlayer()
+    
     var logoNode =  SKSpriteNode()
     var leftArrowNode = SKLabelNode()
     var rightArrowNode = SKLabelNode()
@@ -26,7 +30,11 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         // Add menu content here
+        pressArrow = AudioController.setupAudio(fileName: "pressArrow")
+        pressButton = AudioController.setupAudio(fileName: "pressButton")
+        
         addLogo()
+//        AnimationController.gifAnimation(imageName: "animatedLogo", scene: self)
         addRightArrow()
         addLeftArrow()
         
@@ -114,6 +122,7 @@ class MenuScene: SKScene {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
             case "<":
+                AudioController.playSound(audioNode: pressArrow)
                 if labelSelector == 1 {
                     labelSelector = -1
                 }
@@ -121,6 +130,7 @@ class MenuScene: SKScene {
                 switchLabel()
                 break
             case ">":
+                AudioController.playSound(audioNode: pressArrow)
                 if labelSelector == 0 {
                     labelSelector = 2
                 }
@@ -128,7 +138,8 @@ class MenuScene: SKScene {
                 switchLabel()
                 break
             case "newGame":
-                GameParameters.switchScene(fromScene: self, toScene: LevelTest(size: self.size))
+                AudioController.playSound(audioNode: pressButton)
+                GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
                 break
             default: break
             }
