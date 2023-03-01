@@ -13,7 +13,7 @@ import AVFoundation
 extension LevelTest: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        if contact.bodyA.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyB.categoryBitMask == PhysicsCategory.groundCategory || contact.bodyB.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyA.categoryBitMask == PhysicsCategory.groundCategory {
+        if contact.bodyA.node == childNode(withName: "player") && contact.bodyA.node == childNode(withName: "ground") || contact.bodyB.node == childNode(withName: "player") && contact.bodyA.node == childNode(withName: "ground") {
             isOnGround = true
         }
         if contact.bodyA.node == childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") || contact.bodyB.node === childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") {

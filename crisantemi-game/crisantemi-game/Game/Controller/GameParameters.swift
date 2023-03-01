@@ -27,6 +27,7 @@ struct GameParameters {
     static let cameraFixedX: CGFloat = 150
     static let cameraFixedY: CGFloat = 10
     static let zoomScale: CGFloat = 0.5
+    
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2
     static let playerMass: CGFloat = 0.05

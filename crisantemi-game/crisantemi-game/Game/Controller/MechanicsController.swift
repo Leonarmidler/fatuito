@@ -12,7 +12,6 @@ import CoreMotion
 import AVFoundation
 
 struct MechanicsController {
-    
     static func getInclination(motionManager: CMMotionManager) -> Double {
         var inclination: Double = 0
         
@@ -24,7 +23,7 @@ struct MechanicsController {
     }
     
     static func getTiltedGravityVector(motionManager: CMMotionManager) -> CGVector {
-        let tilt = checkTilt(actualTilt: getInclination(motionManager: motionManager))
+        let tilt = tilt(actualTilt: getInclination(motionManager: motionManager))
         let gravityForce = CGFloat(-9.8)*GameParameters.gravityScaleFactor
         let sin = CGFloat(tilt)
         let cos = cos(asin(sin))
@@ -40,7 +39,7 @@ struct MechanicsController {
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
     }
     
-    static func checkTilt(actualTilt: Double) -> Double {
+    static func tilt(actualTilt: Double) -> Double {
         let maxTilt = 0.9
         let minTilt = -maxTilt
         var tilt = actualTilt
