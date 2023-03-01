@@ -43,7 +43,9 @@ struct GameParameters {
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
         fromScene.removeAllChildren()
         fromScene.removeFromParent()
+
         fromScene.view?.presentScene(toScene, transition: .fade(withDuration: transitionTime))
+
     }
     
     static func setupPlayer(playerNode: SKNode) {

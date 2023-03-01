@@ -16,9 +16,9 @@ extension LevelTest: SKPhysicsContactDelegate {
         if contact.bodyA.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyB.categoryBitMask == PhysicsCategory.groundCategory || contact.bodyB.categoryBitMask == PhysicsCategory.playerCategory && contact.bodyA.categoryBitMask == PhysicsCategory.groundCategory {
             isOnGround = true
         }
-//        if contact.bodyA.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyB.node == childNode(withName: "tree") || contact.bodyB.contactTestBitMask == PhysicsCategory.playerCategory && contact.bodyB.node == childNode(withName: "tree") {
-//            GameParameters.switchScene(fromScene: self, toScene: GameOverScene())
-//        }
+        if contact.bodyA.node == childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") || contact.bodyB.node === childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") {
+            GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
+        }
     }
     
 }

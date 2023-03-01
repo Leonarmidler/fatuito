@@ -17,11 +17,12 @@
 		A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B7529ADF22A00D9B75A /* jump2.wav */; };
 		A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B7629ADF22A00D9B75A /* jump1.wav */; };
 		A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B7729ADF22A00D9B75A /* tripopSpawn.wav */; };
-		A7222B8629ADF47500D9B75A /* pressArrow.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B8529ADF47500D9B75A /* pressArrow.wav */; };
-		A7222B8829ADF52200D9B75A /* pressButton.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B8729ADF52200D9B75A /* pressButton.wav */; };
+		A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B8529ADF47500D9B75A /* arrowClick.wav */; };
+		A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B8729ADF52200D9B75A /* buttonClick.wav */; };
 		A7222B8A29ADF66100D9B75A /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8929ADF66100D9B75A /* AudioController.swift */; };
 		A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */; };
-		A7222B9129AE0A2E00D9B75A /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOverScene.swift */; };
+		A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOver.swift */; };
+		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
 		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
@@ -35,7 +36,7 @@
 		A7DF46F729A0ED7000DC9A66 /* GameContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F629A0ED7000DC9A66 /* GameContactController.swift */; };
 		A7DF46F929A0EDB300DC9A66 /* GameTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46F829A0EDB300DC9A66 /* GameTouchController.swift */; };
 		A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */; };
-		A7DF992829A2C4EC00D21CEC /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992729A2C4EC00D21CEC /* MenuScene.swift */; };
+		A7DF992829A2C4EC00D21CEC /* Manu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992729A2C4EC00D21CEC /* Manu.swift */; };
 		A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,11 +51,12 @@
 		A7222B7529ADF22A00D9B75A /* jump2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump2.wav; sourceTree = "<group>"; };
 		A7222B7629ADF22A00D9B75A /* jump1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump1.wav; sourceTree = "<group>"; };
 		A7222B7729ADF22A00D9B75A /* tripopSpawn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tripopSpawn.wav; sourceTree = "<group>"; };
-		A7222B8529ADF47500D9B75A /* pressArrow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pressArrow.wav; sourceTree = "<group>"; };
-		A7222B8729ADF52200D9B75A /* pressButton.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pressButton.wav; sourceTree = "<group>"; };
+		A7222B8529ADF47500D9B75A /* arrowClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = arrowClick.wav; sourceTree = "<group>"; };
+		A7222B8729ADF52200D9B75A /* buttonClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buttonClick.wav; sourceTree = "<group>"; };
 		A7222B8929ADF66100D9B75A /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsController.swift; sourceTree = "<group>"; };
-		A7222B9029AE0A2E00D9B75A /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		A7222B9029AE0A2E00D9B75A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		A72B6C3529AF59B600684336 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
 		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fatuito.ttf; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		A7DF46F629A0ED7000DC9A66 /* GameContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContactController.swift; sourceTree = "<group>"; };
 		A7DF46F829A0EDB300DC9A66 /* GameTouchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTouchController.swift; sourceTree = "<group>"; };
 		A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
-		A7DF992729A2C4EC00D21CEC /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		A7DF992729A2C4EC00D21CEC /* Manu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manu.swift; sourceTree = "<group>"; };
 		A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,10 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				A7222B6D29ADF22A00D9B75A /* fallingDown.wav */,
-				A7222B8529ADF47500D9B75A /* pressArrow.wav */,
+				A7222B8529ADF47500D9B75A /* arrowClick.wav */,
 				A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */,
 				A7222B6F29ADF22A00D9B75A /* hitSpikes.wav */,
-				A7222B8729ADF52200D9B75A /* pressButton.wav */,
+				A7222B8729ADF52200D9B75A /* buttonClick.wav */,
 				A7222B7029ADF22A00D9B75A /* wallBump.wav */,
 				A7222B7129ADF22A00D9B75A /* hitPlatform.wav */,
 				A7222B7329ADF22A00D9B75A /* death.wav */,
@@ -107,7 +109,8 @@
 		A7222B8F29AE0A1700D9B75A /* GameOverScene */ = {
 			isa = PBXGroup;
 			children = (
-				A7222B9029AE0A2E00D9B75A /* GameOverScene.swift */,
+				A72B6C3529AF59B600684336 /* GameOverScene.sks */,
+				A7222B9029AE0A2E00D9B75A /* GameOver.swift */,
 			);
 			path = GameOverScene;
 			sourceTree = "<group>";
@@ -144,7 +147,6 @@
 		A7DF46F129A0EC8700DC9A66 /* IDK */ = {
 			isa = PBXGroup;
 			children = (
-				A7D3905829A2D643009FDE81 /* MenuScene.sks */,
 				A7DF46E429A0EC7800DC9A66 /* Main.storyboard */,
 				A7DF46E929A0EC7900DC9A66 /* LaunchScreen.storyboard */,
 			);
@@ -186,7 +188,8 @@
 		A7DF992629A2C4CA00D21CEC /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
-				A7DF992729A2C4EC00D21CEC /* MenuScene.swift */,
+				A7D3905829A2D643009FDE81 /* MenuScene.sks */,
+				A7DF992729A2C4EC00D21CEC /* Manu.swift */,
 			);
 			path = MenuScene;
 			sourceTree = "<group>";
@@ -270,14 +273,15 @@
 				A7222B7F29ADF22A00D9B75A /* death.wav in Resources */,
 				A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */,
 				A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */,
-				A7222B8629ADF47500D9B75A /* pressArrow.wav in Resources */,
+				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
+				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
 				A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
 				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
 				A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */,
-				A7222B8829ADF52200D9B75A /* pressButton.wav in Resources */,
+				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,
 				A7222B8029ADF22A00D9B75A /* bushWalk.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,13 +297,13 @@
 				A7222B8A29ADF66100D9B75A /* AudioController.swift in Sources */,
 				A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */,
 				A7DF46F729A0ED7000DC9A66 /* GameContactController.swift in Sources */,
-				A7DF992829A2C4EC00D21CEC /* MenuScene.swift in Sources */,
+				A7DF992829A2C4EC00D21CEC /* Manu.swift in Sources */,
 				A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */,
 				A7DF46F529A0ED0100DC9A66 /* MechanicsController.swift in Sources */,
 				A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */,
 				A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */,
 				A7DF46F929A0EDB300DC9A66 /* GameTouchController.swift in Sources */,
-				A7222B9129AE0A2E00D9B75A /* GameOverScene.swift in Sources */,
+				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT3DDUBTKD;
+				DEVELOPMENT_TEAM = 56AV2RD3G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -5,26 +5,31 @@
 //  Created by Leonardo Daniele on 28/02/23.
 //
 
-import Foundation
+import SwiftUI
 import AVFoundation
 
-struct AudioController {
+class AudioController {
+    // AUDIOPLAYER
+    var arrowClick = AudioController.setupAudio(audioPlayerName: "arrowClick")
+    var buttonClick = AudioController.setupAudio(audioPlayerName: "buttonClick")
+    var jump = AudioController.setupAudio(audioPlayerName: "jump1")
     
-    static func setupAudio(fileName: String) -> AVAudioPlayer {
-        let soundFile = Bundle.main.url(forResource: fileName, withExtension: "wav")
-        var audioNode = AVAudioPlayer()
+    static func setupAudio(audioPlayerName: String) -> AVAudioPlayer{
+        var audioPlayer = AVAudioPlayer()
+        
         do {
-            audioNode = try AVAudioPlayer(contentsOf: soundFile!)
-            audioNode.prepareToPlay()
+            audioPlayer = try AVAudioPlayer(contentsOf: Bundle.main.url(forResource: audioPlayerName, withExtension: "wav")!)
+            audioPlayer.prepareToPlay()
         } catch {
             print("Error loading sound file: \(error)")
         }
-        return audioNode
+        
+        return audioPlayer
     }
     
-    static func playSound(audioNode: AVAudioPlayer){
-        audioNode.currentTime = 0
-        audioNode.play()
+    static func playSound(audioPlayer: AVAudioPlayer) {
+        audioPlayer.currentTime = 0
+        audioPlayer.play()
     }
     
 }

@@ -54,9 +54,9 @@ struct MechanicsController {
         return tilt
     }
     
-    static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {
-        cameraNode.position.x = playerNode.position.x
-        cameraNode.position.y = playerNode.position.y + GameParameters.cameraFixedY
+    static func fixCamera(cameraNode: SKNode, node: SKNode) {
+        cameraNode.position.x = node.position.x
+        cameraNode.position.y = node.position.y + GameParameters.cameraFixedY
         cameraNode.setScale(GameParameters.zoomScale)
     }
     

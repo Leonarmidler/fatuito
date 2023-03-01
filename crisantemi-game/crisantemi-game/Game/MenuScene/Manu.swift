@@ -10,16 +10,15 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class MenuScene: SKScene {
+class Manu: SKScene {
+    // CLASS INITIALIZER
+    let audioController = AudioController()
     
     // SELECTOR
     var labelSelector: Int = 0
     var selectedLabel = SKLabelNode()
 
-    // NODES
-    var pressArrow = AVAudioPlayer()
-    var pressButton = AVAudioPlayer()
-    
+    // NODES    
     var logoNode =  SKSpriteNode()
     var leftArrowNode = SKLabelNode()
     var rightArrowNode = SKLabelNode()
@@ -30,9 +29,6 @@ class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
         // Add menu content here
-        pressArrow = AudioController.setupAudio(fileName: "pressArrow")
-        pressButton = AudioController.setupAudio(fileName: "pressButton")
-        
         addLogo()
 //        AnimationController.gifAnimation(imageName: "animatedLogo", scene: self)
         addRightArrow()
@@ -122,7 +118,7 @@ class MenuScene: SKScene {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
             case "<":
-                AudioController.playSound(audioNode: pressArrow)
+                AudioController.playSound(audioPlayer: audioController.arrowClick)
                 if labelSelector == 1 {
                     labelSelector = -1
                 }
@@ -130,7 +126,7 @@ class MenuScene: SKScene {
                 switchLabel()
                 break
             case ">":
-                AudioController.playSound(audioNode: pressArrow)
+                AudioController.playSound(audioPlayer: audioController.arrowClick)
                 if labelSelector == 0 {
                     labelSelector = 2
                 }
@@ -138,7 +134,7 @@ class MenuScene: SKScene {
                 switchLabel()
                 break
             case "newGame":
-                AudioController.playSound(audioNode: pressButton)
+                AudioController.playSound(audioPlayer: audioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
                 break
             default: break
