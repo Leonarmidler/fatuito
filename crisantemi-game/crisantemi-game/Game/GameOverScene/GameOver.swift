@@ -38,13 +38,13 @@ class GameOver: SKScene {
     }
     
     func addRestartLabel() {
-        restartNode.text = "Restart"
+        restartNode.text = "Home"
         restartNode.fontName = "Fatuito"
         
         restartNode.fontSize = GameParameters.fontSize/4
         restartNode.position = CGPoint(x: frame.midX, y: frame.midY - GameParameters.fontSize/2)
         
-        restartNode.name = "restart"
+        restartNode.name = "home"
         addChild(restartNode)
     }
     
@@ -52,7 +52,7 @@ class GameOver: SKScene {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             if node.name == "restart" {
-                GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
+                GameParameters.switchScene(fromScene: self, toScene: Menu(fileNamed: "MenuScene")!)
             }
         }
     }
