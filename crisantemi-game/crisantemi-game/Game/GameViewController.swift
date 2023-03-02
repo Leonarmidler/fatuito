@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         // Create and configure the menu scene
 //        let menuScene = MenuScene(size: CGSize(width: GameParameters.frameWidth, height: GameParameters.frameHeight))
 //        menuScene.scaleMode = .aspectFill
-        let menuScene = Manu(fileNamed: "MenuScene")
+        let menuScene = Menu(fileNamed: "MenuScene")
         menuScene!.scaleMode = .aspectFill
         
         // Present the menu scene

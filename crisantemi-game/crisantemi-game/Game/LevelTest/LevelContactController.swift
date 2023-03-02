@@ -18,34 +18,34 @@ extension LevelTest: SKPhysicsContactDelegate {
     }
     
     func checkCollision(contact: SKPhysicsContact) {
-        if contact.bodyA.node == circleNode {
+        if contact.bodyA.node == playerNode {
             if contact.bodyB.node?.parent == groundParentNode {
-                groundContact()
+                contactPlayerGround()
             }
             if contact.bodyB.node?.parent == tokenNode {
-                tokenContact()
+                contactPlayerToken()
             }
             if contact.bodyB.node?.name == "fatuum" {
-                fatuumContact(fatuumParentNode: contact.bodyB.node!)
+                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
             }
-        } else if contact.bodyB.node == circleNode {
+        } else if contact.bodyB.node == playerNode {
             if contact.bodyA.node?.parent == groundParentNode {
-                groundContact()
+                contactPlayerGround()
             }
             if contact.bodyA.node?.parent == tokenNode {
-                tokenContact()
+                contactPlayerToken()
             }
             if contact.bodyA.node?.name == "fatuum" {
-                fatuumContact(fatuumParentNode: contact.bodyA.node!)
+                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
             }
         }
     }
     
-    func groundContact() {
+    func contactPlayerGround() {
         isOnGround = true
     }
     
-    func tokenContact() {
+    func contactPlayerToken() {
         if points >= minPoints {
             GameParameters.isWon = true
         } else {
@@ -54,7 +54,7 @@ extension LevelTest: SKPhysicsContactDelegate {
         GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
     }
     
-    func fatuumContact(fatuumParentNode: SKNode) {
+    func contactPlayerFatuum(fatuumParentNode: SKNode) {
         fatuumParentNode.removeFromParent()
         scoreNode.removeFromParent()
         points = MechanicsController.addPoint(actualPoints: points)

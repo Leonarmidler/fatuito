@@ -21,7 +21,6 @@ class LevelTest: SKScene {
     
     // NODES
     var playerNode: SKNode!
-    var circleNode: SKNode!
     var groundParentNode: SKNode!
     var fatuumParentNode: SKNode!
     var tokenNode: SKNode!
@@ -43,8 +42,8 @@ class LevelTest: SKScene {
         groundParentNode = childNode(withName: "ground")
         PhysicsController.setupNode(node: groundParentNode, nodeSelfCategory: PhysicsCategory.ground, nodeCollisionCategory: PhysicsCategory.player)
         
-        circleNode = childNode(withName: "circle")
-        PhysicsController.setupNode(node: circleNode, nodeSelfCategory: PhysicsCategory.player, nodeCollisionCategory: PhysicsCategory.ground|PhysicsCategory.fatuum)
+        playerNode = childNode(withName: "circle")
+        PhysicsController.setupNode(node: playerNode, nodeSelfCategory: PhysicsCategory.player, nodeCollisionCategory: PhysicsCategory.ground|PhysicsCategory.fatuum)
         
         tokenNode = childNode(withName: "token")
         PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
@@ -55,9 +54,8 @@ class LevelTest: SKScene {
 //        playerNode = childNode(withName: "player")!
 //        PhysicsController.setupNode(node: childNode(withName: "player")!, nodeSelfCategory: PhysicsCategory.playerCategory, nodeCollisionCategory: PhysicsCategory.groundCategory)
         
-        
         self.camera = childNode(withName: "camera") as? SKCameraNode
-        spawnPoint = circleNode.position
+        spawnPoint = playerNode.position
         addScore()
         
         // CREATING THE JOINT BETWEEN THE INTERN AND THE EXTERN
@@ -67,7 +65,7 @@ class LevelTest: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
-        scoreNode.position = CGPoint(x: circleNode.position.x, y: circleNode.position.y + 70)
+        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 70)
         physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
         MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
         
@@ -82,7 +80,7 @@ class LevelTest: SKScene {
         scoreNode.text = "\(points)"
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.fontSize/5
-        scoreNode.position = CGPoint(x: circleNode.position.x, y: circleNode.position.y + 100)
+        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 100)
         
         scoreNode.name = "score"
         addChild(scoreNode)

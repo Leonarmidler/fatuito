@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Manu: SKScene {
+class Menu: SKScene {
     // SELECTOR
     var labelSelector: Int = 0
     var selectedLabel = SKLabelNode()
@@ -101,14 +101,6 @@ class Manu: SKScene {
         
         stageSelectNode.name = "stageSelect"
     }
-
-    func addOptionLabel() {
-        
-    }
-    
-    func addLanguageLabel() {
-        
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
@@ -134,6 +126,9 @@ class Manu: SKScene {
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
                 break
+            case "stageSelect":
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                GameParameters.switchScene(fromScene: self, toScene: MakerSelector(fileNamed: "MakerSelectorScene")!)
             default: break
             }
         }
