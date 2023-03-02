@@ -27,8 +27,8 @@ class NikoLevel1: SKScene {
     var menuNode = SKLabelNode()
     
     // BOOL CHECKS
-    var isOnGround = true
     var shouldUpdate = true
+    var canJump = true
     
     // MOTION MANAGER
     let motionManager = CMMotionManager()
@@ -123,7 +123,7 @@ extension NikoLevel1: SKPhysicsContactDelegate {
     }
     
     func contactPlayerGround() {
-        isOnGround = true
+        canJump = true
     }
     
     func contactPlayerToken() {
@@ -158,13 +158,11 @@ extension NikoLevel1 {
                 menuScene.scaleMode = .aspectFill
                 GameParameters.switchScene(fromScene: self, toScene: menuScene)
                 break
-            case "ground":
-                if isOnGround {
+            default:
+                if canJump {
                     MechanicsController.jump(node: playerNode, motionManager: motionManager)
-                    isOnGround = false
                 }
                 break
-            default: break
             }
         }
     }
