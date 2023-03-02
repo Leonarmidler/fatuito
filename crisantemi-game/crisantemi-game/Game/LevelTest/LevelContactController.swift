@@ -14,54 +14,51 @@ import SwiftUI
 extension LevelTest: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        //        if contact.bodyA.node == childNode(withName: "player") && contact.bodyA.node == childNode(withName: "ground") || contact.bodyB.node == childNode(withName: "player") && contact.bodyA.node == childNode(withName: "ground") {
-        //            isOnGround = true
-        //        }
-        //        if contact.bodyA.node == childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") || contact.bodyB.node == childNode(withName: "player") && contact.bodyB.node == childNode(withName: "token") {
-        //            GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
-        //        }
-        
         checkCollision(contact: contact)
     }
     
     func checkCollision(contact: SKPhysicsContact) {
-        if contact.bodyA.node == childNode(withName: "circle") {
-            if contact.bodyB.node?.parent == childNode(withName: "ground") {
-                print("GROUND A")
-                isOnGround = true
+        if contact.bodyA.node == circleNode {
+            if contact.bodyB.node?.parent == groundParentNode {
+                groundContact()
             }
-            if contact.bodyB.node?.parent == childNode(withName: "token") {
-                GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
+            if contact.bodyB.node?.parent == tokenNode {
+                tokenContact()
             }
-        } else if contact.bodyB.node == childNode(withName: "circle") {
-            if contact.bodyA.node?.parent == childNode(withName: "ground") {
-                print("GROUND B")
-                isOnGround = true
+            if contact.bodyB.node?.name == "fatuum" {
+                fatuumContact(fatuumParentNode: contact.bodyB.node!)
             }
-            if contact.bodyA.node?.parent == childNode(withName: "token") {
-                GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
+        } else if contact.bodyB.node == circleNode {
+            if contact.bodyA.node?.parent == groundParentNode {
+                groundContact()
+            }
+            if contact.bodyA.node?.parent == tokenNode {
+                tokenContact()
+            }
+            if contact.bodyA.node?.name == "fatuum" {
+                fatuumContact(fatuumParentNode: contact.bodyA.node!)
             }
         }
-        
-//        if contact.bodyA.contactTestBitMask == PhysicsCategory.player {
-//            if contact.bodyB.contactTestBitMask == PhysicsCategory.ground {
-//                print("GROUND A - PC")
-//                isOnGround = true
-//            }
-//            if contact.bodyB.contactTestBitMask == PhysicsCategory.token {
-//                GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
-//            }
-//        } else if contact.bodyB.contactTestBitMask == PhysicsCategory.player {
-//            if contact.bodyA.contactTestBitMask == PhysicsCategory.ground {
-//                print("GROUND B - PC")
-//                isOnGround = true
-//            }
-//            if contact.bodyA.contactTestBitMask == PhysicsCategory.token {
-//                GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
-//            }
-//        }
-
-        
+    }
+    
+    func groundContact() {
+        isOnGround = true
+    }
+    
+    func tokenContact() {
+        if points >= minPoints {
+            GameParameters.isWon = true
+        } else {
+            GameParameters.isWon = false
+        }
+        GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
+    }
+    
+    func fatuumContact(fatuumParentNode: SKNode) {
+        fatuumParentNode.removeFromParent()
+        scoreNode.removeFromParent()
+        points = MechanicsController.addPoint(actualPoints: points)
+        addScore()
     }
     
 }

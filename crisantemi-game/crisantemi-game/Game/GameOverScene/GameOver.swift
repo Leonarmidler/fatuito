@@ -15,6 +15,8 @@ class GameOver: SKScene {
     
     var gameOverNode = SKLabelNode()
     var restartNode = SKLabelNode()
+    var lostText = "YOU LOST"
+    var winText = "YOU WIN"
     
     override func didMove(to view: SKView) {
         addGameOverLabel()
@@ -26,7 +28,7 @@ class GameOver: SKScene {
     }
     
     func addGameOverLabel() {
-        gameOverNode.text = "GAME OVER"
+        gameOverNode.text = (GameParameters.isWon ? "\(winText)" : "\(lostText)")
         gameOverNode.fontName = "Fatuito"
         
         gameOverNode.fontSize = GameParameters.fontSize/2

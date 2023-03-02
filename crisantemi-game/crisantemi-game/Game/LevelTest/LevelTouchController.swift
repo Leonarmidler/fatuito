@@ -26,7 +26,7 @@ extension LevelTest {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        print("touchesBegan")
         if isOnGround {
-            MechanicsController.jump(node: childNode(withName: "circle")!, motionManager: motionManager)
+            MechanicsController.jump(node: circleNode, motionManager: motionManager)
             isOnGround = false
         }
     }

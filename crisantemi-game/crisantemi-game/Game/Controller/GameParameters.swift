@@ -9,6 +9,8 @@ import Foundation
 import SpriteKit
 
 class GameParameters {
+    // LEVEL BOOL
+    static var isWon: Bool = false
     
     // DIMENSION
     static let fontSize: CGFloat = 150

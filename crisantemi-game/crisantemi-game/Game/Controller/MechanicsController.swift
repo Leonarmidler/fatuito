@@ -77,8 +77,9 @@ class MechanicsController {
         return joint
     }
     
-    static func addPoint() {
-        
+    static func addPoint(actualPoints: Int) -> Int {
+        let points = actualPoints + 1
+        return points
     }
 
 }

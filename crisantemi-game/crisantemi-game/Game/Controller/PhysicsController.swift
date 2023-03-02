@@ -14,6 +14,7 @@ struct PhysicsCategory {
     static let circle : UInt32 = 0b0010
     static let ground : UInt32 = 0b0011
     static let token  : UInt32 = 0b0100
+    static let fatuum : UInt32 = 0b0101
 }
 
 struct PhysicsController {
