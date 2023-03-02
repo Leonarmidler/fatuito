@@ -34,11 +34,13 @@ class MakerSelector: SKScene {
     }
     
     func addLeonardo() {
-        leonardoNode.text = "Leonardo"
+        leonardoNode.text = "Leo"
         leonardoNode.fontName = "Fatuito"
         
         leonardoNode.fontSize = GameParameters.fontSize/2
-        leonardoNode.position = CGPoint(x: frame.midX - frame.width/4, y: frame.midY + frame.height/4)
+        leonardoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY + frame.height/4)
+        
+        leonardoNode.alpha = 0.5
         
         leonardoNode.name = "leonardo"
         addChild(leonardoNode)
@@ -49,7 +51,9 @@ class MakerSelector: SKScene {
         giovanniNode.fontName = "Fatuito"
         
         giovanniNode.fontSize = GameParameters.fontSize/2
-        giovanniNode.position = CGPoint(x: frame.midX - frame.width/4, y: frame.midY)
+        giovanniNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY)
+        
+        giovanniNode.alpha = 0.5
         
         giovanniNode.name = "giovanni"
         addChild(giovanniNode)
@@ -60,7 +64,9 @@ class MakerSelector: SKScene {
         nikoNode.fontName = "Fatuito"
         
         nikoNode.fontSize = GameParameters.fontSize/2
-        nikoNode.position = CGPoint(x: frame.midX - frame.width/4, y: frame.midY - frame.height/4)
+        nikoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY - frame.height/4)
+        
+//        nikoNode.alpha = 0.5
         
         nikoNode.name = "niko"
         addChild(nikoNode)
@@ -71,7 +77,9 @@ class MakerSelector: SKScene {
         soniaNode.fontName = "Fatuito"
         
         soniaNode.fontSize = GameParameters.fontSize/2
-        soniaNode.position = CGPoint(x: frame.midX + frame.width/4, y: frame.midY + frame.height/4)
+        soniaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY + frame.height/4)
+        
+        soniaNode.alpha = 0.5
         
         soniaNode.name = "sonia"
         addChild(soniaNode)
@@ -82,7 +90,9 @@ class MakerSelector: SKScene {
         alinaNode.fontName = "Fatuito"
         
         alinaNode.fontSize = GameParameters.fontSize/2
-        alinaNode.position = CGPoint(x: frame.midX + frame.width/4, y: frame.midY)
+        alinaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY)
+        
+        alinaNode.alpha = 0.5
         
         alinaNode.name = "alina"
         addChild(alinaNode)
@@ -93,7 +103,9 @@ class MakerSelector: SKScene {
         anitaNode.fontName = "Fatuito"
         
         anitaNode.fontSize = GameParameters.fontSize/2
-        anitaNode.position = CGPoint(x: frame.midX + frame.width/4, y: frame.midY - frame.height/4)
+        anitaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY - frame.height/4)
+        
+        anitaNode.alpha = 0.5
         
         anitaNode.name = "anita"
         addChild(anitaNode)
@@ -106,6 +118,8 @@ class MakerSelector: SKScene {
         backButtonNode.fontSize = GameParameters.fontSize/2
         backButtonNode.position = CGPoint(x: -frame.width/2.3, y: -frame.height/2.3)
         
+        
+        
         backButtonNode.name = "backButton"
         addChild(backButtonNode)
     }
@@ -114,30 +128,27 @@ class MakerSelector: SKScene {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
-            case "<":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                break
             case "leonardo":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "giovanni":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "niko":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: NikoLevel1(fileNamed: "NikoLevel1Scene")!)
+                GameParameters.switchScene(fromScene: self, toScene: NikoLevel(fileNamed: "NikoLevelScene")!)
                 break
             case "sonia":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "alina":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "anita":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "backButton":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 let menuScene = Menu(fileNamed: "MenuScene")!
                 menuScene.scaleMode = .aspectFill
                 GameParameters.switchScene(fromScene: self, toScene: menuScene)

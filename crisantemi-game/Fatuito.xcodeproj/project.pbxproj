@@ -25,8 +25,8 @@
 		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
 		A76254F029B1220200E2A5D1 /* MakerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76254EF29B1220200E2A5D1 /* MakerSelector.swift */; };
 		A76254F229B122CA00E2A5D1 /* MakerSelectorScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F129B122CA00E2A5D1 /* MakerSelectorScene.sks */; };
-		A76254F529B1270D00E2A5D1 /* NikoLevel1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* NikoLevel1Scene.sks */; };
-		A762558B29B128C500E2A5D1 /* NikoLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762558A29B128C500E2A5D1 /* NikoLevel1.swift */; };
+		A76254F529B1270D00E2A5D1 /* NikoLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */; };
+		A762558B29B128C500E2A5D1 /* NikoLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762558A29B128C500E2A5D1 /* NikoLevel.swift */; };
 		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
@@ -64,8 +64,8 @@
 		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
 		A76254EF29B1220200E2A5D1 /* MakerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerSelector.swift; sourceTree = "<group>"; };
 		A76254F129B122CA00E2A5D1 /* MakerSelectorScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MakerSelectorScene.sks; sourceTree = "<group>"; };
-		A76254F429B1270D00E2A5D1 /* NikoLevel1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NikoLevel1Scene.sks; sourceTree = "<group>"; };
-		A762558A29B128C500E2A5D1 /* NikoLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoLevel1.swift; sourceTree = "<group>"; };
+		A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NikoLevelScene.sks; sourceTree = "<group>"; };
+		A762558A29B128C500E2A5D1 /* NikoLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoLevel.swift; sourceTree = "<group>"; };
 		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fatuito.ttf; sourceTree = "<group>"; };
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		A76254F329B126F000E2A5D1 /* NikoLevels */ = {
 			isa = PBXGroup;
 			children = (
-				A76254F429B1270D00E2A5D1 /* NikoLevel1Scene.sks */,
-				A762558A29B128C500E2A5D1 /* NikoLevel1.swift */,
+				A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */,
+				A762558A29B128C500E2A5D1 /* NikoLevel.swift */,
 			);
 			path = NikoLevels;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76254F529B1270D00E2A5D1 /* NikoLevel1Scene.sks in Resources */,
+				A76254F529B1270D00E2A5D1 /* NikoLevelScene.sks in Resources */,
 				A7222B7C29ADF22A00D9B75A /* wallBump.wav in Resources */,
 				A7222B7D29ADF22A00D9B75A /* hitPlatform.wav in Resources */,
 				A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */,
@@ -334,7 +334,7 @@
 				A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */,
 				A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */,
 				A7DF46F929A0EDB300DC9A66 /* LevelTouchController.swift in Sources */,
-				A762558B29B128C500E2A5D1 /* NikoLevel1.swift in Sources */,
+				A762558B29B128C500E2A5D1 /* NikoLevel.swift in Sources */,
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
 			);

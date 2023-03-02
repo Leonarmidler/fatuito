@@ -10,7 +10,7 @@ import GameplayKit
 import CoreMotion
 import AVFoundation
 
-class NikoLevel1: SKScene {
+class NikoLevel: SKScene {
     // POINT PARAMETERS
     let minPoints: Int = 0
     var points: Int = 0
@@ -70,6 +70,7 @@ class NikoLevel1: SKScene {
             
             physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
             MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
+
         }
     }
     
@@ -92,7 +93,7 @@ class NikoLevel1: SKScene {
     }
 }
 
-extension NikoLevel1: SKPhysicsContactDelegate {
+extension NikoLevel: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         checkCollision(contact: contact)
@@ -144,7 +145,7 @@ extension NikoLevel1: SKPhysicsContactDelegate {
 }
 
 
-extension NikoLevel1 {
+extension NikoLevel {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
@@ -161,6 +162,7 @@ extension NikoLevel1 {
             default:
                 if canJump {
                     MechanicsController.jump(node: playerNode, motionManager: motionManager)
+                    canJump = false
                 }
                 break
             }
