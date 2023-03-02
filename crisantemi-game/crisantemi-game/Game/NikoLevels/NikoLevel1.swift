@@ -12,7 +12,7 @@ import AVFoundation
 
 class NikoLevel1: SKScene {
     // POINT PARAMETERS
-    let minPoints: Int = 3
+    let minPoints: Int = 0
     var points: Int = 0
     
     // STARTING POINT
@@ -24,9 +24,11 @@ class NikoLevel1: SKScene {
     var fatuumParentNode: SKNode!
     var tokenNode: SKNode!
     var scoreNode = SKLabelNode()
+    var menuNode = SKLabelNode()
     
     // BOOL CHECKS
     var isOnGround = true
+    var shouldUpdate = true
     
     // MOTION MANAGER
     let motionManager = CMMotionManager()
@@ -44,35 +46,49 @@ class NikoLevel1: SKScene {
         playerNode = childNode(withName: "circle")
         PhysicsController.setupNode(node: playerNode, nodeSelfCategory: PhysicsCategory.player, nodeCollisionCategory: PhysicsCategory.ground|PhysicsCategory.fatuum)
         
-//        tokenNode = childNode(withName: "token")
-//        PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
+        tokenNode = childNode(withName: "token")
+        PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
         
-//        fatuumParentNode = childNode(withName: "fatuum")
-//        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
+        //        fatuumParentNode = childNode(withName: "fatuum")
+        //        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
         
         
         self.camera = childNode(withName: "camera") as? SKCameraNode
         spawnPoint = playerNode.position
         addScore()
+        addMenu()
         
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
-        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 70)
-        physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
-        MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
+        if shouldUpdate {
+            // FIX POSITION WITH THE CAMERA
+            menuNode.position = CGPoint(x: playerNode.position.x - 180, y: playerNode.position.y + 70)
+            scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 70)
+            // END
+            
+            physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
+            MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
+        }
     }
     
     func addScore() {
         scoreNode.text = "\(points)"
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.fontSize/5
-        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 100)
         
         scoreNode.name = "score"
         addChild(scoreNode)
+    }
+    
+    func addMenu() {
+        menuNode.text = "I I"
+        menuNode.fontName = "Fatuito"
+        menuNode.fontSize = GameParameters.fontSize/5
+        
+        menuNode.name = "menu"
+        addChild(menuNode)
     }
 }
 
@@ -129,37 +145,27 @@ extension NikoLevel1: SKPhysicsContactDelegate {
 
 
 extension NikoLevel1 {
-    
-    func touchDown(atPoint pos : CGPoint) {
-//        print("touchDown")
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-//        print("touchMoved")
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-//        print("touchUp")
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesBegan")
-        if isOnGround {
-            MechanicsController.jump(node: playerNode, motionManager: motionManager)
-            isOnGround = false
+        for t in touches {
+            let node = self.atPoint(t.location(in :self))
+            switch node.name {
+            case "menu":
+                shouldUpdate = false
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                
+                // SWITCH SCENE
+                let menuScene = Menu(fileNamed: "MenuScene")!
+                menuScene.scaleMode = .aspectFill
+                GameParameters.switchScene(fromScene: self, toScene: menuScene)
+                break
+            case "ground":
+                if isOnGround {
+                    MechanicsController.jump(node: playerNode, motionManager: motionManager)
+                    isOnGround = false
+                }
+                break
+            default: break
+            }
         }
     }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesMoved")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesEnded")
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesCancelled")
-    }
-    
 }

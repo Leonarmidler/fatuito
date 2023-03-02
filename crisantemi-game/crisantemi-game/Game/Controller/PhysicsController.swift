@@ -23,6 +23,7 @@ struct PhysicsController {
         node.physicsBody?.categoryBitMask = nodeSelfCategory
         node.physicsBody?.collisionBitMask = nodeCollisionCategory
         node.physicsBody?.contactTestBitMask = nodeCollisionCategory
+        node.physicsBody?.friction = GameParameters.stdFriction
     }
     
 }
