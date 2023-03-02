@@ -11,7 +11,7 @@ import GameplayKit
 import CoreMotion
 import AVFoundation
 
-struct MechanicsController {
+class MechanicsController {
     static func getInclination(motionManager: CMMotionManager) -> Double {
         var inclination: Double = 0
         
@@ -23,7 +23,7 @@ struct MechanicsController {
     }
     
     static func getTiltedGravityVector(motionManager: CMMotionManager) -> CGVector {
-        let tilt = tilt(actualTilt: getInclination(motionManager: motionManager))
+        let tilt = checkTilt(actualTilt: getInclination(motionManager: motionManager))
         let gravityForce = CGFloat(-9.8)*GameParameters.gravityScaleFactor
         let sin = CGFloat(tilt)
         let cos = cos(asin(sin))
@@ -34,12 +34,13 @@ struct MechanicsController {
     }
     
     static func jump(node: SKNode, motionManager: CMMotionManager) {
+        AudioController.playSound(audioPlayer: AudioController.jump)
         let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
         node.physicsBody?.velocity.dy = 0
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
     }
     
-    static func tilt(actualTilt: Double) -> Double {
+    static func checkTilt(actualTilt: Double) -> Double {
         let maxTilt = 0.9
         let minTilt = -maxTilt
         var tilt = actualTilt
@@ -67,7 +68,7 @@ struct MechanicsController {
         }
     }
     
-    static func setDynamicAnchorPoint(firstNode: SKNode, secondNode: SKNode, anchorPoint: CGPoint, damping: CGFloat, frequency: CGFloat) -> SKPhysicsJointSpring {
+    static func createJoint(firstNode: SKNode, secondNode: SKNode, anchorPoint: CGPoint, damping: CGFloat, frequency: CGFloat) -> SKPhysicsJointSpring {
         let joint = SKPhysicsJointSpring.joint(withBodyA: firstNode.physicsBody!, bodyB: secondNode.physicsBody!, anchorA: CGPoint(x: secondNode.frame.midX, y: secondNode.frame.midY), anchorB: anchorPoint)
         
         joint.damping = damping

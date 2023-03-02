@@ -10,9 +10,9 @@ import AVFoundation
 
 class AudioController {
     // AUDIOPLAYER
-    var arrowClick = setupAudio(audioPlayerName: "arrowClick")
-    var buttonClick = setupAudio(audioPlayerName: "buttonClick")
-    var jump = setupAudio(audioPlayerName: "jump1")
+    static let arrowClick = setupAudio(audioPlayerName: "arrowClick")
+    static let buttonClick = setupAudio(audioPlayerName: "buttonClick")
+    static let jump = setupAudio(audioPlayerName: "jump1")
     
     static private func setupAudio(audioPlayerName: String) -> AVAudioPlayer{
         var audioPlayer = AVAudioPlayer()

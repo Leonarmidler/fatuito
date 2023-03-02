@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-struct GameParameters {
+class GameParameters {
     
     // DIMENSION
     static let fontSize: CGFloat = 150
@@ -52,9 +52,9 @@ struct GameParameters {
     static func setupPlayer(playerNode: SKNode) {
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: GameParameters.playerSize.width/2)
         
-        playerNode.physicsBody?.categoryBitMask = PhysicsCategory.playerCategory
-        playerNode.physicsBody?.collisionBitMask = PhysicsCategory.groundCategory
-        playerNode.physicsBody?.contactTestBitMask = PhysicsCategory.groundCategory
+        playerNode.physicsBody?.categoryBitMask = PhysicsCategory.player
+        playerNode.physicsBody?.collisionBitMask = PhysicsCategory.ground
+        playerNode.physicsBody?.contactTestBitMask = PhysicsCategory.ground
         
         playerNode.physicsBody?.mass = GameParameters.playerMass/10
         playerNode.physicsBody?.friction = GameParameters.stdFriction
@@ -66,9 +66,9 @@ struct GameParameters {
     }
     
     static func setupGround(groundNode: SKNode) {
-        groundNode.physicsBody?.categoryBitMask = PhysicsCategory.groundCategory
-        groundNode.physicsBody?.collisionBitMask = PhysicsCategory.playerCategory
-        groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.playerCategory
+        groundNode.physicsBody?.categoryBitMask = PhysicsCategory.ground
+        groundNode.physicsBody?.collisionBitMask = PhysicsCategory.player
+        groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.player
         
         groundNode.physicsBody?.mass = GameParameters.staticObjMass
         groundNode.physicsBody?.friction = GameParameters.stdFriction

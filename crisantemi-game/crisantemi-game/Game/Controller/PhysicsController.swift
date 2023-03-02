@@ -10,10 +10,10 @@ import SpriteKit
 
 struct PhysicsCategory {
     static let none   : UInt32 = 0
-    static let playerCategory : UInt32 = 0b0001
-    static let circleCategory : UInt32 = 0b0010
-    static let groundCategory : UInt32 = 0b0011
-    static let wallCategory   : UInt32 = 0b0100
+    static let player : UInt32 = 0b0001
+    static let circle : UInt32 = 0b0010
+    static let ground : UInt32 = 0b0011
+    static let token  : UInt32 = 0b0100
 }
 
 struct PhysicsController {

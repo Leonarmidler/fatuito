@@ -41,7 +41,7 @@ class GameOver: SKScene {
         restartNode.fontName = "Fatuito"
         
         restartNode.fontSize = GameParameters.fontSize/4
-        restartNode.position = CGPoint(x: frame.midX, y: frame.midY - GameParameters.fontSize)
+        restartNode.position = CGPoint(x: frame.midX, y: frame.midY - GameParameters.fontSize/2)
         
         restartNode.name = "restart"
         addChild(restartNode)

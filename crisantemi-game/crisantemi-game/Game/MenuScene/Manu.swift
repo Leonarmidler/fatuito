@@ -11,9 +11,6 @@ import GameplayKit
 import AVFoundation
 
 class Manu: SKScene {
-    // CLASS INITIALIZER
-    let audioController = AudioController()
-    
     // SELECTOR
     var labelSelector: Int = 0
     var selectedLabel = SKLabelNode()
@@ -118,7 +115,7 @@ class Manu: SKScene {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
             case "<":
-                AudioController.playSound(audioPlayer: audioController.arrowClick)
+                AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 1 {
                     labelSelector = -1
                 }
@@ -126,7 +123,7 @@ class Manu: SKScene {
                 switchLabel()
                 break
             case ">":
-                AudioController.playSound(audioPlayer: audioController.arrowClick)
+                AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 0 {
                     labelSelector = 2
                 }
@@ -134,7 +131,7 @@ class Manu: SKScene {
                 switchLabel()
                 break
             case "newGame":
-                AudioController.playSound(audioPlayer: audioController.buttonClick)
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
                 break
             default: break
