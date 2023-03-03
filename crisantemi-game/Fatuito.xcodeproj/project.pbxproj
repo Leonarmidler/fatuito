@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709581C29B159B700B6BD41 /* UpdateController.swift */; };
 		A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6D29ADF22A00D9B75A /* fallingDown.wav */; };
 		A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */; };
 		A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6F29ADF22A00D9B75A /* hitSpikes.wav */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A709581C29B159B700B6BD41 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		A7222B6D29ADF22A00D9B75A /* fallingDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallingDown.wav; sourceTree = "<group>"; };
 		A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fatuumsPickup.wav; sourceTree = "<group>"; };
 		A7222B6F29ADF22A00D9B75A /* hitSpikes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitSpikes.wav; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				A7222B8929ADF66100D9B75A /* AudioController.swift */,
 				A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */,
 				A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */,
+				A709581C29B159B700B6BD41 /* UpdateController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */,
 				A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */,
 				A7DF46F929A0EDB300DC9A66 /* LevelTouchController.swift in Sources */,
+				A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */,
 				A762558B29B128C500E2A5D1 /* NikoLevel.swift in Sources */,
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,

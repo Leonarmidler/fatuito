@@ -42,7 +42,7 @@ extension LevelTest: SKPhysicsContactDelegate {
     }
     
     func contactPlayerGround() {
-        isOnGround = true
+        canJump = true
     }
     
     func contactPlayerToken() {

@@ -25,9 +25,25 @@ extension LevelTest {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        print("touchesBegan")
-        if isOnGround {
-            MechanicsController.jump(node: playerNode, motionManager: motionManager)
-            isOnGround = false
+        for t in touches {
+            let node = self.atPoint(t.location(in :self))
+            switch node.name {
+            case "menu":
+                shouldUpdate = false
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                
+                // SWITCH SCENE
+                let menuScene = Menu(fileNamed: "MenuScene")!
+                menuScene.scaleMode = .aspectFill
+                GameParameters.switchScene(fromScene: self, toScene: menuScene)
+                break
+            default:
+                if canJump {
+                    MechanicsController.jump(node: playerNode, motionManager: motionManager)
+                    canJump = false
+                }
+                break
+            }
         }
     }
     

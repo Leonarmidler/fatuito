@@ -43,7 +43,7 @@ class NikoLevel: SKScene {
         groundParentNode = childNode(withName: "ground")
         PhysicsController.setupNode(node: groundParentNode, nodeSelfCategory: PhysicsCategory.ground, nodeCollisionCategory: PhysicsCategory.player)
         
-        playerNode = childNode(withName: "circle")
+        playerNode = childNode(withName: "player")
         PhysicsController.setupNode(node: playerNode, nodeSelfCategory: PhysicsCategory.player, nodeCollisionCategory: PhysicsCategory.ground|PhysicsCategory.fatuum)
         
         tokenNode = childNode(withName: "token")
@@ -63,22 +63,23 @@ class NikoLevel: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if shouldUpdate {
-            // FIX POSITION WITH THE CAMERA
-            menuNode.position = CGPoint(x: playerNode.position.x - 180, y: playerNode.position.y + 70)
-            scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 70)
-            // END
+            //FIX CAMERA
+            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!)
             
+            // FIX FRAME POSITION WITH THE CAMERA
+            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
+            
+            // FIX GRAVITY
             physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
-            MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
-
         }
     }
     
     func addScore() {
         scoreNode.text = "\(points)"
         scoreNode.fontName = "Fatuito"
-        scoreNode.fontSize = GameParameters.fontSize/5
+        scoreNode.fontSize = GameParameters.inGameFontSize
         
+        scoreNode.setScale(2)
         scoreNode.name = "score"
         addChild(scoreNode)
     }
@@ -86,11 +87,13 @@ class NikoLevel: SKScene {
     func addMenu() {
         menuNode.text = "I I"
         menuNode.fontName = "Fatuito"
-        menuNode.fontSize = GameParameters.fontSize/5
+        menuNode.fontSize = GameParameters.inGameFontSize
         
+        menuNode.setScale(2)
         menuNode.name = "menu"
         addChild(menuNode)
     }
+    
 }
 
 extension NikoLevel: SKPhysicsContactDelegate {

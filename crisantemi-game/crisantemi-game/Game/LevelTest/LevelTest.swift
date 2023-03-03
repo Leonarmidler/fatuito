@@ -25,9 +25,11 @@ class LevelTest: SKScene {
     var fatuumParentNode: SKNode!
     var tokenNode: SKNode!
     var scoreNode = SKLabelNode()
+    var menuNode = SKLabelNode()
     
     // BOOL CHECKS
-    var isOnGround = true
+    var shouldUpdate = true
+    var canJump = true
     
     // MOTION MANAGER
     let motionManager = CMMotionManager()
@@ -42,7 +44,7 @@ class LevelTest: SKScene {
         groundParentNode = childNode(withName: "ground")
         PhysicsController.setupNode(node: groundParentNode, nodeSelfCategory: PhysicsCategory.ground, nodeCollisionCategory: PhysicsCategory.player)
         
-        playerNode = childNode(withName: "circle")
+        playerNode = childNode(withName: "player")
         PhysicsController.setupNode(node: playerNode, nodeSelfCategory: PhysicsCategory.player, nodeCollisionCategory: PhysicsCategory.ground|PhysicsCategory.fatuum)
         
         tokenNode = childNode(withName: "token")
@@ -57,33 +59,42 @@ class LevelTest: SKScene {
         self.camera = childNode(withName: "camera") as? SKCameraNode
         spawnPoint = playerNode.position
         addScore()
+        addMenu()
         
         // CREATING THE JOINT BETWEEN THE INTERN AND THE EXTERN
 //        physicsWorld.add(MechanicsController.createJoint(firstNode: childNode(withName: "circle")!, secondNode: childNode(withName: "player")!, anchorPoint: CGPoint(x: childNode(withName: "player")!.frame.midX, y: childNode(withName: "player")!.frame.midY), damping: 0.5, frequency: 0.9))
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
-        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 70)
-        physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
-        MechanicsController.fixCamera(cameraNode: self.camera!, node: childNode(withName: "circle")!)
-        
-        // TEST GAME OVER
-//        if (childNode(withName: "player")!.position == CGPoint(x: 1860.009, y: -1004.25)) {
-//            GameParameters.switchScene(fromScene: self, toScene: GameOverScene())
-//        }
-        //        MechanicsController.reposition(nodeToReposition: circleNode, playerNode: playerNode, refNode: groundNode, spawnPoint: startingPoint)
+        if shouldUpdate {
+            //FIX CAMERA
+            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: playerNode)
+            
+            // FIX FRAME POSITION WITH THE CAMERA
+            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
+            
+            // FIX GRAVITY
+            physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
+        }
     }
     
     func addScore() {
         scoreNode.text = "\(points)"
         scoreNode.fontName = "Fatuito"
-        scoreNode.fontSize = GameParameters.fontSize/5
-        scoreNode.position = CGPoint(x: playerNode.position.x, y: playerNode.position.y + 100)
+        scoreNode.fontSize = GameParameters.inGameFontSize
         
         scoreNode.name = "score"
         addChild(scoreNode)
     }
+    
+    func addMenu() {
+        menuNode.text = "I I"
+        menuNode.fontName = "Fatuito"
+        menuNode.fontSize = GameParameters.inGameFontSize
+        
+        menuNode.name = "menu"
+        addChild(menuNode)
+    }
+    
     
 }

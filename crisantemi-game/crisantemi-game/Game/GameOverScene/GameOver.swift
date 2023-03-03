@@ -42,7 +42,7 @@ class GameOver: SKScene {
         restartNode.fontName = "Fatuito"
         
         restartNode.fontSize = GameParameters.fontSize/4
-        restartNode.position = CGPoint(x: frame.midX, y: frame.midY - GameParameters.fontSize/3)
+        restartNode.position = CGPoint(x: frame.midX, y: frame.midY - GameParameters.fontSize)
         
         restartNode.name = "home"
         addChild(restartNode)
@@ -51,8 +51,18 @@ class GameOver: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
-            if node.name == "home" {
-                GameParameters.switchScene(fromScene: self, toScene: Menu(fileNamed: "MenuScene")!)
+            switch node.name {
+            case "home":
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                
+                // SWITCH SCENE
+                let menuScene = Menu(fileNamed: "MenuScene")!
+                menuScene.scaleMode = .aspectFill
+                GameParameters.switchScene(fromScene: self, toScene: menuScene)
+                break
+            default:
+
+                break
             }
         }
     }

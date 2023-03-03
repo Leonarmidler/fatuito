@@ -14,9 +14,10 @@ class GameParameters {
     
     // DIMENSION
     static let fontSize: CGFloat = 150
+    static let inGameFontSize: CGFloat = fontSize/2.5
     
     // TRANSITION
-    static let transitionTime: CGFloat = 3
+    static let switchSceneTransitionTime: CGFloat = 3
     
     // VIEW SIZE
     static let circleSize = CGSize(width: 25, height: 25)
@@ -26,9 +27,15 @@ class GameParameters {
     static let frameHeight: CGFloat = 1170
     
     // CAMERA
-    static let cameraFixedX: CGFloat = 150
-    static let cameraFixedY: CGFloat = 10
-    static let zoomScale: CGFloat = 0.5
+    static let cameraFixedX: CGFloat = 0
+    static let cameraFixedY: CGFloat = 15
+    static let startingZoomScale: CGFloat = 0.5
+    
+    // FRAME
+    static let startingScoreOffsetX: CGFloat = 0
+    static let startingScoreOffsetY: CGFloat = 140
+    static let startingMenuButtonOffsetX: CGFloat = -360
+    static let startingMenuButtonOffsetY: CGFloat = 140
     
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2
@@ -37,18 +44,34 @@ class GameParameters {
     static let stdFriction: CGFloat = 0.5
     static let jumpIntensity: CGFloat = 75
     
-//    static let jointDamping: CGFloat = 0.7 // Ractive force of joint (STD = 10)
+    // METHODS PARAMETERS
+    static func zoomScale(playerNode: SKNode) -> CGFloat {
+        var zoomScale: CGFloat = startingZoomScale
+        let velocity = sqrt(pow(playerNode.physicsBody!.velocity.dx, 2) + pow(playerNode.physicsBody!.velocity.dy, 2))
+        if zoomScale < 1 {
+            zoomScale += velocity/5000
+        }
+        return zoomScale
+    }
     
-    // CHECKS
-    var isStarted = false
-    var isOnGround = false
+    static func scoreOffsetX(playerNode: SKNode) -> CGFloat {
+        return startingScoreOffsetX*zoomScale(playerNode: playerNode)
+    }
+    static func scoreOffsetY(playerNode: SKNode) -> CGFloat {
+        return startingScoreOffsetY*zoomScale(playerNode: playerNode)
+    }
+    static func menuButtonOffsetX(playerNode: SKNode) -> CGFloat {
+        return startingMenuButtonOffsetX*zoomScale(playerNode: playerNode)
+    }
+    static func menuButtonOffsetY(playerNode: SKNode) -> CGFloat {
+        return startingMenuButtonOffsetY*zoomScale(playerNode: playerNode)
+    }
     
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
         fromScene.removeAllChildren()
         fromScene.removeFromParent()
 
-        fromScene.view?.presentScene(toScene, transition: .fade(withDuration: transitionTime))
-
+        fromScene.view?.presentScene(toScene, transition: .fade(withDuration: switchSceneTransitionTime))
     }
     
     static func setupPlayer(playerNode: SKNode) {

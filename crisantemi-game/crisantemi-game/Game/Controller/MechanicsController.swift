@@ -36,7 +36,6 @@ class MechanicsController {
     static func jump(node: SKNode, motionManager: CMMotionManager) {
         AudioController.playSound(audioPlayer: AudioController.jump)
         let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
-        node.physicsBody?.velocity.dy = 0
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
     }
     
@@ -52,12 +51,6 @@ class MechanicsController {
         }
         
         return tilt
-    }
-    
-    static func fixCamera(cameraNode: SKNode, node: SKNode) {
-        cameraNode.position.x = node.position.x
-        cameraNode.position.y = node.position.y + GameParameters.cameraFixedY
-        cameraNode.setScale(GameParameters.zoomScale)
     }
     
     static func reposition(nodeToReposition: SKNode, playerNode: SKNode, refNode: SKNode, spawnPoint: CGPoint) {
