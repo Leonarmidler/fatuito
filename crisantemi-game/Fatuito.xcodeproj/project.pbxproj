@@ -24,15 +24,12 @@
 		A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */; };
 		A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOver.swift */; };
 		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
-		A76254F029B1220200E2A5D1 /* MakerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76254EF29B1220200E2A5D1 /* MakerSelector.swift */; };
-		A76254F229B122CA00E2A5D1 /* MakerSelectorScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F129B122CA00E2A5D1 /* MakerSelectorScene.sks */; };
+		A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */; };
 		A76254F529B1270D00E2A5D1 /* NikoLevelScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */; };
-		A762558B29B128C500E2A5D1 /* NikoLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762558A29B128C500E2A5D1 /* NikoLevel.swift */; };
 		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
 		A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */; };
-		A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */; };
 		A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */; };
 		A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E429A0EC7800DC9A66 /* Main.storyboard */; };
 		A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */; };
@@ -43,6 +40,8 @@
 		A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */; };
 		A7DF992829A2C4EC00D21CEC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992729A2C4EC00D21CEC /* Menu.swift */; };
 		A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */; };
+		A7F49B1829B1781C0093A6EE /* LevelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F49B1729B1781C0093A6EE /* LevelCreator.swift */; };
+		A7F49B1B29B179000093A6EE /* StageSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F49B1A29B179000093A6EE /* StageSelect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,16 +63,13 @@
 		A7222B9029AE0A2E00D9B75A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		A72B6C3529AF59B600684336 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
 		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
-		A76254EF29B1220200E2A5D1 /* MakerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerSelector.swift; sourceTree = "<group>"; };
-		A76254F129B122CA00E2A5D1 /* MakerSelectorScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MakerSelectorScene.sks; sourceTree = "<group>"; };
+		A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
 		A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NikoLevelScene.sks; sourceTree = "<group>"; };
-		A762558A29B128C500E2A5D1 /* NikoLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NikoLevel.swift; sourceTree = "<group>"; };
 		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fatuito.ttf; sourceTree = "<group>"; };
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		A7DF46D729A0EC7800DC9A66 /* Fatuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fatuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTest.swift; sourceTree = "<group>"; };
 		A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A7DF46E529A0EC7800DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +80,8 @@
 		A7DF46FC29A0F23A00DC9A66 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		A7DF992729A2C4EC00D21CEC /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameParameters.swift; sourceTree = "<group>"; };
+		A7F49B1729B1781C0093A6EE /* LevelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCreator.swift; sourceTree = "<group>"; };
+		A7F49B1A29B179000093A6EE /* StageSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +126,8 @@
 		A76254EA29B121B900E2A5D1 /* StageSelector */ = {
 			isa = PBXGroup;
 			children = (
-				A76254F129B122CA00E2A5D1 /* MakerSelectorScene.sks */,
-				A76254EF29B1220200E2A5D1 /* MakerSelector.swift */,
+				A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */,
+				A7F49B1A29B179000093A6EE /* StageSelect.swift */,
 			);
 			path = StageSelector;
 			sourceTree = "<group>";
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				A76254F429B1270D00E2A5D1 /* NikoLevelScene.sks */,
-				A762558A29B128C500E2A5D1 /* NikoLevel.swift */,
 			);
 			path = NikoLevels;
 			sourceTree = "<group>";
@@ -189,8 +186,7 @@
 				A76254EA29B121B900E2A5D1 /* StageSelector */,
 				A7222B8F29AE0A1700D9B75A /* GameOverScene */,
 				A7DF992B29A2CAB700D21CEC /* Controller */,
-				A7DF992529A2C4C100D21CEC /* LevelTest */,
-				A76254F329B126F000E2A5D1 /* NikoLevels */,
+				A7F49B1929B178240093A6EE /* Levels */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -204,15 +200,12 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		A7DF992529A2C4C100D21CEC /* LevelTest */ = {
+		A7DF992529A2C4C100D21CEC /* TestLevel */ = {
 			isa = PBXGroup;
 			children = (
 				A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */,
-				A7DF46E029A0EC7800DC9A66 /* LevelTest.swift */,
-				A7DF46F629A0ED7000DC9A66 /* LevelContactController.swift */,
-				A7DF46F829A0EDB300DC9A66 /* LevelTouchController.swift */,
 			);
-			path = LevelTest;
+			path = TestLevel;
 			sourceTree = "<group>";
 		};
 		A7DF992629A2C4CA00D21CEC /* MenuScene */ = {
@@ -235,6 +228,18 @@
 				A709581C29B159B700B6BD41 /* UpdateController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7F49B1929B178240093A6EE /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				A7F49B1729B1781C0093A6EE /* LevelCreator.swift */,
+				A7DF46F629A0ED7000DC9A66 /* LevelContactController.swift */,
+				A7DF46F829A0EDB300DC9A66 /* LevelTouchController.swift */,
+				A76254F329B126F000E2A5D1 /* NikoLevels */,
+				A7DF992529A2C4C100D21CEC /* TestLevel */,
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +305,7 @@
 				A7222B7D29ADF22A00D9B75A /* hitPlatform.wav in Resources */,
 				A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */,
 				A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */,
-				A76254F229B122CA00E2A5D1 /* MakerSelectorScene.sks in Resources */,
+				A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */,
 				A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */,
 				A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */,
 				A7222B7F29ADF22A00D9B75A /* death.wav in Resources */,
@@ -328,17 +333,16 @@
 			files = (
 				A7DF46FD29A0F23A00DC9A66 /* AnimationController.swift in Sources */,
 				A7222B8A29ADF66100D9B75A /* AudioController.swift in Sources */,
-				A7DF46E129A0EC7800DC9A66 /* LevelTest.swift in Sources */,
 				A7DF46F729A0ED7000DC9A66 /* LevelContactController.swift in Sources */,
-				A76254F029B1220200E2A5D1 /* MakerSelector.swift in Sources */,
+				A7F49B1829B1781C0093A6EE /* LevelCreator.swift in Sources */,
 				A7DF992829A2C4EC00D21CEC /* Menu.swift in Sources */,
 				A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */,
 				A7DF46F529A0ED0100DC9A66 /* MechanicsController.swift in Sources */,
 				A7DF46E329A0EC7800DC9A66 /* GameViewController.swift in Sources */,
 				A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */,
+				A7F49B1B29B179000093A6EE /* StageSelect.swift in Sources */,
 				A7DF46F929A0EDB300DC9A66 /* LevelTouchController.swift in Sources */,
 				A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */,
-				A762558B29B128C500E2A5D1 /* NikoLevel.swift in Sources */,
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
 			);

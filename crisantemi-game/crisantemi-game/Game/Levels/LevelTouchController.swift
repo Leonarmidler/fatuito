@@ -1,5 +1,5 @@
 //
-//  TouchController.swift
+//  LevelTouchController.swift
 //  crisantemi-game
 //
 //  Created by Leonardo Daniele on 18/02/23.
@@ -9,22 +9,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-extension LevelTest {
-    
-    func touchDown(atPoint pos : CGPoint) {
-//        print("touchDown")
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-//        print("touchMoved")
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-//        print("touchUp")
-    }
-    
+extension LevelCreator {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesBegan")
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
@@ -47,16 +33,12 @@ extension LevelTest {
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesMoved")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesEnded")
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("touchesCancelled")
-    }
+    // ALL TOUCH FUNCTIONS
+    func touchDown(atPoint pos : CGPoint) {}
+    func touchMoved(toPoint pos : CGPoint) {}
+    func touchUp(atPoint pos : CGPoint) {}
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {}
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {}
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {}
     
 }

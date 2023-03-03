@@ -124,11 +124,11 @@ class Menu: SKScene {
                 break
             case "newGame":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: LevelTest(fileNamed: "LevelTestScene")!)
+                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "LevelTestScene")!)
                 break
             case "stageSelect":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: MakerSelector(fileNamed: "MakerSelectorScene")!)
+                GameParameters.switchScene(fromScene: self, toScene: StageSelect(fileNamed: "StageSelectScene")!)
             default: break
             }
         }

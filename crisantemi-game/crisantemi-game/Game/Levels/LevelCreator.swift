@@ -1,8 +1,8 @@
 //
-//  NikoLevel1.swift
+//  LevelCreator.swift
 //  Fatuito
 //
-//  Created by Leonardo Daniele on 02/03/23.
+//  Created by Leonardo Daniele on 03/03/23.
 //
 
 import SpriteKit
@@ -10,7 +10,7 @@ import GameplayKit
 import CoreMotion
 import AVFoundation
 
-class NikoLevel: SKScene {
+class LevelCreator: SKScene {
     // POINT PARAMETERS
     let minPoints: Int = 0
     var points: Int = 0
@@ -94,81 +94,4 @@ class NikoLevel: SKScene {
         addChild(menuNode)
     }
     
-}
-
-extension NikoLevel: SKPhysicsContactDelegate {
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        checkCollision(contact: contact)
-    }
-    
-    func checkCollision(contact: SKPhysicsContact) {
-        if contact.bodyA.node == playerNode {
-            if contact.bodyB.node?.parent == groundParentNode {
-                contactPlayerGround()
-            }
-            if contact.bodyB.node?.parent == tokenNode {
-                contactPlayerToken()
-            }
-            if contact.bodyB.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
-            }
-        } else if contact.bodyB.node == playerNode {
-            if contact.bodyA.node?.parent == groundParentNode {
-                contactPlayerGround()
-            }
-            if contact.bodyA.node?.parent == tokenNode {
-                contactPlayerToken()
-            }
-            if contact.bodyA.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
-            }
-        }
-    }
-    
-    func contactPlayerGround() {
-        canJump = true
-    }
-    
-    func contactPlayerToken() {
-        if points >= minPoints {
-            GameParameters.isWon = true
-        } else {
-            GameParameters.isWon = false
-        }
-        GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
-    }
-    
-    func contactPlayerFatuum(fatuumParentNode: SKNode) {
-        fatuumParentNode.removeFromParent()
-        scoreNode.removeFromParent()
-        points = MechanicsController.addPoint(actualPoints: points)
-        addScore()
-    }
-}
-
-
-extension NikoLevel {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches {
-            let node = self.atPoint(t.location(in :self))
-            switch node.name {
-            case "menu":
-                shouldUpdate = false
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                
-                // SWITCH SCENE
-                let menuScene = Menu(fileNamed: "MenuScene")!
-                menuScene.scaleMode = .aspectFill
-                GameParameters.switchScene(fromScene: self, toScene: menuScene)
-                break
-            default:
-                if canJump {
-                    MechanicsController.jump(node: playerNode, motionManager: motionManager)
-                    canJump = false
-                }
-                break
-            }
-        }
-    }
 }

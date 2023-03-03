@@ -1,5 +1,5 @@
 //
-//  ContactHandler.swift
+//  LevelContactController.swift
 //  crisantemi-game
 //
 //  Created by Leonardo Daniele on 18/02/23.
@@ -11,7 +11,7 @@ import GameplayKit
 import AVFoundation
 import SwiftUI
 
-extension LevelTest: SKPhysicsContactDelegate {
+extension LevelCreator: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         checkCollision(contact: contact)
@@ -60,5 +60,4 @@ extension LevelTest: SKPhysicsContactDelegate {
         points = MechanicsController.addPoint(actualPoints: points)
         addScore()
     }
-    
 }

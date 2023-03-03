@@ -1,19 +1,18 @@
 //
-//  GameScene.swift
-//  crisantemi-game
+//  NikoLevel1.swift
+//  Fatuito
 //
-//  Created by Leonardo Daniele on 15/02/23.
+//  Created by Leonardo Daniele on 02/03/23.
 //
 
-import Foundation
 import SpriteKit
 import GameplayKit
 import CoreMotion
 import AVFoundation
 
-class LevelTest: SKScene {
+class NikoLevel: SKScene {
     // POINT PARAMETERS
-    let minPoints: Int = 3
+    let minPoints: Int = 0
     var points: Int = 0
     
     // STARTING POINT
@@ -50,25 +49,22 @@ class LevelTest: SKScene {
         tokenNode = childNode(withName: "token")
         PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
         
-        fatuumParentNode = childNode(withName: "fatuum")
-        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
+        //        fatuumParentNode = childNode(withName: "fatuum")
+        //        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
         
-//        playerNode = childNode(withName: "player")!
-//        PhysicsController.setupNode(node: childNode(withName: "player")!, nodeSelfCategory: PhysicsCategory.playerCategory, nodeCollisionCategory: PhysicsCategory.groundCategory)
         
         self.camera = childNode(withName: "camera") as? SKCameraNode
         spawnPoint = playerNode.position
         addScore()
         addMenu()
         
-        // CREATING THE JOINT BETWEEN THE INTERN AND THE EXTERN
-//        physicsWorld.add(MechanicsController.createJoint(firstNode: childNode(withName: "circle")!, secondNode: childNode(withName: "player")!, anchorPoint: CGPoint(x: childNode(withName: "player")!.frame.midX, y: childNode(withName: "player")!.frame.midY), damping: 0.5, frequency: 0.9))
     }
     
     override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
         if shouldUpdate {
             //FIX CAMERA
-            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: playerNode)
+            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!)
             
             // FIX FRAME POSITION WITH THE CAMERA
             UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
@@ -83,6 +79,7 @@ class LevelTest: SKScene {
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.inGameFontSize
         
+        scoreNode.setScale(2)
         scoreNode.name = "score"
         addChild(scoreNode)
     }
@@ -92,9 +89,65 @@ class LevelTest: SKScene {
         menuNode.fontName = "Fatuito"
         menuNode.fontSize = GameParameters.inGameFontSize
         
+        menuNode.setScale(2)
         menuNode.name = "menu"
         addChild(menuNode)
     }
     
+}
+
+extension NikoLevel: SKPhysicsContactDelegate {
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        checkCollision(contact: contact)
+    }
+    
+    func checkCollision(contact: SKPhysicsContact) {
+        if contact.bodyA.node == playerNode {
+            if contact.bodyB.node?.parent == groundParentNode {
+                contactPlayerGround()
+            }
+            if contact.bodyB.node?.parent == tokenNode {
+                contactPlayerToken()
+            }
+            if contact.bodyB.node?.name == "fatuum" {
+                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
+            }
+        } else if contact.bodyB.node == playerNode {
+            if contact.bodyA.node?.parent == groundParentNode {
+                contactPlayerGround()
+            }
+            if contact.bodyA.node?.parent == tokenNode {
+                contactPlayerToken()
+            }
+            if contact.bodyA.node?.name == "fatuum" {
+                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
+            }
+        }
+    }
+    
+    func contactPlayerGround() {
+        canJump = true
+    }
+    
+    func contactPlayerToken() {
+        if points >= minPoints {
+            GameParameters.isWon = true
+        } else {
+            GameParameters.isWon = false
+        }
+        GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
+    }
+    
+    func contactPlayerFatuum(fatuumParentNode: SKNode) {
+        fatuumParentNode.removeFromParent()
+        scoreNode.removeFromParent()
+        points = MechanicsController.addPoint(actualPoints: points)
+        addScore()
+    }
+}
+
+
+extension NikoLevel {
+
 }

@@ -1,5 +1,5 @@
 //
-//  StageSelector.swift
+//  StageSelect.swift
 //  Fatuito
 //
 //  Created by Leonardo Daniele on 02/03/23.
@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class MakerSelector: SKScene {
+class StageSelect: SKScene {
     var leonardoNode = SKLabelNode()
     var giovanniNode = SKLabelNode()
     var nikoNode = SKLabelNode()
@@ -117,9 +117,7 @@ class MakerSelector: SKScene {
         
         backButtonNode.fontSize = GameParameters.fontSize/2
         backButtonNode.position = CGPoint(x: -frame.width/2.3, y: -frame.height/2.3)
-        
-        
-        
+
         backButtonNode.name = "backButton"
         addChild(backButtonNode)
     }
@@ -136,7 +134,7 @@ class MakerSelector: SKScene {
                 break
             case "niko":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: NikoLevel(fileNamed: "NikoLevelScene")!)
+                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "NikoLevelScene")!)
                 break
             case "sonia":
 //                AudioController.playSound(audioPlayer: AudioController.buttonClick)
