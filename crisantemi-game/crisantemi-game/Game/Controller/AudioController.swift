@@ -13,6 +13,8 @@ class AudioController {
     static let arrowClick = setupAudio(audioPlayerName: "arrowClick")
     static let buttonClick = setupAudio(audioPlayerName: "buttonClick")
     static let jump = setupAudio(audioPlayerName: "jump1")
+    static let fatuumHit = setupAudio(audioPlayerName: "fatuumsPickup")
+    static let gulaguForest = setupAudio(audioPlayerName: "gulaguForest")
     
     static private func setupAudio(audioPlayerName: String) -> AVAudioPlayer{
         var audioPlayer = AVAudioPlayer()
@@ -30,6 +32,10 @@ class AudioController {
     static func playSound(audioPlayer: AVAudioPlayer) {
         audioPlayer.currentTime = 0
         audioPlayer.play()
+    }
+    
+    static func stopAudio() {
+        gulaguForest.stop()
     }
     
 }

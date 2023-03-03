@@ -13,6 +13,7 @@ import AVFoundation
 class Credits: SKScene {
     // PARAM
     let speedIncrement: CGFloat = 20000
+    let teamNameScaleFactor: CGFloat = 0.7
     
     // NODES
     var teamNameNode = SKNode()
@@ -24,7 +25,7 @@ class Credits: SKScene {
     var anitaNode = SKLabelNode()
     var backButtonNode = SKLabelNode()
     
-    var scrollingSpeed: CGFloat = 40
+    var scrollingSpeed: CGFloat = 100
     var shouldUpdate = true
     
     override func didMove(to view: SKView) {
@@ -44,7 +45,7 @@ class Credits: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if shouldUpdate {
-            if teamNameNode.position.y > (GameParameters.frameHeight/6 +  3.5*GameParameters.fontSize) {
+            if teamNameNode.position.y > (GameParameters.frameHeight/6 +  3.7*GameParameters.fontSize)*(2*teamNameScaleFactor) {
                 let menuScene = Menu(fileNamed: "MenuScene")!
                 menuScene.scaleMode = .aspectFill
                 GameParameters.switchScene(fromScene: self, toScene: menuScene)
@@ -60,7 +61,7 @@ class Credits: SKScene {
     
     func addTeamName() {
         teamNameNode = SKSpriteNode(imageNamed: "teamName")
-        teamNameNode.setScale(0.5)
+        teamNameNode.setScale(teamNameScaleFactor)
         teamNameNode.position = CGPoint(x: frame.midX, y: -1.5*teamNameNode.frame.height)
         
         addChild(teamNameNode)
@@ -71,7 +72,7 @@ class Credits: SKScene {
         leonardoNode.fontName = "Fatuito"
         
         leonardoNode.fontSize = GameParameters.fontSize/2
-        leonardoNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - GameParameters.fontSize)
+        leonardoNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 5*GameParameters.fontSize)
         
         leonardoNode.name = "leonardo"
         teamNameNode.addChild(leonardoNode)
@@ -82,7 +83,7 @@ class Credits: SKScene {
         giovanniNode.fontName = "Fatuito"
         
         giovanniNode.fontSize = GameParameters.fontSize/2
-        giovanniNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 2*GameParameters.fontSize)
+        giovanniNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 4*GameParameters.fontSize)
         
         giovanniNode.name = "giovanni"
         teamNameNode.addChild(giovanniNode)
@@ -104,7 +105,7 @@ class Credits: SKScene {
         soniaNode.fontName = "Fatuito"
         
         soniaNode.fontSize = GameParameters.fontSize/2
-        soniaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 4*GameParameters.fontSize)
+        soniaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 6*GameParameters.fontSize)
         
         soniaNode.name = "sonia"
         teamNameNode.addChild(soniaNode)
@@ -115,7 +116,7 @@ class Credits: SKScene {
         alinaNode.fontName = "Fatuito"
         
         alinaNode.fontSize = GameParameters.fontSize/2
-        alinaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 5*GameParameters.fontSize)
+        alinaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 1*GameParameters.fontSize)
         
         alinaNode.name = "alina"
         teamNameNode.addChild(alinaNode)
@@ -126,7 +127,7 @@ class Credits: SKScene {
         anitaNode.fontName = "Fatuito"
         
         anitaNode.fontSize = GameParameters.fontSize/2
-        anitaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 6*GameParameters.fontSize)
+        anitaNode.position = CGPoint(x: frame.midX, y: -teamNameNode.frame.height - 2*GameParameters.fontSize)
         
         anitaNode.name = "anita"
         teamNameNode.addChild(anitaNode)

@@ -93,7 +93,9 @@ class Menu: SKScene {
         playNode.fontSize = GameParameters.fontSize
         playNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
         
-        playNode.name = "newGame"
+        playNode.alpha = GameParameters.nonClickableLabelOpacity
+        
+        playNode.name = "play"
     }
     
     func addStageSelectLabel() {
@@ -134,9 +136,9 @@ class Menu: SKScene {
                 labelSelector -= 1
                 switchLabel()
                 break
-            case "newGame":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "LevelTestScene")!)
+            case "play":
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "LevelTestScene")!)
                 break
             case "stageSelect":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)

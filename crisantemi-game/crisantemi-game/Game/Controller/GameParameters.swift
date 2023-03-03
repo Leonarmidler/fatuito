@@ -16,32 +16,34 @@ class GameParameters {
     static let fontSize: CGFloat = 150
     static let inGameFontSize: CGFloat = fontSize/2.5
     
-    // TRANSITION
-    static let switchSceneTransitionTime: CGFloat = 3
-    
     // VIEW SIZE
     static let circleSize = CGSize(width: 25, height: 25)
     static let playerSize = CGSize(width: 12.5, height: 12.5)
     
+    static let nonClickableLabelOpacity: CGFloat = 0.3
+
+    // FRAME
+    static let startingScoreOffsetX: CGFloat = 360
+    static let startingScoreOffsetY: CGFloat = 140
+    static let startingMenuButtonOffsetX: CGFloat = -360
+    static let startingMenuButtonOffsetY: CGFloat = 140
+    
     static let frameWidth: CGFloat = 2532
     static let frameHeight: CGFloat = 1170
+    
+    // TRANSITION
+    static let switchSceneTransitionTime: CGFloat = 1
     
     // CAMERA
     static let cameraFixedX: CGFloat = 0
     static let cameraFixedY: CGFloat = 15
     static let startingZoomScale: CGFloat = 0.5
     
-    // FRAME
-    static let startingScoreOffsetX: CGFloat = 0
-    static let startingScoreOffsetY: CGFloat = 140
-    static let startingMenuButtonOffsetX: CGFloat = -360
-    static let startingMenuButtonOffsetY: CGFloat = 140
-    
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2
     static let playerMass: CGFloat = 0.05
     static let staticObjMass: CGFloat = 10
-    static let stdFriction: CGFloat = 0.5
+    static let stdFriction: CGFloat = 0.8
     static let jumpIntensity: CGFloat = 75
     
     // METHODS PARAMETERS
@@ -68,6 +70,7 @@ class GameParameters {
     }
     
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
+        AudioController.stopAudio()
         fromScene.removeAllChildren()
         fromScene.removeFromParent()
 

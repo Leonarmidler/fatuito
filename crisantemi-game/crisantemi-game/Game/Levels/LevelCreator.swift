@@ -12,7 +12,7 @@ import AVFoundation
 
 class LevelCreator: SKScene {
     // POINT PARAMETERS
-    let minPoints: Int = 0
+    let minPoints: Int = 14
     var points: Int = 0
     
     // STARTING POINT
@@ -49,8 +49,10 @@ class LevelCreator: SKScene {
         tokenNode = childNode(withName: "token")
         PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
         
-        //        fatuumParentNode = childNode(withName: "fatuum")
-        //        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
+        AudioController.playSound(audioPlayer: AudioController.gulaguForest)
+//        fatuumParentNode = childNode(withName: "fatuum")
+//        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
+//        AnimationController.animateFatuum(fatuum: childNode(withName: "fatuum")!.parent!)
         
         
         self.camera = childNode(withName: "camera") as? SKCameraNode
@@ -78,6 +80,8 @@ class LevelCreator: SKScene {
         scoreNode.text = "\(points)"
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.inGameFontSize
+        
+        scoreNode.position = CGPoint(x: playerNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: playerNode.position.y + GameParameters.scoreOffsetY(playerNode: playerNode))
         
         scoreNode.setScale(2)
         scoreNode.name = "score"

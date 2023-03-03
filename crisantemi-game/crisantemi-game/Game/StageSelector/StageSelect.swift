@@ -34,78 +34,78 @@ class StageSelect: SKScene {
     }
     
     func addLeonardo() {
-        leonardoNode.text = "Leo"
+        leonardoNode.text = "Gulagu Forest"
         leonardoNode.fontName = "Fatuito"
         
         leonardoNode.fontSize = GameParameters.fontSize/2
         leonardoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY + frame.height/4)
         
-        leonardoNode.alpha = 0.5
+//        leonardoNode.alpha = GameParameters.nonClickableLabelOpacity
         
-        leonardoNode.name = "leonardo"
+        leonardoNode.name = "gulaguForest"
         addChild(leonardoNode)
     }
     
     func addGiovanni() {
-        giovanniNode.text = "Giovanni"
+        giovanniNode.text = "???"
         giovanniNode.fontName = "Fatuito"
         
         giovanniNode.fontSize = GameParameters.fontSize/2
         giovanniNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY)
         
-        giovanniNode.alpha = 0.5
+        giovanniNode.alpha = GameParameters.nonClickableLabelOpacity
         
         giovanniNode.name = "giovanni"
         addChild(giovanniNode)
     }
     
     func addNiko() {
-        nikoNode.text = "Niko"
+        nikoNode.text = "???"
         nikoNode.fontName = "Fatuito"
         
         nikoNode.fontSize = GameParameters.fontSize/2
         nikoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY - frame.height/4)
         
-//        nikoNode.alpha = 0.5
+        nikoNode.alpha = GameParameters.nonClickableLabelOpacity
         
         nikoNode.name = "niko"
         addChild(nikoNode)
     }
     
     func addSonia() {
-        soniaNode.text = "Sonia"
+        soniaNode.text = "???"
         soniaNode.fontName = "Fatuito"
         
         soniaNode.fontSize = GameParameters.fontSize/2
         soniaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY + frame.height/4)
         
-        soniaNode.alpha = 0.5
+        soniaNode.alpha = GameParameters.nonClickableLabelOpacity
         
         soniaNode.name = "sonia"
         addChild(soniaNode)
     }
     
     func addAlina() {
-        alinaNode.text = "Alina"
+        alinaNode.text = "???"
         alinaNode.fontName = "Fatuito"
         
         alinaNode.fontSize = GameParameters.fontSize/2
         alinaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY)
         
-        alinaNode.alpha = 0.5
+        alinaNode.alpha = GameParameters.nonClickableLabelOpacity
         
         alinaNode.name = "alina"
         addChild(alinaNode)
     }
     
     func addAnita() {
-        anitaNode.text = "Anita"
+        anitaNode.text = "???"
         anitaNode.fontName = "Fatuito"
         
         anitaNode.fontSize = GameParameters.fontSize/2
         anitaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY - frame.height/4)
         
-        anitaNode.alpha = 0.5
+        anitaNode.alpha = GameParameters.nonClickableLabelOpacity
         
         anitaNode.name = "anita"
         addChild(anitaNode)
@@ -126,15 +126,15 @@ class StageSelect: SKScene {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
-            case "leonardo":
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+            case "gulaguForest":
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
                 break
             case "giovanni":
 //                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "niko":
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "NikoLevelScene")!)
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "sonia":
 //                AudioController.playSound(audioPlayer: AudioController.buttonClick)
