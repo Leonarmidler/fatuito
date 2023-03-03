@@ -19,9 +19,10 @@ class Menu: SKScene {
     var logoNode =  SKSpriteNode()
     var leftArrowNode = SKLabelNode()
     var rightArrowNode = SKLabelNode()
+    
     var playNode = SKLabelNode()
     var stageSelectNode = SKLabelNode()
-    var galleryNode = SKLabelNode()
+    var creditsLabel = SKLabelNode()
     var quitNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
@@ -33,6 +34,7 @@ class Menu: SKScene {
         
         addPlayLabel()
         addStageSelectLabel()
+        addCreditsNode()
 
         addSelectedLabel()
     }
@@ -45,6 +47,7 @@ class Menu: SKScene {
         switch labelSelector {
         case 0: selectedLabel = playNode; break
         case 1: selectedLabel = stageSelectNode; break
+        case 2: selectedLabel = creditsLabel; break
         default: break
         }
         
@@ -102,19 +105,28 @@ class Menu: SKScene {
         stageSelectNode.name = "stageSelect"
     }
     
+    func addCreditsNode() {
+        creditsLabel.text = "CREDITS"
+        creditsLabel.fontName = "Fatuito"
+        creditsLabel.fontSize = GameParameters.fontSize
+        creditsLabel.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
+        
+        creditsLabel.name = "credits"
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
-            case "<":
+            case ">":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
-                if labelSelector == 1 {
+                if labelSelector == 2 {
                     labelSelector = -1
                 }
                 labelSelector += 1
                 switchLabel()
                 break
-            case ">":
+            case "<":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 0 {
                     labelSelector = 2
@@ -129,6 +141,9 @@ class Menu: SKScene {
             case "stageSelect":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: StageSelect(fileNamed: "StageSelectScene")!)
+            case "credits":
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                GameParameters.switchScene(fromScene: self, toScene: Credits(fileNamed: "CreditsScene")!)
             default: break
             }
         }

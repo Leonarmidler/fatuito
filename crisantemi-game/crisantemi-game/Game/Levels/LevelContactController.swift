@@ -19,24 +19,24 @@ extension LevelCreator: SKPhysicsContactDelegate {
     
     func checkCollision(contact: SKPhysicsContact) {
         if contact.bodyA.node == playerNode {
+            if contact.bodyB.node?.name == "fatuum" {
+                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
+            }
             if contact.bodyB.node?.parent == groundParentNode {
                 contactPlayerGround()
             }
             if contact.bodyB.node?.parent == tokenNode {
                 contactPlayerToken()
             }
-            if contact.bodyB.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
-            }
         } else if contact.bodyB.node == playerNode {
+            if contact.bodyA.node?.name == "fatuum" {
+                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
+            }
             if contact.bodyA.node?.parent == groundParentNode {
                 contactPlayerGround()
             }
             if contact.bodyA.node?.parent == tokenNode {
                 contactPlayerToken()
-            }
-            if contact.bodyA.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
             }
         }
     }

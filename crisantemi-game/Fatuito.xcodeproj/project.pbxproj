@@ -42,6 +42,8 @@
 		A7DF992D29A2CE2E00D21CEC /* GameParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */; };
 		A7F49B1829B1781C0093A6EE /* LevelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F49B1729B1781C0093A6EE /* LevelCreator.swift */; };
 		A7F49B1B29B179000093A6EE /* StageSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F49B1A29B179000093A6EE /* StageSelect.swift */; };
+		A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE676F29B1EEA60082FA83 /* Credits.swift */; };
+		A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameParameters.swift; sourceTree = "<group>"; };
 		A7F49B1729B1781C0093A6EE /* LevelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCreator.swift; sourceTree = "<group>"; };
 		A7F49B1A29B179000093A6EE /* StageSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelect.swift; sourceTree = "<group>"; };
+		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */,
+				A7FE676E29B1EE860082FA83 /* Credits */,
 				A7DF992629A2C4CA00D21CEC /* MenuScene */,
 				A76254EA29B121B900E2A5D1 /* StageSelector */,
 				A7222B8F29AE0A1700D9B75A /* GameOverScene */,
@@ -240,6 +245,15 @@
 				A7DF992529A2C4C100D21CEC /* TestLevel */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		A7FE676E29B1EE860082FA83 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */,
+				A7FE676F29B1EEA60082FA83 /* Credits.swift */,
+			);
+			path = Credits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +323,7 @@
 				A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */,
 				A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */,
 				A7222B7F29ADF22A00D9B75A /* death.wav in Resources */,
+				A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */,
 				A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */,
 				A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */,
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
@@ -344,6 +359,7 @@
 				A7DF46F929A0EDB300DC9A66 /* LevelTouchController.swift in Sources */,
 				A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */,
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
+				A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
