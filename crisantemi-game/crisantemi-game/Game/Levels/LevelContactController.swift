@@ -46,7 +46,7 @@ extension LevelCreator: SKPhysicsContactDelegate {
     }
     
     func contactPlayerToken() {
-        if score >= minScore {
+        if score >= LevelCreator.minScore {
             GameParameters.isWon = true
         } else {
             GameParameters.isWon = false

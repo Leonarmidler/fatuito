@@ -34,8 +34,14 @@ class AudioController {
         audioPlayer.play()
     }
     
-    static func stopAudio() {
-        gulaguForest.stop()
+    static func playSoundForever(audioPlayer: AVAudioPlayer) {
+        audioPlayer.currentTime = 0
+        audioPlayer.numberOfLoops = -1
+        audioPlayer.play()
+    }
+    
+    static func stopAudio(audioPlayer: AVAudioPlayer) {
+        audioPlayer.stop()
     }
     
 }

@@ -11,8 +11,11 @@ import CoreMotion
 import AVFoundation
 
 class LevelCreator: SKScene {
-    // POINT PARAMETERS
-    let minScore: Int = 14
+    // LEVEL PARAMETER
+    static var minScore = Int()
+    static var bgSound = AVAudioPlayer()
+    
+    // SCORE PARAMETERS
     var score: Int = 0
     
     // STARTING POINT
@@ -38,6 +41,7 @@ class LevelCreator: SKScene {
         GameParameters.isWon = false
         motionManager.startAccelerometerUpdates()
         physicsWorld.contactDelegate = self
+        AudioController.playSoundForever(audioPlayer: AudioController.gulaguForest)
         // END
         
         groundParentNode = childNode(withName: "ground")
@@ -49,7 +53,6 @@ class LevelCreator: SKScene {
         tokenNode = childNode(withName: "token")
         PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
         
-        AudioController.playSound(audioPlayer: AudioController.gulaguForest)
         fatuumParentNode = childNode(withName: "fatuum")
         //        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.ground)
         //        AnimationController.animateFatuum(fatuum: childNode(withName: "fatuum")!.parent!)

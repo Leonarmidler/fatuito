@@ -83,7 +83,14 @@ class StageSelect: SKScene {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
             case "gulaguForest":
+                // SOUND PLAYED
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                
+                // GAME PARAM SET
+                LevelCreator.bgSound = AudioController.gulaguForest
+                LevelCreator.minScore = 14
+                
+                // SWITCH
                 GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
                 break
             case "level2":

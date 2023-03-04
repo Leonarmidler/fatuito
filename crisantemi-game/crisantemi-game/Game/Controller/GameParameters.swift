@@ -73,7 +73,7 @@ class GameParameters {
     }
     
     static func switchScene(fromScene: SKScene, toScene: SKScene) {
-        AudioController.stopAudio()
+        AudioController.stopAudio(audioPlayer: AudioController.gulaguForest)
         fromScene.removeAllChildren()
         fromScene.removeFromParent()
 
