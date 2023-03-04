@@ -19,9 +19,9 @@ extension LevelCreator: SKPhysicsContactDelegate {
     
     func checkCollision(contact: SKPhysicsContact) {
         if contact.bodyA.node == playerNode {
-            if contact.bodyB.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
-            }
+//            if contact.bodyB.node?.parent?.name == "fatuum" {
+//                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
+//            }
             if contact.bodyB.node?.parent == groundParentNode {
                 contactPlayerGround()
             }
@@ -29,9 +29,9 @@ extension LevelCreator: SKPhysicsContactDelegate {
                 contactPlayerToken()
             }
         } else if contact.bodyB.node == playerNode {
-            if contact.bodyA.node?.name == "fatuum" {
-                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
-            }
+//            if contact.bodyA.node?.parent?.name == "fatuum" {
+//                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
+//            }
             if contact.bodyA.node?.parent == groundParentNode {
                 contactPlayerGround()
             }
@@ -46,7 +46,7 @@ extension LevelCreator: SKPhysicsContactDelegate {
     }
     
     func contactPlayerToken() {
-        if points >= minPoints {
+        if score >= minScore {
             GameParameters.isWon = true
         } else {
             GameParameters.isWon = false
@@ -54,10 +54,22 @@ extension LevelCreator: SKPhysicsContactDelegate {
         GameParameters.switchScene(fromScene: self, toScene: GameOver(fileNamed: "GameOverScene")!)
     }
     
-    func contactPlayerFatuum(fatuumParentNode: SKNode) {
-        AudioController.playSound(audioPlayer: AudioController.fatuumHit)
-        fatuumParentNode.removeFromParent()
-        points = MechanicsController.addPoint(actualPoints: points)
-        scoreNode.text = "\(points)"
+    func checkCollision() {
+        for childrenNode in fatuumParentNode.children {
+            let distanceX = abs(childrenNode.position.x - playerNode.position.x)
+            let distanceY = abs(childrenNode.position.y - playerNode.position.y)
+            
+            if distanceX <= 15 && distanceY <= 15 {
+                contactPlayerFatuum(fatumNode: childrenNode)
+            }
+        }
     }
+    
+    func contactPlayerFatuum(fatumNode: SKNode){
+        AudioController.playSound(audioPlayer: AudioController.fatuumHit)
+        fatumNode.removeFromParent()
+        score += 1
+        scoreNode.text = "\(score)"
+    }
+
 }

@@ -12,8 +12,8 @@ import AVFoundation
 
 class LevelCreator: SKScene {
     // POINT PARAMETERS
-    let minPoints: Int = 14
-    var points: Int = 0
+    let minScore: Int = 14
+    var score: Int = 0
     
     // STARTING POINT
     var spawnPoint = CGPoint()
@@ -50,16 +50,14 @@ class LevelCreator: SKScene {
         PhysicsController.setupNode(node: tokenNode, nodeSelfCategory: PhysicsCategory.token, nodeCollisionCategory: PhysicsCategory.player)
         
         AudioController.playSound(audioPlayer: AudioController.gulaguForest)
-//        fatuumParentNode = childNode(withName: "fatuum")
-//        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.player)
-//        AnimationController.animateFatuum(fatuum: childNode(withName: "fatuum")!.parent!)
-        
+        fatuumParentNode = childNode(withName: "fatuum")
+        //        PhysicsController.setupNode(node: fatuumParentNode, nodeSelfCategory: PhysicsCategory.fatuum, nodeCollisionCategory: PhysicsCategory.ground)
+        //        AnimationController.animateFatuum(fatuum: childNode(withName: "fatuum")!.parent!)
         
         self.camera = childNode(withName: "camera") as? SKCameraNode
         spawnPoint = playerNode.position
         addMenu()
         addScore()
-        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -69,10 +67,12 @@ class LevelCreator: SKScene {
             UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!)
             
             // FIX FRAME POSITION WITH THE CAMERA
-//            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
+            //            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
             
             // FIX GRAVITY
             physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
+            
+            checkCollision()
         }
     }
     
@@ -89,7 +89,7 @@ class LevelCreator: SKScene {
     }
     
     func addScore() {
-        scoreNode.text = "\(points)"
+        scoreNode.text = "\(score)"
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.inGameFontSize
         

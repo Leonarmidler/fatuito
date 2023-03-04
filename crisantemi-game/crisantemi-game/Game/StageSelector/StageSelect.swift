@@ -11,21 +11,15 @@ import GameplayKit
 import AVFoundation
 
 class StageSelect: SKScene {
-    var leonardoNode = SKLabelNode()
-    var giovanniNode = SKLabelNode()
-    var nikoNode = SKLabelNode()
-    var soniaNode = SKLabelNode()
-    var alinaNode = SKLabelNode()
-    var anitaNode = SKLabelNode()
+    var levelNode1 = SKLabelNode()
+    var levelNode2 = SKLabelNode()
+    var levelNode3 = SKLabelNode()
     var backButtonNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
-        addLeonardo()
-        addGiovanni()
-        addNiko()
-        addSonia()
-        addAlina()
-        addAnita()
+        level1()
+        level2()
+        level3()
         addBackButton()
     }
     
@@ -33,82 +27,44 @@ class StageSelect: SKScene {
         // Called before each frame is rendered
     }
     
-    func addLeonardo() {
-        leonardoNode.text = "Gulagu Forest"
-        leonardoNode.fontName = "Fatuito"
+    func level1() {
+        levelNode1.text = "Gulagu Forest"
+        levelNode1.fontName = "Fatuito"
         
-        leonardoNode.fontSize = GameParameters.fontSize/2
-        leonardoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY + frame.height/4)
+        levelNode1.fontSize = GameParameters.fontSize/2
+        levelNode1.position = CGPoint(x: frame.midX, y: frame.midY + frame.height/4)
         
-//        leonardoNode.alpha = GameParameters.nonClickableLabelOpacity
+//        levelNode1.alpha = GameParameters.nonClickableLabelOpacity
         
-        leonardoNode.name = "gulaguForest"
-        addChild(leonardoNode)
+        levelNode1.name = "gulaguForest"
+        addChild(levelNode1)
     }
     
-    func addGiovanni() {
-        giovanniNode.text = "???"
-        giovanniNode.fontName = "Fatuito"
+    
+    func level2() {
+        levelNode2.text = "???"
+        levelNode2.fontName = "Fatuito"
         
-        giovanniNode.fontSize = GameParameters.fontSize/2
-        giovanniNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY)
+        levelNode2.fontSize = GameParameters.fontSize/2
+        levelNode2.position = CGPoint(x: frame.midX, y: frame.midY)
         
-        giovanniNode.alpha = GameParameters.nonClickableLabelOpacity
+        levelNode2.alpha = GameParameters.nonClickableLabelOpacity
         
-        giovanniNode.name = "giovanni"
-        addChild(giovanniNode)
+        levelNode2.name = "level2"
+        addChild(levelNode2)
     }
     
-    func addNiko() {
-        nikoNode.text = "???"
-        nikoNode.fontName = "Fatuito"
+    func level3() {
+        levelNode3.text = "???"
+        levelNode3.fontName = "Fatuito"
         
-        nikoNode.fontSize = GameParameters.fontSize/2
-        nikoNode.position = CGPoint(x: frame.midX - frame.width/5, y: frame.midY - frame.height/4)
+        levelNode3.fontSize = GameParameters.fontSize/2
+        levelNode3.position = CGPoint(x: frame.midX, y: frame.midY - frame.height/4)
         
-        nikoNode.alpha = GameParameters.nonClickableLabelOpacity
+        levelNode3.alpha = GameParameters.nonClickableLabelOpacity
         
-        nikoNode.name = "niko"
-        addChild(nikoNode)
-    }
-    
-    func addSonia() {
-        soniaNode.text = "???"
-        soniaNode.fontName = "Fatuito"
-        
-        soniaNode.fontSize = GameParameters.fontSize/2
-        soniaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY + frame.height/4)
-        
-        soniaNode.alpha = GameParameters.nonClickableLabelOpacity
-        
-        soniaNode.name = "sonia"
-        addChild(soniaNode)
-    }
-    
-    func addAlina() {
-        alinaNode.text = "???"
-        alinaNode.fontName = "Fatuito"
-        
-        alinaNode.fontSize = GameParameters.fontSize/2
-        alinaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY)
-        
-        alinaNode.alpha = GameParameters.nonClickableLabelOpacity
-        
-        alinaNode.name = "alina"
-        addChild(alinaNode)
-    }
-    
-    func addAnita() {
-        anitaNode.text = "???"
-        anitaNode.fontName = "Fatuito"
-        
-        anitaNode.fontSize = GameParameters.fontSize/2
-        anitaNode.position = CGPoint(x: frame.midX + frame.width/5, y: frame.midY - frame.height/4)
-        
-        anitaNode.alpha = GameParameters.nonClickableLabelOpacity
-        
-        anitaNode.name = "anita"
-        addChild(anitaNode)
+        levelNode3.name = "level3"
+        addChild(levelNode3)
     }
     
     func addBackButton() {
@@ -130,19 +86,7 @@ class StageSelect: SKScene {
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
                 break
-            case "giovanni":
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                break
-            case "niko":
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                break
-            case "sonia":
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                break
-            case "alina":
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                break
-            case "anita":
+            case "level2":
 //                AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 break
             case "backButton":

@@ -35,7 +35,7 @@ struct UpdateController {
     static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {
         cameraNode.position = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
         
-        let scaleAction = SKAction.scale(to: GameParameters.zoomScale(playerNode: playerNode), duration: GameParameters.zoomSpeedTranition)
+        let scaleAction = SKAction.scale(to: GameParameters.zoomScale(playerNode: playerNode), duration: GameParameters.zoomTransitionTime)
         cameraNode.run(scaleAction)
     }
 }

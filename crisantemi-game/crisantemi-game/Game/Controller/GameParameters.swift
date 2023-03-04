@@ -39,14 +39,15 @@ class GameParameters {
     static let cameraFixedY: CGFloat = 15
     static let startingZoomScale: CGFloat = 0.5
     static let zoomScaleFactor: CGFloat = 0.0007
-    static let zoomSpeedTranition: CGFloat = 0.2
+    static let zoomTransitionTime: CGFloat = 0.4
     
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2
     static let playerMass: CGFloat = 0.05
     static let staticObjMass: CGFloat = 10
-    static let stdFriction: CGFloat = 0.8
+    static let stdFriction: CGFloat = 1
     static let jumpIntensity: CGFloat = 75
+    static let removeDistance: CGFloat = 10
     
     // METHODS PARAMETERS
     static func zoomScale(playerNode: SKNode) -> CGFloat {
