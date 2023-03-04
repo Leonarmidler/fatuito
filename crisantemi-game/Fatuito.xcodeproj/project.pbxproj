@@ -45,6 +45,10 @@
 		A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE676F29B1EEA60082FA83 /* Credits.swift */; };
 		A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */; };
 		A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677329B20AB70082FA83 /* gulaguForest.wav */; };
+		C74DA8EE29B3AA83000DFD68 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8EC29B3AA83000DFD68 /* rain.sks */; };
+		C74DA8EF29B3AA83000DFD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */; };
+		C74DA8F129B3B09E000DFD68 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8F029B3B09E000DFD68 /* smoke.sks */; };
+		C74DA8F529B3BDF7000DFD68 /* rosa.sks in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8F429B3BDF7000DFD68 /* rosa.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,10 @@
 		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		A7FE677329B20AB70082FA83 /* gulaguForest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gulaguForest.wav; sourceTree = "<group>"; };
+		C74DA8EC29B3AA83000DFD68 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
+		C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C74DA8F029B3B09E000DFD68 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
+		C74DA8F429B3BDF7000DFD68 /* rosa.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rosa.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				A76254F429B1270D00E2A5D1 /* GulaguForest.sks */,
+				C74DA8EC29B3AA83000DFD68 /* rain.sks */,
+				C74DA8F029B3B09E000DFD68 /* smoke.sks */,
+				C74DA8F429B3BDF7000DFD68 /* rosa.sks */,
+				C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -328,18 +340,22 @@
 				A7222B7F29ADF22A00D9B75A /* death.wav in Resources */,
 				A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */,
 				A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */,
+				C74DA8F529B3BDF7000DFD68 /* rosa.sks in Resources */,
+				C74DA8F129B3B09E000DFD68 /* smoke.sks in Resources */,
 				A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */,
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
 				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
 				A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */,
+				C74DA8EE29B3AA83000DFD68 /* rain.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
 				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
 				A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */,
 				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,
 				A7222B8029ADF22A00D9B75A /* bushWalk.wav in Resources */,
+				C74DA8EF29B3AA83000DFD68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +527,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GT3DDUBTKD;
+				DEVELOPMENT_TEAM = V9YT873A8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -526,7 +542,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Leonardo-Daniele.crisantemi-game";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Brandizzi.crisantemi-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -544,7 +560,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 56AV2RD3G8;
+				DEVELOPMENT_TEAM = V9YT873A8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -559,7 +575,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Leonardo-Daniele.crisantemi-game";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Brandizzi.crisantemi-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
