@@ -57,8 +57,7 @@ extension LevelCreator: SKPhysicsContactDelegate {
     func contactPlayerFatuum(fatuumParentNode: SKNode) {
         AudioController.playSound(audioPlayer: AudioController.fatuumHit)
         fatuumParentNode.removeFromParent()
-        scoreNode.removeFromParent()
         points = MechanicsController.addPoint(actualPoints: points)
-        addScore()
+        scoreNode.text = "\(points)"
     }
 }

@@ -23,10 +23,10 @@ class GameParameters {
     static let nonClickableLabelOpacity: CGFloat = 0.3
 
     // FRAME
-    static let startingScoreOffsetX: CGFloat = 360
-    static let startingScoreOffsetY: CGFloat = 140
-    static let startingMenuButtonOffsetX: CGFloat = -360
-    static let startingMenuButtonOffsetY: CGFloat = 140
+    static let startingScoreOffsetX: CGFloat = 1500
+    static let startingScoreOffsetY: CGFloat = 250
+    static let startingMenuButtonOffsetX: CGFloat = -750
+    static let startingMenuButtonOffsetY: CGFloat = 250
     
     static let frameWidth: CGFloat = 2532
     static let frameHeight: CGFloat = 1170
@@ -38,6 +38,8 @@ class GameParameters {
     static let cameraFixedX: CGFloat = 0
     static let cameraFixedY: CGFloat = 15
     static let startingZoomScale: CGFloat = 0.5
+    static let zoomScaleFactor: CGFloat = 0.0007
+    static let zoomSpeedTranition: CGFloat = 0.2
     
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2
@@ -51,7 +53,7 @@ class GameParameters {
         var zoomScale: CGFloat = startingZoomScale
         let velocity = sqrt(pow(playerNode.physicsBody!.velocity.dx, 2) + pow(playerNode.physicsBody!.velocity.dy, 2))
         if zoomScale < 1 {
-            zoomScale += velocity/5000
+            zoomScale += velocity*zoomScaleFactor
         }
         return zoomScale
     }

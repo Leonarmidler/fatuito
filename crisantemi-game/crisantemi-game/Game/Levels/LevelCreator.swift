@@ -57,8 +57,8 @@ class LevelCreator: SKScene {
         
         self.camera = childNode(withName: "camera") as? SKCameraNode
         spawnPoint = playerNode.position
-        addScore()
         addMenu()
+        addScore()
         
     }
     
@@ -69,23 +69,11 @@ class LevelCreator: SKScene {
             UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!)
             
             // FIX FRAME POSITION WITH THE CAMERA
-            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
+//            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
             
             // FIX GRAVITY
             physicsWorld.gravity = MechanicsController.getTiltedGravityVector(motionManager: motionManager)
         }
-    }
-    
-    func addScore() {
-        scoreNode.text = "\(points)"
-        scoreNode.fontName = "Fatuito"
-        scoreNode.fontSize = GameParameters.inGameFontSize
-        
-        scoreNode.position = CGPoint(x: playerNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: playerNode.position.y + GameParameters.scoreOffsetY(playerNode: playerNode))
-        
-        scoreNode.setScale(2)
-        scoreNode.name = "score"
-        addChild(scoreNode)
     }
     
     func addMenu() {
@@ -93,9 +81,22 @@ class LevelCreator: SKScene {
         menuNode.fontName = "Fatuito"
         menuNode.fontSize = GameParameters.inGameFontSize
         
-        menuNode.setScale(2)
+        menuNode.position = CGPoint(x: GameParameters.menuButtonOffsetX(playerNode: playerNode), y: GameParameters.menuButtonOffsetY(playerNode: playerNode))
+        
+        
         menuNode.name = "menu"
-        addChild(menuNode)
+        camera!.addChild(menuNode)
+    }
+    
+    func addScore() {
+        scoreNode.text = "\(points)"
+        scoreNode.fontName = "Fatuito"
+        scoreNode.fontSize = GameParameters.inGameFontSize
+        
+        scoreNode.position = CGPoint(x:menuNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: menuNode.position.y)
+    
+        scoreNode.name = "score"
+        camera!.addChild(scoreNode)
     }
     
 }
