@@ -24,8 +24,13 @@
 		A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */; };
 		A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOver.swift */; };
 		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
+		A75E510029B51C9F00C63215 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50F929B51C9F00C63215 /* rain.sks */; };
+		A75E510129B51C9F00C63215 /* lights.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FA29B51C9F00C63215 /* lights.sks */; };
+		A75E510329B51C9F00C63215 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FC29B51C9F00C63215 /* smoke.sks */; };
+		A75E510429B51C9F00C63215 /* GulaguForest.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FD29B51C9F00C63215 /* GulaguForest.sks */; };
+		A75E510529B51C9F00C63215 /* rosa.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FE29B51C9F00C63215 /* rosa.sks */; };
 		A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */; };
-		A76254F529B1270D00E2A5D1 /* GulaguForest.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* GulaguForest.sks */; };
+		A76254F529B1270D00E2A5D1 /* GulaguForest2.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */; };
 		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
@@ -65,9 +70,14 @@
 		A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsController.swift; sourceTree = "<group>"; };
 		A7222B9029AE0A2E00D9B75A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		A72B6C3529AF59B600684336 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		A75E50F929B51C9F00C63215 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
+		A75E50FA29B51C9F00C63215 /* lights.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = lights.sks; sourceTree = "<group>"; };
+		A75E50FC29B51C9F00C63215 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
+		A75E50FD29B51C9F00C63215 /* GulaguForest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForest.sks; sourceTree = "<group>"; };
+		A75E50FE29B51C9F00C63215 /* rosa.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rosa.sks; sourceTree = "<group>"; };
 		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
 		A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
-		A76254F429B1270D00E2A5D1 /* GulaguForest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForest.sks; sourceTree = "<group>"; };
+		A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForest2.sks; sourceTree = "<group>"; };
 		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fatuito.ttf; sourceTree = "<group>"; };
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
@@ -130,6 +140,18 @@
 			path = GameOverScene;
 			sourceTree = "<group>";
 		};
+		A75E50F829B51C9F00C63215 /* AlinaLevels */ = {
+			isa = PBXGroup;
+			children = (
+				A75E50F929B51C9F00C63215 /* rain.sks */,
+				A75E50FA29B51C9F00C63215 /* lights.sks */,
+				A75E50FC29B51C9F00C63215 /* smoke.sks */,
+				A75E50FD29B51C9F00C63215 /* GulaguForest.sks */,
+				A75E50FE29B51C9F00C63215 /* rosa.sks */,
+			);
+			path = AlinaLevels;
+			sourceTree = "<group>";
+		};
 		A76254EA29B121B900E2A5D1 /* StageSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +164,7 @@
 		A76254F329B126F000E2A5D1 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				A76254F429B1270D00E2A5D1 /* GulaguForest.sks */,
+				A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -194,6 +216,7 @@
 				A76254EA29B121B900E2A5D1 /* StageSelector */,
 				A7222B8F29AE0A1700D9B75A /* GameOverScene */,
 				A7DF992B29A2CAB700D21CEC /* Controller */,
+				A75E50F829B51C9F00C63215 /* AlinaLevels */,
 				A7F49B1929B178240093A6EE /* Levels */,
 			);
 			path = Game;
@@ -317,7 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76254F529B1270D00E2A5D1 /* GulaguForest.sks in Resources */,
+				A76254F529B1270D00E2A5D1 /* GulaguForest2.sks in Resources */,
 				A7222B7C29ADF22A00D9B75A /* wallBump.wav in Resources */,
 				A7222B7D29ADF22A00D9B75A /* hitPlatform.wav in Resources */,
 				A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */,
@@ -333,9 +356,14 @@
 				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
+				A75E510129B51C9F00C63215 /* lights.sks in Resources */,
 				A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */,
+				A75E510329B51C9F00C63215 /* smoke.sks in Resources */,
+				A75E510029B51C9F00C63215 /* rain.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
+				A75E510529B51C9F00C63215 /* rosa.sks in Resources */,
 				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
+				A75E510429B51C9F00C63215 /* GulaguForest.sks in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
 				A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */,
 				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,

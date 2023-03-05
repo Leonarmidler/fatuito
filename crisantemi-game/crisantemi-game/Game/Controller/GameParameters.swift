@@ -39,7 +39,8 @@ class GameParameters {
     static let cameraFixedY: CGFloat = 15
     static let startingZoomScale: CGFloat = 0.5
     static let zoomScaleFactor: CGFloat = 0.0007
-    static let zoomTransitionTime: CGFloat = 0.4
+    static let cameraZoomDelay: CGFloat = 0.4
+    static let cameraMovevementDelay: CGFloat = 0.05
     
     // PHYSICS
     static let gravityScaleFactor: CGFloat = 0.2

@@ -33,9 +33,11 @@ struct UpdateController {
     }
     
     static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {
-        cameraNode.position = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
+        let newPosition = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
+        let moveAction = SKAction.move(to: newPosition, duration: GameParameters.cameraMovevementDelay)
+        cameraNode.run(moveAction)
         
-        let scaleAction = SKAction.scale(to: GameParameters.zoomScale(playerNode: playerNode), duration: GameParameters.zoomTransitionTime)
+        let scaleAction = SKAction.scale(to: GameParameters.zoomScale(playerNode: playerNode), duration: GameParameters.cameraZoomDelay)
         cameraNode.run(scaleAction)
     }
 }
