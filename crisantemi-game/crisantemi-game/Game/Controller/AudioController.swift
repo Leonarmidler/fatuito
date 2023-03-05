@@ -12,7 +12,7 @@ class AudioController {
     // AUDIOPLAYER
     static let arrowClick = setupAudio(audioPlayerName: "arrowClick")
     static let buttonClick = setupAudio(audioPlayerName: "buttonClick")
-    static let jump = setupAudio(audioPlayerName: "jump1")
+    static let jump = [setupAudio(audioPlayerName: "jump1"), setupAudio(audioPlayerName: "jump2")]
     static let fatuumHit = setupAudio(audioPlayerName: "fatuumsPickup")
     static let gulaguForest = setupAudio(audioPlayerName: "gulaguForest")
     

@@ -34,7 +34,8 @@ class MechanicsController {
     }
     
     static func jump(node: SKNode, motionManager: CMMotionManager) {
-        AudioController.playSound(audioPlayer: AudioController.jump)
+        let randomIndex = Int.random(in: 0...1)
+        AudioController.playSound(audioPlayer: AudioController.jump[randomIndex])
         let tiltedGravityVector = getTiltedGravityVector(motionManager: motionManager)
         node.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -tiltedGravityVector.dy+GameParameters.jumpIntensity*GameParameters.playerMass))
     }
