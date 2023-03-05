@@ -45,6 +45,7 @@
 		A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE676F29B1EEA60082FA83 /* Credits.swift */; };
 		A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */; };
 		A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677329B20AB70082FA83 /* gulaguForest.wav */; };
+		C713109929B4F7A900AE1179 /* lights.sks in Resources */ = {isa = PBXBuildFile; fileRef = C713109829B4F7A900AE1179 /* lights.sks */; };
 		C74DA8EE29B3AA83000DFD68 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8EC29B3AA83000DFD68 /* rain.sks */; };
 		C74DA8EF29B3AA83000DFD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */; };
 		C74DA8F129B3B09E000DFD68 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = C74DA8F029B3B09E000DFD68 /* smoke.sks */; };
@@ -92,6 +93,7 @@
 		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		A7FE677329B20AB70082FA83 /* gulaguForest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gulaguForest.wav; sourceTree = "<group>"; };
+		C713109829B4F7A900AE1179 /* lights.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = lights.sks; sourceTree = "<group>"; };
 		C74DA8EC29B3AA83000DFD68 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
 		C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74DA8F029B3B09E000DFD68 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C74DA8EC29B3AA83000DFD68 /* rain.sks */,
 				C74DA8F029B3B09E000DFD68 /* smoke.sks */,
 				C74DA8F429B3BDF7000DFD68 /* rosa.sks */,
+				C713109829B4F7A900AE1179 /* lights.sks */,
 				C74DA8ED29B3AA83000DFD68 /* Assets.xcassets */,
 			);
 			path = Levels;
@@ -349,6 +352,7 @@
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
 				A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */,
 				C74DA8EE29B3AA83000DFD68 /* rain.sks in Resources */,
+				C713109929B4F7A900AE1179 /* lights.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
 				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
