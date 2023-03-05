@@ -131,7 +131,7 @@ class Menu: SKScene {
             case "<":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 0 {
-                    labelSelector = 2
+                    labelSelector = 3
                 }
                 labelSelector -= 1
                 switchLabel()

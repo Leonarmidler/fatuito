@@ -101,7 +101,7 @@ class Credits: SKScene {
     }
     
     func addSonia() {
-        soniaNode.text = "Sonia Di Micoli"
+        soniaNode.text = "Sonia Di Nicoli"
         soniaNode.fontName = "Fatuito"
         
         soniaNode.fontSize = GameParameters.fontSize/2
