@@ -137,7 +137,6 @@ class Menu: SKScene {
                 switchLabel()
                 break
             case "play":
-                // SOUND PLAYED
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 
                 // GAME PARAM SET

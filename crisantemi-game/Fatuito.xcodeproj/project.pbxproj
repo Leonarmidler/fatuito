@@ -25,7 +25,7 @@
 		A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */; };
 		A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOver.swift */; };
 		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
-		A74BA77E29B6088600C11FF3 /* GulaguForestNilo.sks in Resources */ = {isa = PBXBuildFile; fileRef = A74BA77D29B6088600C11FF3 /* GulaguForestNilo.sks */; };
+		A74BA77E29B6088600C11FF3 /* GulaguForestNiko.sks in Resources */ = {isa = PBXBuildFile; fileRef = A74BA77D29B6088600C11FF3 /* GulaguForestNiko.sks */; };
 		A74BA78829B608FF00C11FF3 /* ground1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78029B608FF00C11FF3 /* ground1.pdf */; };
 		A74BA78929B608FF00C11FF3 /* ground2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78129B608FF00C11FF3 /* ground2.pdf */; };
 		A74BA78A29B608FF00C11FF3 /* ground3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78229B608FF00C11FF3 /* ground3.pdf */; };
@@ -79,7 +79,7 @@
 		A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsController.swift; sourceTree = "<group>"; };
 		A7222B9029AE0A2E00D9B75A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		A72B6C3529AF59B600684336 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
-		A74BA77D29B6088600C11FF3 /* GulaguForestNilo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForestNilo.sks; sourceTree = "<group>"; };
+		A74BA77D29B6088600C11FF3 /* GulaguForestNiko.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForestNiko.sks; sourceTree = "<group>"; };
 		A74BA78029B608FF00C11FF3 /* ground1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground1.pdf; sourceTree = "<group>"; };
 		A74BA78129B608FF00C11FF3 /* ground2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground2.pdf; sourceTree = "<group>"; };
 		A74BA78229B608FF00C11FF3 /* ground3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground3.pdf; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A74BA77F29B608FF00C11FF3 /* PDF ASSETS */,
-				A74BA77D29B6088600C11FF3 /* GulaguForest3.sks */,
+				A74BA77D29B6088600C11FF3 /* GulaguForestNiko.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 				A7222B7D29ADF22A00D9B75A /* hitPlatform.wav in Resources */,
 				A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */,
 				A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */,
-				A74BA77E29B6088600C11FF3 /* GulaguForestNilo.sks in Resources */,
+				A74BA77E29B6088600C11FF3 /* GulaguForestNiko.sks in Resources */,
 				A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */,
 				A74BA78B29B608FF00C11FF3 /* grass2.pdf in Resources */,
 				A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */,
