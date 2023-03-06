@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01BF5A8429B6223B000F7FE3 /* Animations.sks */; };
 		A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709581C29B159B700B6BD41 /* UpdateController.swift */; };
 		A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6D29ADF22A00D9B75A /* fallingDown.wav */; };
 		A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01BF5A8429B6223B000F7FE3 /* Animations.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Animations.sks; sourceTree = "<group>"; };
 		A709581C29B159B700B6BD41 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		A7222B6D29ADF22A00D9B75A /* fallingDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallingDown.wav; sourceTree = "<group>"; };
 		A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fatuumsPickup.wav; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		A75E50F829B51C9F00C63215 /* AlinaLevels */ = {
 			isa = PBXGroup;
 			children = (
+				01BF5A8429B6223B000F7FE3 /* Animations.sks */,
 				A75E50F929B51C9F00C63215 /* rain.sks */,
 				A75E50FA29B51C9F00C63215 /* lights.sks */,
 				A75E50FC29B51C9F00C63215 /* smoke.sks */,
@@ -381,6 +384,7 @@
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
 				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
+				01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */,
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
 				A75E510129B51C9F00C63215 /* lights.sks in Resources */,
 				A74BA78C29B608FF00C11FF3 /* grass3.pdf in Resources */,
