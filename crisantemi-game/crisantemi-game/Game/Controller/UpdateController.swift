@@ -10,7 +10,7 @@ import SpriteKit
 
 struct UpdateController {
     
-    static func fixFramePosition(playerNode: SKNode, menuNode: SKNode, scoreNode: SKNode) {
+    static func fixFramePosition(playerNode: SKNode, menuNode: SKNode, scoreNode: SKNode, cameraNode: SKNode) {
         // SCALE MENU AND SCORE
         let newScale = GameParameters.zoomScale(playerNode: playerNode)
         let scaleAction = SKAction.scale(to: newScale, duration: 0.1)
@@ -19,17 +19,16 @@ struct UpdateController {
         
         
         // MOVE MENU
-        let menuNewPosition = CGPoint(x: playerNode.position.x + GameParameters.menuButtonOffsetX(playerNode: playerNode), y: playerNode.position.y + GameParameters.menuButtonOffsetY(playerNode: playerNode))
+        let menuNewPosition = CGPoint(x: playerNode.position.x + GameParameters.menuButtonOffsetX(playerNode: playerNode), y: cameraNode.position.y + GameParameters.menuButtonOffsetY(playerNode: playerNode))
         let menuMoveAction = SKAction.move(to: menuNewPosition, duration: 0.1)
         
         menuNode.run(menuMoveAction)
         
         // MOVE SCORE
-        let scoreNewPosition = CGPoint(x: playerNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: playerNode.position.y + GameParameters.scoreOffsetY(playerNode: playerNode))
+        let scoreNewPosition = CGPoint(x: playerNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: cameraNode.position.y + GameParameters.scoreOffsetY(playerNode: playerNode))
         let scoreMoveAction = SKAction.move(to: scoreNewPosition, duration: 0.1)
     
         scoreNode.run(scoreMoveAction)
-        
     }
     
     static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {

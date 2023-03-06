@@ -19,9 +19,6 @@ extension LevelCreator: SKPhysicsContactDelegate {
     
     func checkCollision(contact: SKPhysicsContact) {
         if contact.bodyA.node == playerNode {
-//            if contact.bodyB.node?.parent?.name == "fatuum" {
-//                contactPlayerFatuum(fatuumParentNode: contact.bodyB.node!)
-//            }
             if contact.bodyB.node?.parent == groundParentNode {
                 contactPlayerGround()
             }
@@ -29,9 +26,6 @@ extension LevelCreator: SKPhysicsContactDelegate {
                 contactPlayerToken()
             }
         } else if contact.bodyB.node == playerNode {
-//            if contact.bodyA.node?.parent?.name == "fatuum" {
-//                contactPlayerFatuum(fatuumParentNode: contact.bodyA.node!)
-//            }
             if contact.bodyA.node?.parent == groundParentNode {
                 contactPlayerGround()
             }

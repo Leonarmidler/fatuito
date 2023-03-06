@@ -31,10 +31,10 @@ struct AnimationController {
     }
     
     static func phoneRotate(phoneNode: SKNode) {
-        let firstRotateRight = SKAction.rotate(byAngle: 30, duration: 0.5)
-        let rotateLeftAction = SKAction.rotate(byAngle: -60, duration: 1)
-        let rotateRight = SKAction.rotate(byAngle: 60, duration: 1)
-        let actionWait = SKAction.wait(forDuration: 0.5)
+        let firstRotateRight = SKAction.rotate(byAngle: 3.14/6, duration: 0.5)
+        let rotateLeftAction = SKAction.rotate(byAngle: -3.14/3, duration: 1)
+        let rotateRight = SKAction.rotate(byAngle: 3.14/3, duration: 1)
+        let actionWait = SKAction.wait(forDuration: 1)
         let fadeOutAction = SKAction.fadeOut(withDuration: 0.5)
         
         let sequence = SKAction.sequence([firstRotateRight, actionWait, rotateLeftAction, actionWait, rotateRight,actionWait, fadeOutAction])

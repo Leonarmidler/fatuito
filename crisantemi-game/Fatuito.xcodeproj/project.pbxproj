@@ -24,6 +24,15 @@
 		A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */; };
 		A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7222B9029AE0A2E00D9B75A /* GameOver.swift */; };
 		A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A72B6C3529AF59B600684336 /* GameOverScene.sks */; };
+		A74BA77E29B6088600C11FF3 /* GulaguForest3.sks in Resources */ = {isa = PBXBuildFile; fileRef = A74BA77D29B6088600C11FF3 /* GulaguForest3.sks */; };
+		A74BA78829B608FF00C11FF3 /* ground1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78029B608FF00C11FF3 /* ground1.pdf */; };
+		A74BA78929B608FF00C11FF3 /* ground2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78129B608FF00C11FF3 /* ground2.pdf */; };
+		A74BA78A29B608FF00C11FF3 /* ground3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78229B608FF00C11FF3 /* ground3.pdf */; };
+		A74BA78B29B608FF00C11FF3 /* grass2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78329B608FF00C11FF3 /* grass2.pdf */; };
+		A74BA78C29B608FF00C11FF3 /* grass3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78429B608FF00C11FF3 /* grass3.pdf */; };
+		A74BA78D29B608FF00C11FF3 /* grass1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78529B608FF00C11FF3 /* grass1.pdf */; };
+		A74BA78E29B608FF00C11FF3 /* wall1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78629B608FF00C11FF3 /* wall1.pdf */; };
+		A74BA78F29B608FF00C11FF3 /* grasswall1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A74BA78729B608FF00C11FF3 /* grasswall1.pdf */; };
 		A75E510029B51C9F00C63215 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50F929B51C9F00C63215 /* rain.sks */; };
 		A75E510129B51C9F00C63215 /* lights.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FA29B51C9F00C63215 /* lights.sks */; };
 		A75E510329B51C9F00C63215 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FC29B51C9F00C63215 /* smoke.sks */; };
@@ -70,6 +79,15 @@
 		A7222B8B29ADFC4C00D9B75A /* PhysicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsController.swift; sourceTree = "<group>"; };
 		A7222B9029AE0A2E00D9B75A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		A72B6C3529AF59B600684336 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		A74BA77D29B6088600C11FF3 /* GulaguForest3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForest3.sks; sourceTree = "<group>"; };
+		A74BA78029B608FF00C11FF3 /* ground1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground1.pdf; sourceTree = "<group>"; };
+		A74BA78129B608FF00C11FF3 /* ground2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground2.pdf; sourceTree = "<group>"; };
+		A74BA78229B608FF00C11FF3 /* ground3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ground3.pdf; sourceTree = "<group>"; };
+		A74BA78329B608FF00C11FF3 /* grass2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grass2.pdf; sourceTree = "<group>"; };
+		A74BA78429B608FF00C11FF3 /* grass3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grass3.pdf; sourceTree = "<group>"; };
+		A74BA78529B608FF00C11FF3 /* grass1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grass1.pdf; sourceTree = "<group>"; };
+		A74BA78629B608FF00C11FF3 /* wall1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = wall1.pdf; sourceTree = "<group>"; };
+		A74BA78729B608FF00C11FF3 /* grasswall1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grasswall1.pdf; sourceTree = "<group>"; };
 		A75E50F929B51C9F00C63215 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
 		A75E50FA29B51C9F00C63215 /* lights.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = lights.sks; sourceTree = "<group>"; };
 		A75E50FC29B51C9F00C63215 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
@@ -140,6 +158,21 @@
 			path = GameOverScene;
 			sourceTree = "<group>";
 		};
+		A74BA77F29B608FF00C11FF3 /* PDF ASSETS */ = {
+			isa = PBXGroup;
+			children = (
+				A74BA78029B608FF00C11FF3 /* ground1.pdf */,
+				A74BA78129B608FF00C11FF3 /* ground2.pdf */,
+				A74BA78229B608FF00C11FF3 /* ground3.pdf */,
+				A74BA78329B608FF00C11FF3 /* grass2.pdf */,
+				A74BA78429B608FF00C11FF3 /* grass3.pdf */,
+				A74BA78529B608FF00C11FF3 /* grass1.pdf */,
+				A74BA78629B608FF00C11FF3 /* wall1.pdf */,
+				A74BA78729B608FF00C11FF3 /* grasswall1.pdf */,
+			);
+			path = "PDF ASSETS";
+			sourceTree = "<group>";
+		};
 		A75E50F829B51C9F00C63215 /* AlinaLevels */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +197,9 @@
 		A76254F329B126F000E2A5D1 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				A74BA77F29B608FF00C11FF3 /* PDF ASSETS */,
 				A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */,
+				A74BA77D29B6088600C11FF3 /* GulaguForest3.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -342,28 +377,37 @@
 			files = (
 				A76254F529B1270D00E2A5D1 /* GulaguForest2.sks in Resources */,
 				A7222B7C29ADF22A00D9B75A /* wallBump.wav in Resources */,
+				A74BA78F29B608FF00C11FF3 /* grasswall1.pdf in Resources */,
+				A74BA78E29B608FF00C11FF3 /* wall1.pdf in Resources */,
+				A74BA78929B608FF00C11FF3 /* ground2.pdf in Resources */,
 				A7222B7D29ADF22A00D9B75A /* hitPlatform.wav in Resources */,
 				A7222B8229ADF22A00D9B75A /* jump1.wav in Resources */,
 				A7DF46E629A0EC7800DC9A66 /* Main.storyboard in Resources */,
+				A74BA77E29B6088600C11FF3 /* GulaguForest3.sks in Resources */,
 				A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */,
+				A74BA78B29B608FF00C11FF3 /* grass2.pdf in Resources */,
 				A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */,
 				A7DF46E829A0EC7900DC9A66 /* Assets.xcassets in Resources */,
 				A7222B7F29ADF22A00D9B75A /* death.wav in Resources */,
 				A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */,
 				A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */,
 				A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */,
+				A74BA78829B608FF00C11FF3 /* ground1.pdf in Resources */,
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
 				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
 				A75E510129B51C9F00C63215 /* lights.sks in Resources */,
+				A74BA78C29B608FF00C11FF3 /* grass3.pdf in Resources */,
 				A7222B8129ADF22A00D9B75A /* jump2.wav in Resources */,
+				A74BA78A29B608FF00C11FF3 /* ground3.pdf in Resources */,
 				A75E510329B51C9F00C63215 /* smoke.sks in Resources */,
 				A75E510029B51C9F00C63215 /* rain.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
 				A75E510529B51C9F00C63215 /* rosa.sks in Resources */,
 				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 				A75E510429B51C9F00C63215 /* GulaguForest.sks in Resources */,
+				A74BA78D29B608FF00C11FF3 /* grass1.pdf in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
 				A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */,
 				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,

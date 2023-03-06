@@ -26,6 +26,7 @@ class LevelCreator: SKScene {
     var groundParentNode: SKNode!
     var fatuumParentNode: SKNode!
     var tokenNode: SKNode!
+//    var phoneNode: SKNode!
     var scoreNode = SKLabelNode()
     var menuNode = SKLabelNode()
     
@@ -61,6 +62,7 @@ class LevelCreator: SKScene {
         spawnPoint = playerNode.position
         addMenu()
         addScore()
+        addPhone()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -80,15 +82,15 @@ class LevelCreator: SKScene {
     }
     
     func addMenu() {
-        menuNode.text = "I I"
+        menuNode.text = "home"
         menuNode.fontName = "Fatuito"
         menuNode.fontSize = GameParameters.inGameFontSize
         
         menuNode.position = CGPoint(x: GameParameters.menuButtonOffsetX(playerNode: playerNode), y: GameParameters.menuButtonOffsetY(playerNode: playerNode))
-        
+        menuNode.zPosition = 5
         
         menuNode.name = "menu"
-        camera!.addChild(menuNode)
+        self.camera!.addChild(menuNode)
     }
     
     func addScore() {
@@ -96,10 +98,22 @@ class LevelCreator: SKScene {
         scoreNode.fontName = "Fatuito"
         scoreNode.fontSize = GameParameters.inGameFontSize
         
-        scoreNode.position = CGPoint(x:menuNode.position.x + GameParameters.scoreOffsetX(playerNode: playerNode), y: menuNode.position.y)
+        scoreNode.position = CGPoint(x: GameParameters.scoreOffsetX(playerNode: playerNode) , y: GameParameters.scoreOffsetY(playerNode: playerNode))
+        scoreNode.zPosition = 5
     
         scoreNode.name = "score"
-        camera!.addChild(scoreNode)
+        self.camera!.addChild(scoreNode)
+    }
+    
+    func addPhone() {
+        let phoneNode = SKSpriteNode(imageNamed: "phoneTilt")
+        phoneNode.position = CGPoint(x: frame.midX, y: frame.midY - 140)
+        phoneNode.setScale(0.3)
+        phoneNode.zPosition = 5
+        phoneNode.alpha = 0.5
+        
+        self.camera!.addChild(phoneNode)
+        AnimationController.phoneRotate(phoneNode: phoneNode)
     }
     
 }
