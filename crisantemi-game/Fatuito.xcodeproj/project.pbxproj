@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01BF5A8429B6223B000F7FE3 /* Animations.sks */; };
 		A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709581C29B159B700B6BD41 /* UpdateController.swift */; };
 		A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6D29ADF22A00D9B75A /* fallingDown.wav */; };
 		A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */; };
@@ -39,8 +40,6 @@
 		A75E510429B51C9F00C63215 /* GulaguForest.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FD29B51C9F00C63215 /* GulaguForest.sks */; };
 		A75E510529B51C9F00C63215 /* rosa.sks in Resources */ = {isa = PBXBuildFile; fileRef = A75E50FE29B51C9F00C63215 /* rosa.sks */; };
 		A76254F229B122CA00E2A5D1 /* StageSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */; };
-		A76254F529B1270D00E2A5D1 /* GulaguForest2.sks in Resources */ = {isa = PBXBuildFile; fileRef = A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */; };
-		A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */; };
 		A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */; };
 		A7D3905929A2D643009FDE81 /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7D3905829A2D643009FDE81 /* MenuScene.sks */; };
 		A7DF46DB29A0EC7800DC9A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */; };
@@ -62,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01BF5A8429B6223B000F7FE3 /* Animations.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Animations.sks; sourceTree = "<group>"; };
 		A709581C29B159B700B6BD41 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		A7222B6D29ADF22A00D9B75A /* fallingDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallingDown.wav; sourceTree = "<group>"; };
 		A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fatuumsPickup.wav; sourceTree = "<group>"; };
@@ -95,8 +95,6 @@
 		A75E50FE29B51C9F00C63215 /* rosa.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rosa.sks; sourceTree = "<group>"; };
 		A75F3DC029ACAC75008013EF /* Fatuito-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fatuito-Info.plist"; sourceTree = "<group>"; };
 		A76254F129B122CA00E2A5D1 /* StageSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageSelectScene.sks; sourceTree = "<group>"; };
-		A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GulaguForest2.sks; sourceTree = "<group>"; };
-		A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTestScene.sks; sourceTree = "<group>"; };
 		A7CBE21629AD5DC900BBFC8B /* Fatuito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fatuito.ttf; sourceTree = "<group>"; };
 		A7D3905829A2D643009FDE81 /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		A7DF46D729A0EC7800DC9A66 /* Fatuito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fatuito.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +174,7 @@
 		A75E50F829B51C9F00C63215 /* AlinaLevels */ = {
 			isa = PBXGroup;
 			children = (
+				01BF5A8429B6223B000F7FE3 /* Animations.sks */,
 				A75E50F929B51C9F00C63215 /* rain.sks */,
 				A75E50FA29B51C9F00C63215 /* lights.sks */,
 				A75E50FC29B51C9F00C63215 /* smoke.sks */,
@@ -198,8 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A74BA77F29B608FF00C11FF3 /* PDF ASSETS */,
-				A76254F429B1270D00E2A5D1 /* GulaguForest2.sks */,
-				A74BA77D29B6088600C11FF3 /* GulaguForestNilo.sks */,
+				A74BA77D29B6088600C11FF3 /* GulaguForest3.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -266,14 +264,6 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		A7DF992529A2C4C100D21CEC /* TestLevel */ = {
-			isa = PBXGroup;
-			children = (
-				A78671A529A8C8D800B5DE6F /* LevelTestScene.sks */,
-			);
-			path = TestLevel;
-			sourceTree = "<group>";
-		};
 		A7DF992629A2C4CA00D21CEC /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,7 +293,6 @@
 				A7DF46F629A0ED7000DC9A66 /* LevelContactController.swift */,
 				A7DF46F829A0EDB300DC9A66 /* LevelTouchController.swift */,
 				A76254F329B126F000E2A5D1 /* Levels */,
-				A7DF992529A2C4C100D21CEC /* TestLevel */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -375,7 +364,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A76254F529B1270D00E2A5D1 /* GulaguForest2.sks in Resources */,
 				A7222B7C29ADF22A00D9B75A /* wallBump.wav in Resources */,
 				A74BA78F29B608FF00C11FF3 /* grasswall1.pdf in Resources */,
 				A74BA78E29B608FF00C11FF3 /* wall1.pdf in Resources */,
@@ -396,6 +384,7 @@
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
 				A72B6C3629AF59B600684336 /* GameOverScene.sks in Resources */,
 				A7DF46EB29A0EC7900DC9A66 /* LaunchScreen.storyboard in Resources */,
+				01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */,
 				A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */,
 				A75E510129B51C9F00C63215 /* lights.sks in Resources */,
 				A74BA78C29B608FF00C11FF3 /* grass3.pdf in Resources */,
@@ -405,7 +394,6 @@
 				A75E510029B51C9F00C63215 /* rain.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
 				A75E510529B51C9F00C63215 /* rosa.sks in Resources */,
-				A78671A629A8C8D800B5DE6F /* LevelTestScene.sks in Resources */,
 				A75E510429B51C9F00C63215 /* GulaguForest.sks in Resources */,
 				A74BA78D29B608FF00C11FF3 /* grass1.pdf in Resources */,
 				A7222B8329ADF22A00D9B75A /* tripopSpawn.wav in Resources */,
