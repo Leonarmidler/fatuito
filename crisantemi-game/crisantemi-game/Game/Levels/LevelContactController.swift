@@ -61,7 +61,7 @@ extension LevelCreator: SKPhysicsContactDelegate {
     
     func contactPlayerFatuum(fatumNode: SKNode){
         AudioController.playSound(audioPlayer: AudioController.fatuumHit)
-        let particleEffect = SKEmitterNode(fileNamed: "pickupParticle.sks")!
+        let particleEffect = SKEmitterNode(fileNamed: "fatumpickup.sks")!
         particleEffect.position = fatumNode.position
         let actionWait = SKAction.wait(forDuration: 0.2)
         let actionRemove = SKAction.removeFromParent()
