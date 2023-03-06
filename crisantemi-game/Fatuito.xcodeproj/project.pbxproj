@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A99BA429B69BF600FB369A /* fatumpickup.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01A99BA329B69BF600FB369A /* fatumpickup.sks */; };
 		01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01BF5A8429B6223B000F7FE3 /* Animations.sks */; };
 		A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709581C29B159B700B6BD41 /* UpdateController.swift */; };
 		A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6D29ADF22A00D9B75A /* fallingDown.wav */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A99BA329B69BF600FB369A /* fatumpickup.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fatumpickup.sks; sourceTree = "<group>"; };
 		01BF5A8429B6223B000F7FE3 /* Animations.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Animations.sks; sourceTree = "<group>"; };
 		A709581C29B159B700B6BD41 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		A7222B6D29ADF22A00D9B75A /* fallingDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallingDown.wav; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A75E50F929B51C9F00C63215 /* rain.sks */,
 				A75E50FA29B51C9F00C63215 /* lights.sks */,
 				A75E50FD29B51C9F00C63215 /* GulaguForest.sks */,
+				01A99BA329B69BF600FB369A /* fatumpickup.sks */,
 				A75E50FE29B51C9F00C63215 /* rosa.sks */,
 			);
 			path = AlinaLevels;
@@ -396,6 +399,7 @@
 				A7222B7B29ADF22A00D9B75A /* hitSpikes.wav in Resources */,
 				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,
 				A7222B8029ADF22A00D9B75A /* bushWalk.wav in Resources */,
+				01A99BA429B69BF600FB369A /* fatumpickup.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
