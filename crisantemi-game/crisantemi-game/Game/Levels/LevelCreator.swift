@@ -69,7 +69,7 @@ class LevelCreator: SKScene {
         // Called before each frame is rendered
         if shouldUpdate {
             //FIX CAMERA
-            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!)
+            UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!, wallParentNode: childNode(withName: "wall")!)
             
             // FIX FRAME POSITION WITH THE CAMERA
             //            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
