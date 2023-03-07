@@ -31,12 +31,24 @@ struct UpdateController {
         scoreNode.run(scoreMoveAction)
     }
     
-    static func fixCamera(cameraNode: SKNode, playerNode: SKNode) {
-        let newPosition = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
+    static func fixCamera(cameraNode: SKNode, playerNode: SKNode, wallParentNode: SKNode) {
+        var newPosition = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
+        let zoomScale = GameParameters.zoomScale(playerNode: playerNode)
+        
+        for childrenNode in wallParentNode.children {
+            let distanceX = abs(childrenNode.position.x - playerNode.position.x)
+            if distanceX <= 100/zoomScale {
+                newPosition.x = cameraNode.position.x
+                break
+            } else {
+                newPosition = CGPoint(x: playerNode.position.x + GameParameters.cameraFixedX, y: playerNode.position.y + GameParameters.cameraFixedY)
+            }
+        }
+        
         let moveAction = SKAction.move(to: newPosition, duration: GameParameters.cameraMovevementDelay)
         cameraNode.run(moveAction)
         
-        let scaleAction = SKAction.scale(to: GameParameters.zoomScale(playerNode: playerNode), duration: GameParameters.cameraZoomDelay)
+        let scaleAction = SKAction.scale(to: zoomScale, duration: GameParameters.cameraZoomDelay)
         cameraNode.run(scaleAction)
     }
 }
