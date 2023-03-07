@@ -114,6 +114,7 @@
 		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		A7FE677329B20AB70082FA83 /* gulaguForest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gulaguForest.wav; sourceTree = "<group>"; };
+		C747162829B74FA700D668A0 /* logoAnimation.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = logoAnimation.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +268,7 @@
 		A7DF992629A2C4CA00D21CEC /* MenuScene */ = {
 			isa = PBXGroup;
 			children = (
+				C747162829B74FA700D668A0 /* logoAnimation.sks */,
 				A7D3905829A2D643009FDE81 /* MenuScene.sks */,
 				A7DF992729A2C4EC00D21CEC /* Menu.swift */,
 			);
