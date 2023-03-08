@@ -82,7 +82,7 @@ class LevelCreator: SKScene {
     }
     
     func addMenu() {
-        menuNode.text = "home"
+        menuNode.text = "| |"
         menuNode.fontName = "Fatuito"
         menuNode.fontSize = GameParameters.inGameFontSize
         
