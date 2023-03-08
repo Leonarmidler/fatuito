@@ -9,6 +9,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import SwiftUI
 
 class Menu: SKScene {
     // SELECTOR
@@ -23,6 +24,7 @@ class Menu: SKScene {
     var playNode = SKLabelNode()
     var stageSelectNode = SKLabelNode()
     var creditsLabel = SKLabelNode()
+    var settingsLabel = SKLabelNode()
     var quitNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
@@ -34,7 +36,7 @@ class Menu: SKScene {
         
         addPlayLabel()
         addCreditsNode()
-
+        addSettingsLabel()
         addSelectedLabel()
     }
     
@@ -45,7 +47,8 @@ class Menu: SKScene {
     func addSelectedLabel() {
         switch labelSelector {
         case 0: selectedLabel = playNode; break
-        case 1: selectedLabel = creditsLabel; break
+        case 1: selectedLabel = settingsLabel; break
+        case 2: selectedLabel = creditsLabel; break
         default: break
         }
         
@@ -105,13 +108,22 @@ class Menu: SKScene {
         creditsLabel.name = "credits"
     }
     
+    func addSettingsLabel() {
+        settingsLabel.text = "SETTINGS"
+        settingsLabel.fontName = "Fatuito"
+        settingsLabel.fontSize = GameParameters.fontSize
+        settingsLabel.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
+        
+        settingsLabel.name = "settings"
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
             switch node.name {
             case ">":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
-                if labelSelector == 1 {
+                if labelSelector == 2 {
                     labelSelector = -1
                 }
                 labelSelector += 1
@@ -120,7 +132,7 @@ class Menu: SKScene {
             case "<":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 0 {
-                    labelSelector = 2
+                    labelSelector = 3
                 }
                 labelSelector -= 1
                 switchLabel()
@@ -139,6 +151,9 @@ class Menu: SKScene {
             case "credits":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: Credits(fileNamed: "CreditsScene")!)
+            case "settings":
+                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                GameParameters.switchScene(fromScene: self, toScene: Settings(fileNamed: "SettingsScene")!)
             default: break
             }
         }

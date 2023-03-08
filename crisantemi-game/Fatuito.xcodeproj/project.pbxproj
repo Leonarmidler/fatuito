@@ -61,6 +61,8 @@
 		A7F49B1B29B179000093A6EE /* StageSelect1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F49B1A29B179000093A6EE /* StageSelect1.swift */; };
 		A7FAF06E29B9394400A7B42E /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FAF06D29B9394400A7B42E /* PauseScene.sks */; };
 		A7FAF07029B9394900A7B42E /* Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAF06F29B9394900A7B42E /* Pause.swift */; };
+		A7FAF07329B9469900A7B42E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAF07229B9469900A7B42E /* Settings.swift */; };
+		A7FAF07529B946A400A7B42E /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FAF07429B946A400A7B42E /* SettingsScene.sks */; };
 		A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE676F29B1EEA60082FA83 /* Credits.swift */; };
 		A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */; };
 		A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677329B20AB70082FA83 /* gulaguForest.wav */; };
@@ -123,6 +125,8 @@
 		A7F49B1A29B179000093A6EE /* StageSelect1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelect1.swift; sourceTree = "<group>"; };
 		A7FAF06D29B9394400A7B42E /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
 		A7FAF06F29B9394900A7B42E /* Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pause.swift; sourceTree = "<group>"; };
+		A7FAF07229B9469900A7B42E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A7FAF07429B946A400A7B42E /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
 		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		A7FE677329B20AB70082FA83 /* gulaguForest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gulaguForest.wav; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */,
+				A7FAF07129B9468F00A7B42E /* Settings */,
 				A7FE676E29B1EE860082FA83 /* Credits */,
 				A7DF992629A2C4CA00D21CEC /* MenuScene */,
 				A76254EA29B121B900E2A5D1 /* StageSelector */,
@@ -323,6 +328,15 @@
 				A7FAF06F29B9394900A7B42E /* Pause.swift */,
 			);
 			path = Pause;
+			sourceTree = "<group>";
+		};
+		A7FAF07129B9468F00A7B42E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A7FAF07429B946A400A7B42E /* SettingsScene.sks */,
+				A7FAF07229B9469900A7B42E /* Settings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A7FE676E29B1EE860082FA83 /* Credits */ = {
@@ -423,6 +437,7 @@
 				A74BA78A29B608FF00C11FF3 /* ground3.pdf in Resources */,
 				A75E510029B51C9F00C63215 /* rain.sks in Resources */,
 				A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */,
+				A7FAF07529B946A400A7B42E /* SettingsScene.sks in Resources */,
 				A75E510529B51C9F00C63215 /* rosa.sks in Resources */,
 				A75E510429B51C9F00C63215 /* Gulagu Forest.sks in Resources */,
 				A74BA78D29B608FF00C11FF3 /* grass1.pdf in Resources */,
@@ -459,6 +474,7 @@
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
 				A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
+				A7FAF07329B9469900A7B42E /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
