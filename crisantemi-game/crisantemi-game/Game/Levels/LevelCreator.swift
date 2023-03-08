@@ -26,13 +26,18 @@ class LevelCreator: SKScene {
     var groundParentNode: SKNode!
     var fatuumParentNode: SKNode!
     var tokenNode: SKNode!
-//    var phoneNode: SKNode!
     var scoreNode = SKLabelNode()
     var menuNode = SKLabelNode()
+    
+    // PAUSE NODES
+    var bgNode: SKNode!
+    var resumeNode = SKLabelNode()
+    var quitNode = SKLabelNode()
     
     // BOOL CHECKS
     var shouldUpdate = true
     var canJump = true
+    var notPaused = true
     
     // MOTION MANAGER
     let motionManager = CMMotionManager()
@@ -70,6 +75,7 @@ class LevelCreator: SKScene {
         if shouldUpdate {
             //FIX CAMERA
             UpdateController.fixCamera(cameraNode: self.camera!, playerNode: childNode(withName: "player")!, wallParentNode: childNode(withName: "wall")!)
+            self.camera?.zPosition = 50
             
             // FIX FRAME POSITION WITH THE CAMERA
             //            UpdateController.fixFramePosition(playerNode: playerNode, menuNode: menuNode, scoreNode: scoreNode)
@@ -116,4 +122,30 @@ class LevelCreator: SKScene {
         AnimationController.phoneRotate(phoneNode: phoneNode)
     }
     
+    func addResumeNode() {
+        resumeNode.text = "Resume"
+        resumeNode.fontName = "Fatuito"
+        resumeNode.fontSize = GameParameters.inGameFontSize
+        resumeNode.alpha = 1
+        
+        resumeNode.position = CGPoint(x: frame.midX, y: frame.midY + 50)
+        resumeNode.zPosition = 10
+        
+        resumeNode.name = "resume"
+        camera!.addChild(resumeNode)
+    }
+    
+    func addQuitNode() {
+        quitNode.text = "Quit"
+        quitNode.fontName = "Fatuito"
+        quitNode.fontSize = GameParameters.inGameFontSize
+        quitNode.alpha = 1
+        
+        quitNode.position = CGPoint(x: frame.midX, y: frame.midY - 50)
+        quitNode.zPosition = 10
+        
+        quitNode.name = "quit"
+        camera!.addChild(quitNode)
+    }
+
 }

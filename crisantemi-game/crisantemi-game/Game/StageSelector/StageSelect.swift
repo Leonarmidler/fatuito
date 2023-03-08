@@ -53,6 +53,7 @@ class StageSelect: SKScene {
         startButtonNode.fontName = "Fatuito"
         startButtonNode.fontSize = GameParameters.fontSize/1.5
         
+        startButtonNode.alpha = 0.5
         startButtonNode.position = CGPoint(x: frame.midX + frame.width/3, y: frame.midY - 3*GameParameters.fontSize)
         
         startButtonNode.name = "start"

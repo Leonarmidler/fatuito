@@ -13,25 +13,48 @@ extension LevelCreator {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             let node = self.atPoint(t.location(in :self))
-            switch node.name {
-            case "menu":
-                shouldUpdate = false
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                
-                // SWITCH SCENE
-                let menuScene = Menu(fileNamed: "MenuScene")!
-                menuScene.scaleMode = .aspectFill
-                GameParameters.switchScene(fromScene: self, toScene: menuScene)
-                break
-            default:
-                if canJump {
-                    MechanicsController.jump(node: playerNode, motionManager: motionManager)
-                    canJump = false
+            
+            if self.notPaused {
+                switch node.name {
+                case "menu":
+                    AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                    scene?.isPaused = true
+                    addQuitNode()
+                    addResumeNode()
+                    shouldUpdate.toggle()
+                    notPaused.toggle()
+                    break
+                default:
+                    if canJump {
+                        MechanicsController.jump(node: playerNode, motionManager: motionManager)
+                        canJump = false
+                    }
+                    break
                 }
-                break
+            } else {
+                switch node.name {
+                case "resume":
+                    scene?.isPaused = false
+                    resumeNode.removeFromParent()
+                    quitNode.removeFromParent()
+                    notPaused.toggle()
+                    shouldUpdate.toggle()
+                    break
+                case "quit":
+                    // SWITCH SCENE
+                    shouldUpdate = false
+                    AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                    let menuScene = Menu(fileNamed: "MenuScene")!
+                    menuScene.scaleMode = .aspectFill
+                    GameParameters.switchScene(fromScene: self, toScene: menuScene)
+                    break
+                default:
+                    break
+                }
             }
         }
     }
+    
     
     // ALL TOUCH FUNCTIONS
     func touchDown(atPoint pos : CGPoint) {}

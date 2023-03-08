@@ -25,7 +25,7 @@ class GameParameters {
     // FRAME
     static let startingScoreOffsetX: CGFloat = 750
     static let startingScoreOffsetY: CGFloat = 250
-    static let startingMenuButtonOffsetX: CGFloat = -650
+    static let startingMenuButtonOffsetX: CGFloat = -750
     static let startingMenuButtonOffsetY: CGFloat = 250
     
     static let frameWidth: CGFloat = 2532
