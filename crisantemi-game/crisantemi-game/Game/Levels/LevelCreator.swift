@@ -113,7 +113,7 @@ class LevelCreator: SKScene {
     
     func addPhone() {
         let phoneNode = SKSpriteNode(imageNamed: "phoneTilt")
-        phoneNode.position = CGPoint(x: frame.midX, y: frame.midY - 140)
+        phoneNode.position = CGPoint(x: frame.midX, y: frame.midY )
         phoneNode.setScale(0.3)
         phoneNode.zPosition = 5
         phoneNode.alpha = 0.5
@@ -123,7 +123,7 @@ class LevelCreator: SKScene {
     }
     
     func addResumeNode() {
-        resumeNode.text = "Resume"
+        resumeNode.text = TextController.resumeNode()
         resumeNode.fontName = "Fatuito"
         resumeNode.fontSize = GameParameters.inGameFontSize
         resumeNode.alpha = 1
@@ -136,7 +136,7 @@ class LevelCreator: SKScene {
     }
     
     func addQuitNode() {
-        quitNode.text = "Quit"
+        quitNode.text = TextController.quitNode()
         quitNode.fontName = "Fatuito"
         quitNode.fontSize = GameParameters.inGameFontSize
         quitNode.alpha = 1

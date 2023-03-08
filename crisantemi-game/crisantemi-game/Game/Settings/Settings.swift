@@ -34,7 +34,7 @@ class Settings: SKScene {
     }
     
     func addControlGyro() {
-        controlGyro.text = "GYRO"
+        controlGyro.text = TextController.controlGyro()
         controlGyro.fontName = "Fatuito"
         
         controlGyro.fontSize = GameParameters.fontSize/3
@@ -45,7 +45,7 @@ class Settings: SKScene {
     }
     
     func addControlTouch() {
-        controlTouch.text = "TOUCH"
+        controlTouch.text = TextController.controlTouch()
         controlTouch.fontName = "Fatuito"
         
         controlTouch.fontSize = GameParameters.fontSize/3
@@ -80,8 +80,8 @@ class Settings: SKScene {
     }
     
     func addTitleScreen() {
-        var title = SKLabelNode()
-        title.text = "OPTIONS"
+        let title = SKLabelNode()
+        title.text = TextController.optionTitle()
         title.fontName = "Fatuito"
         
         title.fontSize = GameParameters.fontSize/2
@@ -90,7 +90,7 @@ class Settings: SKScene {
     }
     
     func addControlLabel() {
-        controlLabel.text = "Controls:"
+        controlLabel.text = TextController.controlLabel()
         controlLabel.fontName = "Fatuito"
         controlLabel.scene?.anchorPoint = CGPoint(x: 0, y: 0)
         
@@ -102,7 +102,7 @@ class Settings: SKScene {
     }
     
     func addLanguageLabel() {
-        languageLabel.text = "Language:"
+        languageLabel.text = TextController.languageLabel()
         languageLabel.fontName = "Fatuito"
         languageLabel.scene?.anchorPoint = CGPoint(x: 0, y: 0)
         
@@ -132,11 +132,13 @@ class Settings: SKScene {
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 usaLabel.alpha = 1
                 itaLabel.alpha = 0.5
+                TextController.isEnglish = true
                 break
             case "ita":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 itaLabel.alpha = 1
                 usaLabel.alpha = 0.5
+                TextController.isEnglish = false
                 break
             case "gyro":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)

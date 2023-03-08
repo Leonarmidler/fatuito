@@ -89,7 +89,7 @@ class Menu: SKScene {
     }
     
     func addPlayLabel() {
-        playNode.text = "PLAY"
+        playNode.text = TextController.playNode()
         playNode.fontName = "Fatuito"
         playNode.fontSize = GameParameters.fontSize
         playNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
@@ -100,7 +100,7 @@ class Menu: SKScene {
     }
     
     func addCreditsNode() {
-        creditsLabel.text = "CREDITS"
+        creditsLabel.text = TextController.creditsLabel()
         creditsLabel.fontName = "Fatuito"
         creditsLabel.fontSize = GameParameters.fontSize
         creditsLabel.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
@@ -109,7 +109,7 @@ class Menu: SKScene {
     }
     
     func addSettingsLabel() {
-        settingsLabel.text = "SETTINGS"
+        settingsLabel.text = TextController.settingsLabel()
         settingsLabel.fontName = "Fatuito"
         settingsLabel.fontSize = GameParameters.fontSize
         settingsLabel.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))

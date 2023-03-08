@@ -29,7 +29,7 @@ class StageSelect: SKScene {
 //    }
     
     func addSelectStage() {
-        selectStageNode.text = "SELECT STAGE"
+        selectStageNode.text = TextController.selectStageNode()
         selectStageNode.fontName = "Fatuito"
         selectStageNode.fontSize = GameParameters.fontSize/1.5
         

@@ -63,6 +63,7 @@
 		A7FAF07029B9394900A7B42E /* Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAF06F29B9394900A7B42E /* Pause.swift */; };
 		A7FAF07329B9469900A7B42E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAF07229B9469900A7B42E /* Settings.swift */; };
 		A7FAF07529B946A400A7B42E /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FAF07429B946A400A7B42E /* SettingsScene.sks */; };
+		A7FAF07729B9544D00A7B42E /* TextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FAF07629B9544D00A7B42E /* TextController.swift */; };
 		A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FE676F29B1EEA60082FA83 /* Credits.swift */; };
 		A7FE677229B1EEAE0082FA83 /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */; };
 		A7FE677429B20AB70082FA83 /* gulaguForest.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7FE677329B20AB70082FA83 /* gulaguForest.wav */; };
@@ -127,6 +128,7 @@
 		A7FAF06F29B9394900A7B42E /* Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pause.swift; sourceTree = "<group>"; };
 		A7FAF07229B9469900A7B42E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A7FAF07429B946A400A7B42E /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
+		A7FAF07629B9544D00A7B42E /* TextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextController.swift; sourceTree = "<group>"; };
 		A7FE676F29B1EEA60082FA83 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		A7FE677129B1EEAE0082FA83 /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
 		A7FE677329B20AB70082FA83 /* gulaguForest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gulaguForest.wav; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		A7DF992B29A2CAB700D21CEC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7FAF07629B9544D00A7B42E /* TextController.swift */,
 				A7DF992C29A2CE2E00D21CEC /* GameParameters.swift */,
 				A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */,
 				A7222B8929ADF66100D9B75A /* AudioController.swift */,
@@ -472,6 +475,7 @@
 				A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */,
 				A7FAF07029B9394900A7B42E /* Pause.swift in Sources */,
 				A7222B9129AE0A2E00D9B75A /* GameOver.swift in Sources */,
+				A7FAF07729B9544D00A7B42E /* TextController.swift in Sources */,
 				A7FE677029B1EEA60082FA83 /* Credits.swift in Sources */,
 				A7222B8C29ADFC4C00D9B75A /* PhysicsController.swift in Sources */,
 				A7FAF07329B9469900A7B42E /* Settings.swift in Sources */,
