@@ -88,6 +88,11 @@ class StageSelect: SKScene {
                 GameParameters.switchScene(fromScene: self, toScene: UndergroundLevels(fileNamed: "UndergroundLevelsScene")!)
                 exists = false
                 break
+            case "tartaruEden":
+                AudioController.playSound(audioPlayer: AudioController.arrowClick)
+                stageNameNode.text = "Tartaru Eden"
+                exists = false
+                break
             case "backButton":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 let menuScene = Menu(fileNamed: "MenuScene")!

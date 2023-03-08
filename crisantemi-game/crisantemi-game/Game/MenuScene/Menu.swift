@@ -27,13 +27,12 @@ class Menu: SKScene {
     
     override func didMove(to view: SKView) {
         // Add menu content here
-        addLogo()
+//        addLogo()
 //        AnimationController.gifAnimation(imageName: "animatedLogo", scene: self)
         addRightArrow()
         addLeftArrow()
         
         addPlayLabel()
-        addStageSelectLabel()
         addCreditsNode()
 
         addSelectedLabel()
@@ -46,8 +45,7 @@ class Menu: SKScene {
     func addSelectedLabel() {
         switch labelSelector {
         case 0: selectedLabel = playNode; break
-        case 1: selectedLabel = stageSelectNode; break
-        case 2: selectedLabel = creditsLabel; break
+        case 1: selectedLabel = creditsLabel; break
         default: break
         }
         
@@ -59,19 +57,19 @@ class Menu: SKScene {
         addSelectedLabel()
     }
         
-    func addLogo() {
-        logoNode = SKSpriteNode(imageNamed: "logo")
-        logoNode.setScale(0.5)
-        logoNode.position = CGPoint(x: frame.midX, y: frame.midY + 250)
-        
-        addChild(logoNode)
-    }
+//    func addLogo() {
+//        logoNode = SKSpriteNode(imageNamed: "logo")
+//        logoNode.setScale(0.5)
+//        logoNode.position = CGPoint(x: frame.midX, y: frame.midY + 250)
+//
+//        addChild(logoNode)
+//    }
     
     func addLeftArrow() {
         leftArrowNode.text = "<"
         leftArrowNode.fontName = "Fatuito"
         leftArrowNode.fontSize = GameParameters.fontSize*2
-        leftArrowNode.position = CGPoint(x: frame.midX - logoNode.frame.width/2 - leftArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
+        leftArrowNode.position = CGPoint(x: frame.midX - childNode(withName: "logo")!.frame.width/2 - leftArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
         
         leftArrowNode.name = "<"
         addChild(leftArrowNode)
@@ -81,7 +79,7 @@ class Menu: SKScene {
         rightArrowNode.text = ">"
         rightArrowNode.fontName = "Fatuito"
         rightArrowNode.fontSize = GameParameters.fontSize*2
-        rightArrowNode.position = CGPoint(x: frame.midX + logoNode.frame.width/2 + rightArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
+        rightArrowNode.position = CGPoint(x: frame.midX + childNode(withName: "logo")!.frame.width/2 + rightArrowNode.frame.width, y: frame.midY - (2.35*GameParameters.fontSize))
         
         rightArrowNode.name = ">"
         addChild(rightArrowNode)
@@ -93,18 +91,9 @@ class Menu: SKScene {
         playNode.fontSize = GameParameters.fontSize
         playNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
         
-        playNode.alpha = GameParameters.nonClickableLabelOpacity
+//        playNode.alpha = GameParameters.nonClickableLabelOpacity
         
         playNode.name = "play"
-    }
-    
-    func addStageSelectLabel() {
-        stageSelectNode.text = "STAGE SELECT"
-        stageSelectNode.fontName = "Fatuito"
-        stageSelectNode.fontSize = GameParameters.fontSize
-        stageSelectNode.position = CGPoint(x: frame.midX, y: frame.midY - (2*GameParameters.fontSize))
-        
-        stageSelectNode.name = "stageSelect"
     }
     
     func addCreditsNode() {
@@ -122,7 +111,7 @@ class Menu: SKScene {
             switch node.name {
             case ">":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
-                if labelSelector == 2 {
+                if labelSelector == 1 {
                     labelSelector = -1
                 }
                 labelSelector += 1
@@ -131,25 +120,22 @@ class Menu: SKScene {
             case "<":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 if labelSelector == 0 {
-                    labelSelector = 3
+                    labelSelector = 2
                 }
                 labelSelector -= 1
                 switchLabel()
                 break
             case "play":
-//                // SOUND PLAYED
-//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-//                
-//                // GAME PARAM SET
-//                LevelCreator.bgSound = AudioController.gulaguForest
-//                LevelCreator.minScore = 14
-//                
-//                // SWITCH
-//                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
-                break
-            case "stageSelect":
+                // SOUND PLAYED
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
+                
+                // GAME PARAM SET
+                LevelCreator.bgSound = AudioController.gulaguForest
+                LevelCreator.minScore = 14
+                
+                // SWITCH
                 GameParameters.switchScene(fromScene: self, toScene: StageSelect(fileNamed: "StageSelectScene")!)
+                break
             case "credits":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 GameParameters.switchScene(fromScene: self, toScene: Credits(fileNamed: "CreditsScene")!)
