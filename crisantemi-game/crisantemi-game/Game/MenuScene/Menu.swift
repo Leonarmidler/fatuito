@@ -137,15 +137,15 @@ class Menu: SKScene {
                 switchLabel()
                 break
             case "play":
-                // SOUND PLAYED
-                AudioController.playSound(audioPlayer: AudioController.buttonClick)
-                
-                // GAME PARAM SET
-                LevelCreator.bgSound = AudioController.gulaguForest
-                LevelCreator.minScore = 14
-                
-                // SWITCH
-                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
+//                // SOUND PLAYED
+//                AudioController.playSound(audioPlayer: AudioController.buttonClick)
+//                
+//                // GAME PARAM SET
+//                LevelCreator.bgSound = AudioController.gulaguForest
+//                LevelCreator.minScore = 14
+//                
+//                // SWITCH
+//                GameParameters.switchScene(fromScene: self, toScene: LevelCreator(fileNamed: "GulaguForest")!)
                 break
             case "stageSelect":
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)

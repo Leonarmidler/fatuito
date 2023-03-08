@@ -1,5 +1,5 @@
 //
-//  StageSelect.swift
+//  UndergroundLevels.swift
 //  Fatuito
 //
 //  Created by Leonardo Daniele on 08/03/23.
@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class StageSelect: SKScene {
+class UndergroundLevels: SKScene {
     // NODES
     var exists = false
     var backButtonNode = SKLabelNode()
@@ -33,7 +33,7 @@ class StageSelect: SKScene {
         selectStageNode.fontName = "Fatuito"
         selectStageNode.fontSize = GameParameters.fontSize/1.5
         
-        selectStageNode.position = CGPoint(x: frame.midX + frame.width/3, y: frame.midY - GameParameters.fontSize)
+        selectStageNode.position = CGPoint(x: frame.midX - frame.width/3, y: frame.midY + 3*GameParameters.fontSize)
 
         addChild(selectStageNode)
     }
@@ -43,7 +43,7 @@ class StageSelect: SKScene {
         stageNameNode.fontName = "Fatuito"
         stageNameNode.fontSize = GameParameters.fontSize/1.5
         
-        stageNameNode.position = CGPoint(x: frame.midX + frame.width/3, y: frame.midY - 2*GameParameters.fontSize)
+        stageNameNode.position = CGPoint(x: frame.midX - frame.width/3, y: frame.midY + 2*GameParameters.fontSize)
 
         addChild(stageNameNode)
     }
@@ -53,7 +53,7 @@ class StageSelect: SKScene {
         startButtonNode.fontName = "Fatuito"
         startButtonNode.fontSize = GameParameters.fontSize/1.5
         
-        startButtonNode.position = CGPoint(x: frame.midX + frame.width/3, y: frame.midY - 3*GameParameters.fontSize)
+        startButtonNode.position = CGPoint(x: frame.midX - frame.width/3, y: frame.midY + GameParameters.fontSize)
         
         startButtonNode.name = "start"
         addChild(startButtonNode)
@@ -77,22 +77,18 @@ class StageSelect: SKScene {
             case "gulaguForest":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 stageNameNode.text = "Gulagu Forest"
-                exists = true
+                exists = false
                 break
             case "weppingMountain":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 stageNameNode.text = "Wepping Mountain"
-                break
-            case "underground":
-                AudioController.playSound(audioPlayer: AudioController.arrowClick)
-                GameParameters.switchScene(fromScene: self, toScene: UndergroundLevels(fileNamed: "UndergroundLevelsScene")!)
                 exists = false
                 break
             case "backButton":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 let menuScene = Menu(fileNamed: "MenuScene")!
                 menuScene.scaleMode = .aspectFill
-                GameParameters.switchScene(fromScene: self, toScene: menuScene)
+                GameParameters.switchScene(fromScene: self, toScene: StageSelect(fileNamed: "StageSelectScene")!)
                 break
             case "start":
                 if exists {
@@ -113,3 +109,4 @@ class StageSelect: SKScene {
     }
     
 }
+
