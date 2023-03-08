@@ -77,22 +77,37 @@ class StageSelect: SKScene {
             case "gulaguForest":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 stageNameNode.text = "Gulagu Forest"
+                childNode(withName: "bg")?.alpha = 0
+                childNode(withName: "gulaguForestSelect")?.alpha = 1
+                childNode(withName: "weppingMountainSelect")?.alpha = 0
+                childNode(withName: "tartaruEdenSelect")?.alpha = 0
+                startButtonNode.alpha = 1
                 exists = true
                 break
             case "weppingMountain":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 stageNameNode.text = "Wepping Mountain"
-                break
-            case "underground":
-                AudioController.playSound(audioPlayer: AudioController.arrowClick)
-                GameParameters.switchScene(fromScene: self, toScene: UndergroundLevels(fileNamed: "UndergroundLevelsScene")!)
-                exists = false
+                childNode(withName: "bg")?.alpha = 0
+                childNode(withName: "gulaguForestSelect")?.alpha = 0
+                childNode(withName: "weppingMountainSelect")?.alpha = 1
+                childNode(withName: "tartaruEdenSelect")?.alpha = 0
+                startButtonNode.alpha = 0.5
                 break
             case "tartaruEden":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 stageNameNode.text = "Tartaru Eden"
+                childNode(withName: "bg")?.alpha = 0
+                childNode(withName: "gulaguForestSelect")?.alpha = 0
+                childNode(withName: "weppingMountainSelect")?.alpha = 0
+                childNode(withName: "tartaruEdenSelect")?.alpha = 1
+                startButtonNode.alpha = 0.5
                 exists = false
                 break
+//            case "underground":
+//                AudioController.playSound(audioPlayer: AudioController.arrowClick)
+//                GameParameters.switchScene(fromScene: self, toScene: UndergroundLevels(fileNamed: "UndergroundLevelsScene")!)
+//                exists = false
+//                break
             case "backButton":
                 AudioController.playSound(audioPlayer: AudioController.arrowClick)
                 let menuScene = Menu(fileNamed: "MenuScene")!
