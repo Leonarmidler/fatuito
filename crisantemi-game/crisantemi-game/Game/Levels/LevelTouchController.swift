@@ -19,7 +19,7 @@ extension LevelCreator {
                 AudioController.playSound(audioPlayer: AudioController.buttonClick)
                 
                 // SWITCH SCENE
-                let menuScene = Menu(fileNamed: "MenuScene")!
+                let menuScene = Menu(fileNamed: "Menu")!
                 menuScene.scaleMode = .aspectFill
                 GameParameters.switchScene(fromScene: self, toScene: menuScene)
                 break
