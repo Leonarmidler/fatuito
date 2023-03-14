@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0137C2F729C0FEA4006CE470 /* tears.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0137C2F629C0FEA4006CE470 /* tears.sks */; };
+		0137C2F929C128A2006CE470 /* redtears.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0137C2F829C128A2006CE470 /* redtears.sks */; };
 		01A99BA429B69BF600FB369A /* fatumPickup.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01A99BA329B69BF600FB369A /* fatumPickup.sks */; };
 		01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01BF5A8429B6223B000F7FE3 /* Animations.sks */; };
 		23EEC25129BFBA990044B97D /* Wepping Mountain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23EEC25029BFBA990044B97D /* Wepping Mountain.sks */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		0137C2F629C0FEA4006CE470 /* tears.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = tears.sks; sourceTree = "<group>"; };
+		0137C2F829C128A2006CE470 /* redtears.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redtears.sks; sourceTree = "<group>"; };
 		01A99BA329B69BF600FB369A /* fatumPickup.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fatumPickup.sks; sourceTree = "<group>"; };
 		01BF5A8429B6223B000F7FE3 /* Animations.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Animations.sks; sourceTree = "<group>"; };
 		23EEC25029BFBA990044B97D /* Wepping Mountain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Wepping Mountain.sks"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				01BF5A8429B6223B000F7FE3 /* Animations.sks */,
 				A75E50F929B51C9F00C63215 /* rain.sks */,
 				0137C2F629C0FEA4006CE470 /* tears.sks */,
+				0137C2F829C128A2006CE470 /* redtears.sks */,
 				A75E50FA29B51C9F00C63215 /* lights.sks */,
 				A75E50FD29B51C9F00C63215 /* Gulagu Forest.sks */,
 				01A99BA329B69BF600FB369A /* fatumPickup.sks */,
@@ -456,6 +459,7 @@
 				A7222B8829ADF52200D9B75A /* buttonClick.wav in Resources */,
 				A7222B8029ADF22A00D9B75A /* bushWalk.wav in Resources */,
 				01A99BA429B69BF600FB369A /* fatumPickup.sks in Resources */,
+				0137C2F929C128A2006CE470 /* redtears.sks in Resources */,
 				0137C2F729C0FEA4006CE470 /* tears.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
