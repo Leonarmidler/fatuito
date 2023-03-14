@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01A99BA429B69BF600FB369A /* fatumPickup.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01A99BA329B69BF600FB369A /* fatumPickup.sks */; };
 		01BF5A8529B6223B000F7FE3 /* Animations.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01BF5A8429B6223B000F7FE3 /* Animations.sks */; };
+		23EEC25129BFBA990044B97D /* Wepping Mountain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 23EEC25029BFBA990044B97D /* Wepping Mountain.sks */; };
 		A709581D29B159B700B6BD41 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709581C29B159B700B6BD41 /* UpdateController.swift */; };
 		A7222B7929ADF22A00D9B75A /* fallingDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6D29ADF22A00D9B75A /* fallingDown.wav */; };
 		A7222B7A29ADF22A00D9B75A /* fatuumsPickup.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		01A99BA329B69BF600FB369A /* fatumPickup.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fatumPickup.sks; sourceTree = "<group>"; };
 		01BF5A8429B6223B000F7FE3 /* Animations.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Animations.sks; sourceTree = "<group>"; };
+		23EEC25029BFBA990044B97D /* Wepping Mountain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Wepping Mountain.sks"; sourceTree = "<group>"; };
 		A709581C29B159B700B6BD41 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
 		A7222B6D29ADF22A00D9B75A /* fallingDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallingDown.wav; sourceTree = "<group>"; };
 		A7222B6E29ADF22A00D9B75A /* fatuumsPickup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fatuumsPickup.wav; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		A7F49B1929B178240093A6EE /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				23EEC25029BFBA990044B97D /* Wepping Mountain.sks */,
 				A7F49B1729B1781C0093A6EE /* LevelCreator.swift */,
 				A7DF46F629A0ED7000DC9A66 /* LevelContactController.swift */,
 				A7DF46F829A0EDB300DC9A66 /* LevelTouchController.swift */,
@@ -428,6 +431,7 @@
 				A7CBE21729AD5DC900BBFC8B /* Fatuito.ttf in Resources */,
 				A74BA78829B608FF00C11FF3 /* ground1.pdf in Resources */,
 				A7BAA9D929B8893700D7F837 /* GameOverScene.sks in Resources */,
+				23EEC25129BFBA990044B97D /* Wepping Mountain.sks in Resources */,
 				A7FAF06E29B9394400A7B42E /* PauseScene.sks in Resources */,
 				A7222B8629ADF47500D9B75A /* arrowClick.wav in Resources */,
 				A72B6C3629AF59B600684336 /* StageSelectScene.sks in Resources */,
@@ -625,7 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 56AV2RD3G8;
+				DEVELOPMENT_TEAM = 32HCCGTS8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -658,7 +662,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 56AV2RD3G8;
+				DEVELOPMENT_TEAM = 32HCCGTS8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fatuito-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
