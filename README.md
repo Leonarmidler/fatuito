@@ -18,7 +18,7 @@ _________________
 
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/Crisanteminobg.png)
 ### Crisantemi Team:
-**[Alina Brandizzi](https://www.behance.net/roaringspark)** - art direction, character design, 2d animation, logo & app icon design, asset creation  
+**[Alina Brandizzi](https://www.behance.net/roaringspark)** - art direction, character design, 2d animation, stage select screen, logo & app icon design, asset creation  
 
 **Annamaria de Michele** - project manager, PR  
 
