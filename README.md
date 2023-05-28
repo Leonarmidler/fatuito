@@ -12,7 +12,6 @@ It is localised both in Italian and English, and has the accessibility option to
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito2.png)
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito3.png)
 _________________
-#### GitHub: https://github.com/Leonarmidler/crisantemi-game
 #### TestFlight: https://testflight.apple.com/join/eNVwAIvT
 _________________
 
