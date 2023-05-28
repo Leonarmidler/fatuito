@@ -28,4 +28,4 @@ _________________
 
 **Leonardo Daniele** - coding  
 
-**Sonia di Nicoli** - art direction, character design, stage design, 2d animation, poster and asset creation
+**Sonia di Nicoli** - art direction, character, stage & HUD design, 2d animation, poster and asset creation
