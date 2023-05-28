@@ -1,7 +1,7 @@
 
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/AnimatedLogo.gif)
 
-#### Fatuito is an iOs mobile game developed with the SpriteKit framework. The game is set in a gloomy, atmospheric yet colorful world called Laetasia that adds a unique twist to the gameplay.
+### Fatuito is an iOs mobile game developed with the SpriteKit framework. The game is set in a gloomy, atmospheric yet colorful world called Laetasia that adds a unique twist to the gameplay.
 
 Players control a character that rolls and jumps through levels filled with obstacles and enemies, with gyroscope controls.
 
@@ -17,7 +17,7 @@ _________________
 _________________
 
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/Crisanteminobg.png)
-#### Crisantemi Team:
+### Crisantemi Team:
 **[Alina Brandizzi](https://www.behance.net/roaringspark)** - art direction, character design, 2d animation, logo & app icon design, asset creation  
 
 **Annamaria de Michele** - project manager, PR  
