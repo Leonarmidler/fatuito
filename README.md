@@ -18,9 +18,14 @@ _________________
 
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/Crisanteminobg.png)
 #### Crisantemi Team:
-**[Alina Brandizzi](https://www.behance.net/roaringspark)** - art direction, character design, 2d animation, logo & app icon design, asset creation. 
-**Annamaria de Michele** - project manager, PR. 
-Domenico Trotta** - stage logic design & development. 
-**Giovanni Capuano** - coding, particles, sfx, soundtrack, custom typeface. 
-**Leonardo Daniele** - coding. 
-**Sonia di Nicoli** - art direction, character design, stage design, 2d animation, poster and asset creation. 
+**[Alina Brandizzi](https://www.behance.net/roaringspark)** - art direction, character design, 2d animation, logo & app icon design, asset creation  
+
+**Annamaria de Michele** - project manager, PR  
+
+**Domenico Trotta** - stage logic design & development  
+
+**Giovanni Capuano** - coding, particles, sfx, soundtrack, custom typeface  
+
+**Leonardo Daniele** - coding  
+
+**Sonia di Nicoli** - art direction, character design, stage design, 2d animation, poster and asset creation
