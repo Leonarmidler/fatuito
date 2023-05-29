@@ -3,9 +3,11 @@
 
 ### Fatuito is an iOs mobile game developed in 2023 with the SpriteKit framework. The game is set in a gloomy, atmospheric yet colorful world called Laetasia that adds a unique twist to the gameplay.
 
-Players control a character that rolls and jumps through levels filled with obstacles and enemies, with gyroscope controls.
+Players control a character called **Fatuum** that rolls and jumps through levels filled with obstacles and enemies, with gyroscope controls. The goal is to find & catch as many mini-Fatuums as possible before reaching the end of each stage, and following through the next.
 
-It is localised both in Italian and English, and has the accessibility option to switch between gyroscope or touch controls.
+For now, only the first stage - "Gulagu Forest" - is available.
+
+The game is localised both in Italian and English, and has the accessibility option to switch between gyroscope or touch controls.
 
 _________________
 
