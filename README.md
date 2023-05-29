@@ -7,6 +7,11 @@ Players control a character that rolls and jumps through levels filled with obst
 
 It is localised both in Italian and English, and has the accessibility option to switch between gyroscope or touch controls.
 
+_________________
+
+### Devs notes:
+We are very happy to present our project! The game was developed in a little less than a month as a learning project, with a framework the coders were still beginners at. It was in fact a **huge** learning experience for all of us, of which we're extremely proud and we hope to keep working at it as a team, with the goal to publish it on the App Store. Feel free to try out the demo on [TestFlight](https://testflight.apple.com/join/eNVwAIvT) and give us [feedback](crisantemi.dev@proton.me)!
+
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/photo_2023-05-28_12-19-13.jpg)
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito1.png)
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito2.png)
