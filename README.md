@@ -19,10 +19,10 @@ We are very happy to present our project! The game was developed in a little les
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito2.png)
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/fatuito3.png)
 _________________
-#### TestFlight: #### https://lnkd.in/dF9Fy85e
-#### TikTok: ####https://lnkd.in/drdPSfWw
-#### Devs e-mail: #### crisantemi.dev@proton.me
-#### Devs Instagram: #### https://lnkd.in/dbUqGQry
+#### [TestFlight](https://testflight.apple.com/join/eNVwAIvT)
+#### [TikTok](https://www.tiktok.com/@fatuito)
+#### [Devs e-mail](crisantemi.dev@proton.me)
+#### [Devs Instagram](https://www.instagram.com/crisantemi.dev/)
 _________________
 
 ![My Image](https://github.com/Leonarmidler/crisantemi-game/blob/main/crisantemi-game/Crisanteminobg.png)
