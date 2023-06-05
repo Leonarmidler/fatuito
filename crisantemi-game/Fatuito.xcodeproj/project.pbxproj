@@ -120,7 +120,7 @@
 		A7DF46DA29A0EC7800DC9A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7DF46E229A0EC7800DC9A66 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A7DF46E529A0EC7800DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7DF46E729A0EC7900DC9A66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "crisantemi-game/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		A7DF46EA29A0EC7900DC9A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7DF46F429A0ED0100DC9A66 /* MechanicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicsController.swift; sourceTree = "<group>"; };
 		A7DF46F629A0ED7000DC9A66 /* LevelContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelContactController.swift; sourceTree = "<group>"; };
