@@ -35,6 +35,6 @@ _________________
 
 **Giovanni Capuano** - coding, particles, sfx, soundtrack, custom typeface  
 
-**Leonardo Daniele** - coding  
+**Leonardo Daniele** - Head Of Development
 
 **Sonia di Nicoli** - art direction, character, stage & HUD design, 2d animation, poster and asset creation
